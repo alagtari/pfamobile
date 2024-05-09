@@ -23,78 +23,7 @@ class AdminHomeScreen extends StatelessWidget {
             horizontal: MediaQuery.of(context).size.width * .075),
         child: Column(
           children: [
-            mediumVerticalSpacer,
-            Row(
-              children: [
-                GestureDetector(
-                  onTap: () {},
-                  child: Container(
-                    width: 45,
-                    height: 45,
-                    decoration: const BoxDecoration(
-                      color: AppColors.greenLightColor,
-                      image: DecorationImage(
-                        image: AssetImage('assets/images/profile.jpg'),
-                        fit: BoxFit.cover,
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(15),
-                      ),
-                    ),
-                  ),
-                ),
-                miniHorizantalSpacer,
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Ala Gtari",
-                      style: TextStyles.mediumTextStyle.copyWith(
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        const Icon(
-                          Icons.location_on,
-                          color: AppColors.greenDarkColor,
-                          size: 18,
-                        ),
-                        Text(
-                          "Hammem Linf",
-                          style: TextStyles.extraSmallTextStyle.copyWith(
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                const Expanded(
-                  child: SizedBox(),
-                ),
-                GestureDetector(
-                  onTap: () {},
-                  child: Container(
-                    width: 45,
-                    height: 45,
-                    decoration: const BoxDecoration(
-                      color: AppColors.greenLightColor,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(15),
-                      ),
-                    ),
-                    child: const Icon(
-                      Icons.notifications_outlined,
-                      color: AppColors.greenDarkColor,
-                      size: 25,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            extraLargeVerticalSpacer,
+           extraLargeVerticalSpacer,
             Container(
               width: double.infinity,
               height: MediaQuery.of(context).size.height * .16,
@@ -108,13 +37,14 @@ class AdminHomeScreen extends StatelessWidget {
                   Expanded(
                     child: Column(
                       children: [
+                        miniVerticalSpacer,
                         Text(
                           "Take control of your truck management .",
-                          style: TextStyles.mediumTextStyle.copyWith(
+                          style: TextStyles.smallTextStyle.copyWith(
                               color: AppColors.whiteDarkColor,
                               fontWeight: FontWeight.w600),
                         ),
-                        miniVerticalSpacer,
+                        extraSmallVerticalSpacer,
                         Align(
                           alignment: Alignment.centerLeft,
                           child: GestureDetector(
@@ -167,13 +97,14 @@ class AdminHomeScreen extends StatelessWidget {
                   Expanded(
                     child: Column(
                       children: [
+                        miniVerticalSpacer,
                         Text(
                           "Take charge of your driver management .",
-                          style: TextStyles.mediumTextStyle.copyWith(
+                          style: TextStyles.smallTextStyle.copyWith(
                               color: AppColors.whiteDarkColor,
                               fontWeight: FontWeight.w600),
                         ),
-                        miniVerticalSpacer,
+                        extraSmallVerticalSpacer,
                         Align(
                           alignment: Alignment.centerLeft,
                           child: GestureDetector(
@@ -226,13 +157,14 @@ class AdminHomeScreen extends StatelessWidget {
                   Expanded(
                     child: Column(
                       children: [
+                        miniVerticalSpacer,
                         Text(
                           "Seamlessly organize your schedules .",
-                          style: TextStyles.mediumTextStyle.copyWith(
+                          style: TextStyles.smallTextStyle.copyWith(
                               color: AppColors.whiteDarkColor,
                               fontWeight: FontWeight.w600),
                         ),
-                        miniVerticalSpacer,
+                        extraSmallVerticalSpacer,
                         Align(
                           alignment: Alignment.centerLeft,
                           child: GestureDetector(
@@ -285,13 +217,14 @@ class AdminHomeScreen extends StatelessWidget {
                   Expanded(
                     child: Column(
                       children: [
+                        miniVerticalSpacer,
                         Text(
                           "Create & mange the cities and locations .",
-                          style: TextStyles.mediumTextStyle.copyWith(
+                          style: TextStyles.smallTextStyle.copyWith(
                               color: AppColors.whiteDarkColor,
                               fontWeight: FontWeight.w600),
                         ),
-                        miniVerticalSpacer,
+                        extraSmallVerticalSpacer,
                         Align(
                           alignment: Alignment.centerLeft,
                           child: GestureDetector(

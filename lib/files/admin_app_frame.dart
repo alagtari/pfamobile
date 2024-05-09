@@ -28,7 +28,9 @@ class _AdminAppFrameState extends State<AdminAppFrame> {
       case 2:
         context.router.replace(const ReportsRoute());
         break;
-      
+      case 3:
+        context.router.replace(const ProfileRoute());
+        break;
     }
 
     setState(() {

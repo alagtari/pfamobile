@@ -29,7 +29,7 @@ class _CitizenAppFrameState extends State<CitizenAppFrame> {
         context.router.replace(const CitizenReportRoute());
         break;
       case 3:
-        context.router.replace(const CitizenProfileRoute());
+        context.router.replace(const ProfileRoute());
         break;
     }
 

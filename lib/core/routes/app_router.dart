@@ -31,21 +31,8 @@ class AppRouter extends $AppRouter {
               page: CitizenReportRoute.page,
               transitionsBuilder: TransitionsBuilders.noTransition,
             ),
-            CustomRoute(
-              page: CitizenProfileRoute.page,
-              transitionsBuilder: TransitionsBuilders.noTransition,
-            ),
-            AutoRoute(
-              page: UpdateGeneralInformationRoute.page,
-            ),
             AutoRoute(
               page: UpdateLocationRoute.page,
-            ),
-            AutoRoute(
-              page: ChangePasswordRoute.page,
-            ),
-            AutoRoute(
-              page: ChangePreferencesRoute.page,
             ),
             AutoRoute(
               page: CategoryRoute.page,
@@ -55,22 +42,45 @@ class AppRouter extends $AppRouter {
         CustomRoute(
           page: AdminAppFrame.page,
           transitionsBuilder: TransitionsBuilders.noTransition,
+          // initial: true,
           children: [
             CustomRoute(
               page: AdminHomeRoute.page,
               transitionsBuilder: TransitionsBuilders.noTransition,
+              initial: true,
             ),
             AutoRoute(
               page: CitiesRoute.page,
             ),
             AutoRoute(
+              page: AddCityRoute.page,
+            ),
+            AutoRoute(
+              page: UpdateCityRoute.page,
+            ),
+            AutoRoute(
               page: TrucksRoute.page,
+            ),
+            AutoRoute(
+              page: AddTruckRoute.page,
+            ),
+            AutoRoute(
+              page: UpdateTruckRoute.page,
             ),
             AutoRoute(
               page: DriversRoute.page,
             ),
             AutoRoute(
+              page: AddDriverRoute.page,
+            ),
+            AutoRoute(
+              page: UpdateDriverRoute.page,
+            ),
+            AutoRoute(
               page: PlansRoute.page,
+            ),
+            AutoRoute(
+              page: AddPlanRoute.page,
             ),
             CustomRoute(
               page: ReportsRoute.page,
@@ -82,6 +92,19 @@ class AppRouter extends $AppRouter {
             ),
             AutoRoute(
               page: AdminChatRoomRoute.page,
+            ),
+            CustomRoute(
+              page: ProfileRoute.page,
+              transitionsBuilder: TransitionsBuilders.noTransition,
+            ),
+            AutoRoute(
+              page: UpdateGeneralInformationRoute.page,
+            ),
+            AutoRoute(
+              page: ChangePasswordRoute.page,
+            ),
+            AutoRoute(
+              page: ChangePreferencesRoute.page,
             ),
           ],
         ),

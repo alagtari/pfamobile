@@ -2,21 +2,22 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:mobile/core/injection/injection_container.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'api_interceptor.dart';
 
 class DioProvider {
   static Dio instance() => Dio(
         BaseOptions(
           connectTimeout: const Duration(seconds: 15),
-          baseUrl: "http://localhost:5000/api",
+          baseUrl: "${dotenv.env['BACKEND_BASE_URL']}",
+
           headers: {
             HttpHeaders.contentTypeHeader: "application/json",
           },
         ),
       )..interceptors.addAll(
           [
-            ApiInterceptor(sl()),
+            ApiInterceptor(),
             if (!kReleaseMode)
               LogInterceptor(
                 requestBody: true,

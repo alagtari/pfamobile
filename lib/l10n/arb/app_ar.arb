@@ -1,0 +1,744 @@
+{
+  "@@locale": "ar",
+  "language": "لغة",
+  "en": "الإنجليزية",
+  "fr": "الفرنسية ",
+  "ar": "العربية",
+  "invalidEmail": "عنوان بريد إلكتروني غير صالح!",
+  "invalidPassword": "كلمة مرور غير صالحة!",
+  "authError": "خطأ في تسجيل الدخول",
+  "generaleError": "حدث شيء ما وتعذر علينا معالجة طلبك. يرجى المحاولة مرة أخرى لاحقًا.",
+  "okay": "حسنا",
+  "invalidFirstName": "الاسم الأول غير صالح",
+  "invalidLastName": "اسم العائلة غير صالح",
+  "invalidAddress": "عنوان خاطئ",
+  "requiredField": "نموذج الإدخال المطلوب",
+  "accountCreated": "تم إنشاء الحساب بنجاح",
+  "waitForConfirmation": "تم إنشاء حسابك ، ستتلقى بريدًا إلكترونيًا بمجرد تأكيدك.",
+  "invalidPhoneNumber": "رقم الهاتف غير صحيح",
+  "clientCodeAdded": "تمت إضافة رمز العميل بنجاح!",
+  "clientCodeInvalid": "كود العميل المقدم غير صالح!",
+  "remeberMeText": "تذكرنى",
+  "stepTwoText": "الخطوة 2/2",
+  "animalOwnerText": "صاحب",
+  "youWishToBenefitFromOurServicesText": "هل ترغب في الاستفادة من خدماتنا؟",
+  "vetirninaryDoctorText": "طبيب بيطري",
+  "youWishToJoinOurVetsText": "هل ترغب في الانضمام إلى شبكة Vets؟",
+  "verifyYourEmailText": "تفقد بريدك الالكتروني من فضلك.\n",
+  "weSendAnEmailToResetYourPasswordText": "لقد أرسلنا إليك بريدًا إلكترونيًا يحتوي على تعليمات إعادة تعيين كلمة المرور.",
+  "searchText": "بحث",
+  "sharedMediaText": "الوسائط المشتركة",
+  "emergencyDoctorText": "طوارئ بيطرية",
+  "yourAnimalNeedAnEmergencyTeam": "حيوانك الأليف يحتاج إلى رعاية عاجلة!",
+  "clickHereText": "انقر هنا",
+  "chooseYourProfileText": "اختر ملف التعريف الخاص بك",
+  "stepOneText": "الخطوة 1/2",
+  "doYouWantToMakeAnEmergencyCallText": "هل ترغب في إجراء مكالمة طوارئ؟",
+  "emergencyServiceText": "الرعاية العاجلة",
+  "letsGoText": "هيا بنا",
+  "signupText": "اشتراك",
+  "nextText": "التالي",
+  "verficationText": "التحقق من OTP",
+  "enterCodeText": "الرجاء إدخال الرمز المرسل إلى",
+  "receiveCodeQuestionText": "هل لم تتلق الرمز؟",
+  "demandeAgainText": "أعد الإرسال",
+  "demandeAgainTextInform": "اسأل مرة اخرى",
+  "congratsText": "تهانينا!",
+  "createdAccountSuccessText": "لقد ثم انشاء حسابك بنجاح!",
+  "completeMyAccountText": "أكمل عملية التسجيل",
+  "ifYouAreAvetsClient": "إذا كنت أحد عملاء Vets ، فيرجى الاتصال بالمسؤول للحصول على رمز VIP الخاص بك.",
+  "emergencyDoctorWithoutParenthesesText": "طوارئ بيطرية",
+  "medicalAnimalTransportText": "النقل الطبي للحيوانات",
+  "loginText": "تسجيل الدخول",
+  "addressEmailText": "بريد إلكتروني",
+  "passwordText": "كلمة المرور",
+  "forgotPasswordText": "هل نسيت كلمة السر؟",
+  "orLoginWithText": "أو تسجيل الدخول باستخدام",
+  "youAreANewUserText": "جديد هنا؟",
+  "createAnewAccountText": "إنشاء حساب جديد!",
+  "aNewAccountText": "حساب جديد",
+  "nameText": "اللقب",
+  "lastNameText": "الاسم",
+  "pet_name" :"الاسم",
+  "phoneNumberText": "رقم الهاتف",
+  "conditionAndTermsText": "أوافق على الشروط والأحكام",
+  "orSignupWithText": "أو اشترك مع",
+  "youHaveAnAccountText": "لديك حساب بالفعل؟",
+  "connectedText": "تسجيل الدخول",
+  "aCodeHasBenSentToYourEmailText": "تم إرسال رمز إلى بريدك الإلكتروني!",
+  "sendText": "إرسال",
+  "genderText": "الجنس",
+  "personalInformationText": "معلومات شخصية",
+  "accountAccessText": "الوصول للحساب",
+  "visitorText": "guest",
+  "clientCodeText": "زائر",
+  "youHaveACLientCodeText": "لديك بالفعل رمز VIP؟ إدراج هنا!",
+  "verifyText": "تحقق",
+  "myProfileText": "ملفي",
+  "okText": "موافق",
+  "askAQuestionText": "اتصل بطبيب بيطري",
+  "emergencyContactText": "اتصل بالرعاية العاجلة",
+  "makeAnAppointmentText": "إحجز موعد",
+  "myPetsText": "حيواناتي الأليفة",
+  "questionsSloganText": "خبرائنا سوف يجيبون على جميع أسئلتك!",
+  "emergencySloganText": "رعاية عاجلة 24/7",
+  "appointmentSloganText": "إحجز موعد",
+  "myPetsSloganText": "إدارة السجل الطبي لحيوانك الأليف",
+  "welcomeText": "مرحبًا",
+  "cancelSelectText": "إلغاء التحديد",
+  "continueText": "أكمل",
+  "onlineText": "متصل",
+  "fileText": "ملف",
+  "audioTEXT": "صوتي",
+  "positionText": "موضع",
+  "emergencyAgentText": "طوارئ بيطرية",
+  "whatYourPetEmergencyQuestionText": "أي من حيواناتك الأليفة يحتاج إلى رعاية عاجلة؟",
+  "whatYouPetQuestionText": "أيٌّ من حيواناتك الأليفة تريد طرح أسئلة عنه؟",
+  "cancelText": "إلغاء",
+  "confirmText": "تأكيد",
+  "chatMessagerieText": "محادثة",
+  "copyText": "ينسخ",
+  "replyText": "إجابه",
+  "deleteText": "حذف",
+  "youWantToDeleteTHisMesageText": "هل أنت متأكد أنك تريد حذف هذه الرسالة؟",
+  "clientStatusText": "VIP",
+  "addYourCLientCode": "أضف رمز VIP",
+  "saveText": "حفظ",
+  "verifiedClientCode": "تم التحقق من رمز Vip بنجاح!",
+  "addYourClientCodeText": "أضف رمز VIP الخاص بك",
+  "assuranceText": "تأمين",
+  "emergencyAlertText": "تنبيه طارئ",
+  "yourPetNeedEmergencyTransportText": "يحتاج حيوانك الأليف ليتم نقله إلى عيادتنا!",
+  "constactEmergencyServiceText": "اتصل بأخصائيي الرعاية العاجلة لدينا",
+  "withWhatMeansOfTransportText": "ما هي وسيلة النقل التي تفضلها؟",
+  "ourAmbulanceText": "سيارة الإسعاف لدينا",
+  "yourTransportText": "طريقة النقل الخاصة بك",
+  "localisationText": "الموقع",
+  "authorizeText": "نعم ، يأذن",
+  "dissmissAuhtorizeText": "لا تأذن",
+  "localisationAccessRequestText": "هل تسمح لهذا التطبيق بالوصول إلى موقعك؟",
+  "emergencyConfirmedText": "تم تأكيد حالة الطوارئ",
+  "maleText": "ذكر",
+  "femaleText": "أنثى",
+  "malePetText": "ذكر",
+  "femalePetText": "أنثى",
+  "addressText": "العنوان",
+  "yourAddressHereText": "عنوانك هنا",
+  "petSelection": "اختيار الحيوانات الأليفة",
+  "messageFailed": "فشل في إرسال رسالتك الأخيرة!",
+  "getPetsError": "عذرا ، لم نتمكن من تحميل حيواناتك الأليفة!",
+  "errorTitle": "هناك خطأ ما...",
+  "addPetText": "أضف حيوان أليف",
+  "addPetError": "عذرا ، لم نتمكن من إضافة هذا الحيوان الأليف!",
+  "numberInUse": "رقم الهاتف المقدم قيد الاستخدام بالفعل!",
+  "invalidCredentials": "البريد الإلكتروني أو رقم الهاتف المقدم غير صالح!",
+  "locationDisabled": "خدمة الموقع غير ممكّنة. يرجى الانتقال إلى إعدادات جهازك وتمكينه.",
+  "openDeviceSettings": "افتح إعدادات الموقع",
+  "locationDenied": "تم رفض إذن الموقع.",
+  "openAppSettings": "افتح إعدادات التطبيق",
+  "petAge": "{age, plural, =0{0 عام} =1{ عام} other{{age} أعوام}}",
+  "@petAge": {
+    "description": "A plural message",
+    "placeholders": {
+      "age": {
+        "type": "num",
+        "format": "compact"
+      }
+    }
+  },
+  "sentAudio": "{name} أرسل مقطعًا صوتيًا",
+  "@sentAudio": {
+    "description": "someone sent an audio",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "sentImage": "{name} أرسل صورة",
+  "@sentImage": {
+    "description": "someone sent an image",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "sentFile": "{name} أرسل ملفًا",
+  "@sentFile": {
+    "description": "someone sent a file",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "sentVideo": "{name} حمّل مقطع فيديو",
+  "@sentVideo": {
+    "description": "someone sent an video",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "you": "أنت",
+  "online": "متصل",
+  "offline": "غَيْر مُتَّصِلٍ",
+  "years": "سنين",
+  "petAgeInYears": "{age, plural, =0{0 سنة} =1{1 سنة} other{{age} سنين}}",
+  "@petAgeInYears": {
+    "description": "A plural message",
+    "placeholders": {
+      "age": {
+        "type": "num",
+        "format": "compact"
+      }
+    }
+  },
+  "petAgeInMonths": "{age, plural, =0{0 شهر} =1{1 شهر} other{{age} شهور}}",
+  "@petAgeInMonths": {
+    "description": "A plural message",
+    "placeholders": {
+      "age": {
+        "type": "num",
+        "format": "compact"
+      }
+    }
+  },
+  "petAgeInDays": "{age, plural, =0{0 يوم} =1{1 يوم} other{{age} أيام}}",
+  "@petAgeInDays": {
+    "description": "A plural message",
+    "placeholders": {
+      "age": {
+        "type": "num",
+        "format": "compact"
+      }
+    }
+  },
+  "slogan_text": "A Vet in Your Pocket",
+  "create_account_and_get_access": "أنشئ حسابك واحصل على خدماتنا.",
+  "after_s": "aprés {seconds} s",
+  "@after_s": {
+    "description": "after X seconds",
+    "placeholders": {
+      "seconds": {
+        "type": "num"
+      }
+    }
+  },
+  "vets_network_text": "شبكة الأطباء البيطريين",
+  "first_name_text": "الاسم",
+  "select_an_animal": "اختر حيوانًا",
+  "a_domicile": "في البيت",
+  "calendrier": "التقويم",
+  "x_rendez_vous": "موعد {count}",
+  "@x_rendez_vous": {
+    "description": "X Rendez-vous",
+    "placeholders": {
+      "count": {
+        "type": "num"
+      }
+    }
+  },
+  "select_a_client": "اختر عميلًا",
+  "pending": "قيد الانتظار",
+  "confirmed": "تم التأكيد",
+  "refused": "تم الرفض",
+  "mes_rdv": "مواعيدي",
+ "x_rdv_confirmed": "موعد مؤكد {count}",
+  "@x_rdv_confirmed": {
+    "description": "X rendez-vous confirmés",
+    "placeholders": {
+      "count": {
+        "type": "num"
+      }
+    }
+  },
+  "x_rdv_pending": "موعد في انتظار التأكيد {count}",
+  "@x_rdv_pending": {
+    "description": "X rendez-vous en attente de confirmation",
+    "placeholders": {
+      "count": {
+        "type": "num"
+      }
+    }
+  },
+  "x_rdv_refused": "موعد ملغى {count}",
+  "@x_rdv_refused": {
+    "description": "X rendez-vous annulés",
+    "placeholders": {
+      "count": {
+        "type": "num"
+      }
+    }
+  },
+  "confirmation_des_rdv": "تأكيد المواعيد",
+  "rdv_request_sent_at": "{date}\n تم إرسال طلب الموعد في",
+  "@rdv_request_sent_at": {
+    "description": "Demande de rendez-vous envoyé DATE_X",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+ "refuser": "رفض",
+  "confirmer": "تأكيد",
+  "modifier_le_rdv": "تعديل الموعد",
+  "cancel_rdv": "إلغاء الموعد",
+  "confirm_cancel_rdv_message": "هل ترغب حقًا في رفض هذا طلب الموعد؟",
+  "rdv_refused_title": "الموعد تم رفضه",
+  "rdv_refused_desc": "! تم رفض طلب الموعد",
+  "rdv_confirmed_success_desc": ".تم تأكيد طلب الموعد بنجاح",
+  "rdv_modified_success_desc": ".تم تعديل طلب الموعد بنجاح",
+  "rendez_vous_text": "موعد",
+  "no_users": "لا يوجد مستخدمين",
+  "notice": "إشعار",
+  "animal_already_appointment_that_day": "!الحيوان لديه بالفعل موعد في هذا اليوم",
+  "modifier_un_rdv": "تعديل موعد",
+  "ajouter_un_rdv": "إضافة موعد",
+  "client": "عميل",
+  "animal": "حيوان",
+  "clinic_ou_a_domicile": "عيادة أو منزل",
+  "select_date": "اختر التاريخ",
+  "select_time": "اختر الوقت",
+  "add_and_confirm": "إضافة وتأكيد",
+  "gallery": "المعرض",
+  "camera": "الكاميرا",
+  "ambulancier": "السيارة الإسعاف",
+  "your_current_position": "موقعك الحالي",
+  "loading": "جاري التحميل",
+  "acceuil": "الصفحة الرئيسية",
+  "transfert": "النقل",
+  "messages": "الرسائل",
+  "distance": "المسافة",
+  "km": "كم",
+  "estimated": "المقدر",
+  "min": "دقيقة",
+  "achieved": "تم تحقيقه",
+  "demande_sent_by": ": تم إرسال الطلب بواسطة",
+  "dr_x": "د. {name}",
+  "@dr_x": {
+    "description": "Dr. X",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+ "doctor_vets": "طبيب بيطري",
+  "transfert_history": "سجل النقل",
+  "a_clinic": "إلى العيادة",
+  "urgent_request": "طلب عاجل",
+  "intervention_a_domicile": "تدخل منزلي",
+  "transport_a_clinic": "نقل إلى العيادة",
+  "estimations": "تقديرات",
+  "step_x": " {step} الخطوة",
+  "@step_x": {
+    "description": "étape X",
+    "placeholders": {
+      "step": {
+        "type": "num"
+      }
+    }
+  },
+  "demarrer": "ابدأ",
+  "distance_total_trajectoire": ": المسافة الإجمالية للمسار",
+  "x_km": "كم {x}",
+  "@x_km": {
+    "description": "X Km",
+    "placeholders": {
+      "x": {
+        "type": "String"
+      }
+    }
+  },
+  "x_min": "دقيقة {x}",
+  "@x_min": {
+    "description": "X min",
+    "placeholders": {
+      "x": {
+        "type": "String"
+      }
+    }
+  },
+  "en_route": "في الطريق",
+  "arrived_to_client_home": "وصل إلى منزل العميل",
+  "continuer": "متابعة",
+  "your_dest_ici": "وجهتك هنا",
+  "mission_accomplie": "المهمة تمت بنجاح",
+  "arrival_to_client_home_completed": "وصول إلى منزل العميل تم بنجاح",
+  "arrival_to_client_home": "وصول إلى منزل العميل",
+  "step_x_completed": " تمت الخطوة {step} بنجاح ",
+  "@step_x_completed": {
+    "description": "étape X accomplie",
+    "placeholders": {
+      "step": {
+        "type": "num"
+      }
+    }
+  },
+  "terminer_step_x": "إنهاء الخطوة {x}",
+  "@terminer_step_x": {
+    "description": "Terminer l’étape X",
+    "placeholders": {
+      "x": {
+        "type": "num"
+      }
+    }
+  },
+  "end_mission": "إنهاء المهمة",
+  "glisser_to_see_request": "اسحب لرؤية الطلب",
+  "doctor_vets_urgent": "طبيب بيطري طارئ",
+  "donner_time_estimations": "قدم تقديرك للوقت",
+  "before_disponiblite": "قبل التوفر",
+  "arrival_chez_client": "وصول إلى منزل العميل",
+  "demande_expired_info_text": "انتهت طلب الطوارئ. يرجى الاتصال بخدمة المساعدة في الطوارئ للحصول على طلب جديد.",
+  "car_transport_type_desc": "نحن بانتظارك في العيادة",
+  "home_transport_type_desc": "فريق الطوارئ لدينا في طريقهم للتدخل في المنزل",
+  "clinic_transport_type_desc": "فني الإسعاف لدينا في طريقه لنقل حيوانك",
+  "veuillez_patienter_moment": "يرجى الانتظار لحظة",
+  "demande_in_progress_trai": "الطلب قيد المعالجة!",
+  "confirmation": "تأكيد",
+  "demande_confirme": "تم تأكيد الطلب!",
+  "echec": "فشل",
+  "demande_echouee": "فشل الطلب!",
+  "demande_echouee_general_desc": "حدث خطأ ما. يرجى المحاولة مرة أخرى في وقت لاحق.",
+  "mission_x": "مهمة {name}",
+  "@mission_x": {
+    "description": "Mission X",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "arrive_dans_x_min": "سيصل في {x} دقيقة",
+  "@arrive_dans_x_min": {
+    "description": "Arrive dans X Min",
+    "placeholders": {
+      "x": {
+        "type": "String"
+      }
+    }
+  },
+  "aucun_ambulancier_dispo_desc": "لا يوجد سيارات إسعاف متاحة في الوقت الحالي. يرجى المحاولة مرة أخرى لاحقًا.",
+  "arrive_dans": "سيصل في",
+  "arrive": "وصل",
+  "depart": "انطلق",
+  "equipe_in_route": "فريق الطوارئ في الطريق...",
+  "request_accepted": "تم القبول",
+  "request_completed": "تم الاكتمال",
+  "request_canceled": "تم الإلغاء",
+  "which_transport_type": "أي نوع من وسائل النقل تفضل؟",
+  "clinic_transport_type_service_desc": "عندما تكون المسافة أكثر من 20 كم عن العيادة، سيتم تطبيق تكلفة إضافية قدرها 2 دينار تونسي لكل كيلومتر إضافي.",
+  "home_transport_type_service_overview": "نقل فريق الطوارئ إلى المنزل (النقل + الاستشارة)",
+  "home_transport_type_service_desc": "عندما تكون المسافة أكثر من 20 كم عن العيادة، سيتم تطبيق تكلفة إضافية قدرها 3 دينار تونسي لكل كيلومتر إضافي.",
+  "car_transport_type_service_overview": "نقل الحيوان إلى العيادة بوسائلك الخاصة",
+  "car_transport_type_service_desc": "وصف خدمة نقل الحيوان إلى العيادة بوسائلك الخاصة",
+  "add_comment": "أضف تعليقًا...",
+  "poser_vos_questions": "اسأل أسئلتك",
+  "add_to_list": "إضافة إلى قائمتي",
+  "another_animal": "حيوان آخر",
+  "espece": "نوع",
+  "race": "سلالة",
+  "age": "العمر",
+  "motif": "السبب",
+  "profil": "الملف الشخصي",
+  "member_since": "عضو منذ: ",
+  "phone": "الهاتف",
+  "yes": "نعم",
+  "no": "لا",
+  "clinic": "العيادة",
+  "videos": "مقاطع الفيديو",
+  "send_alert_message_confirm_question": "هل ترغب حقًا في إرسال رسالة التنبيه؟",
+  "your_animal_need_urgence_message": "حيوانك بحاجة إلى رعاية طبية عاجلة",
+  "download_file_here": "قم بتنزيل الملف هنا",
+  "x_kg": "{x} كغ",
+  "@x_kg": {
+    "x_kg": "{x} كيلوغرام",
+    "placeholders": {
+      "x": {
+        "type": "String"
+      }
+    }
+  },
+  "poids_x_kg": "الوزن {x} كيلوغرام",
+  "@poids_x_kg": {
+    "description": "Poids X Kg",
+    "placeholders": {
+      "x": {
+        "type": "String"
+      }
+    }
+  },
+  "sexe_x": "الجنس {x}",
+  "@sexe_x": {
+    "description": "Sexe X",
+    "placeholders": {
+      "x": {
+        "type": "String"
+      }
+    }
+  },
+"age_x": "العمر {x}",
+  "@age_x": {
+    "description": "Age X",
+    "placeholders": {
+      "x": {
+        "type": "String"
+      }
+    }
+  },
+  "asv": "ASV",
+  "support_role": "خدمة العملاء",
+  "your_clinic": "عيادتك",
+  "code_postal": "الرمز البريدي",
+  "bad_crendentials_message": "معذرة، المعلومات الاعتمادية التي أدخلتها غير صحيحة.",
+  "your_profil": "ملفك الشخصي",
+  "annuler_le_rdv": "إلغاء الموعد",
+  "take_rdv": "حجز موعد",
+  "where_you_want_rdv_for_x": "أين ترغب في حجز موعد لـ {x}؟",
+  "@where_you_want_rdv_for_x": {
+    "description": "Où souhaitez vous prendre un rendez-vous pour X",
+    "placeholders": {
+      "x": {
+        "type": "String"
+      }
+    }
+  },
+  "choose_pet_for_rdv_message": "لأي حيوان ترغب في حجز موعد؟",
+  "a_clinic_desc": "أحضر حيوانك إلى أقرب عيادة",
+  "a_domicile_desc": "فريق MyVets يتجه إلى منزلك",
+  "prendre_rendez_vous": "حجز موعد",
+  "time": "الوقت",
+  "date": "التاريخ",
+  "rdv_plus_proche": "أقرب موعد",
+  "date_time_dispos": "تواريخ وأوقات متاحة",
+  "take_rdv_en_select_clinic": "حجز موعد بتحديد العيادة",
+  "which_clinic_you_want": "في أي عيادة ترغب في حجز موعد؟",
+  "take_rdv_plus_proche": "حجز أقرب موعد",
+  "tap_here_for_closest_dispo": "انقر هنا لعرض أقرب موعد متاح",
+  "voir_dispo": "عرض التوافر",
+  "new_rdv": "موعد جديد",
+  "animal_choisi": "الحيوان المختار",
+  "sexe": "الجنس",
+  "poids": "الوزن",
+  "edit_animal": "تعديل الحيوان",
+  "add_animal": "إضافة حيوان",
+  "date_naissance": "تاريخ الميلاد",
+  "color": "اللون",
+  "puce_electronique": "رقاقة إلكترونية",
+  "sterilise": "عقيم",
+  "signe_partic": "علامة خاصة",
+  "vet_traitant": "الطبيب البيطري المعالج",
+  "mise_a_jour": "تحديث",
+  "add_photo_for_your_pet": "إضافة صورة لحيوانك",
+  "click_here": "انقر هنا",
+  "archive_pet": "أرشفة حيوانك",
+  "modifier": "تعديل",
+  "archiver": "أرشفة",
+  "ajout_animal_x_to_archive_list_confirm": "هل ترغب حقًا في إضافة {x} إلى قائمة الحيوانات المؤرشفة؟",
+  "@ajout_animal_x_to_archive_list_confirm": {
+    "description": "Voulez-vous vraiment ajouter X à la liste de vos animaux archivés?",
+    "placeholders": {
+      "x": {
+        "type": "String"
+      }
+    }
+  },
+  "hide": "إخفاء",
+  "show": "عرض",
+  "archived_animals": "الحيوانات المؤرشفة",
+  "restore_your_animal": "استعادة حيوانك",
+  "animal_perdu": "حيوان مفقود",
+  "animal_decede": "حيوان متوفى",
+  "animal_cede_ou_vedu": "حيوان محول أو مباع",
+  "archive": "مؤرشف",
+  "mon_compte": "حسابي",
+  "logout": "تسجيل الخروج",
+  "notifications": "الإشعارات",
+  "son_et_notifications": "الصوت والإشعارات",
+  "notification_for_chat": "إشعارات للدردشة",
+  "son": "صوت",
+  "active": "مفعل",
+  "vibration": "اهتزاز",
+  "push": "إشعارات تقديم",
+  "faq": "الأسئلة الشائعة",
+  "rdv": "مواعيد",
+  "manage_rdsv": "إدارة المواعيد",
+  "new_message": "رسالة جديدة",
+  "questions": "أسئلة",
+  "urgence": "حالة طارئة",
+  "intern": "داخلي",
+  "status_dispo": "حالة التوفر",
+  "disponible": "متاح",
+  "occupe": "مشغول",
+  "take_inter_urgence": "قبول حالات الطوارئ الداخلية",
+  "start_inter_urgence": "بدء حالة طارئة داخلية",
+  "stop_inter_urgence": "تمديد مدة حالة الطوارئ الداخلية",
+  "duree": "المدة",
+  "etendre": "تمديد",
+  "animals": "الحيوانات",
+  "cancel_rdv_confirm_message": "هل ترغب حقًا في إلغاء طلب موعدك؟",
+  "rdv_request_success_sent_message": "تم إرسال طلبك للموعد بنجاح.",
+  "rdv_canceled_success": "تم إلغاء طلب موعدك!",
+  "rdv_canceled": "تم إلغاء الموعد",
+  "need_help_question": "هل تحتاج إلى مساعدة؟",
+  "call_us_directly": "اتصل بنا مباشرة",
+  "call_urgence": "اتصل بالطوارئ",
+  "call_clinic": "اتصل بالعيادة",
+  "request_time_out": "انتهى الوقت",
+  "request_waiting_for_accept": "في انتظار التأكيد",
+  "last_modification_date": "تاريخ آخر تعديل: ",
+  "available": "متاح",
+  "occupied": "مشغول",
+  "vehicle_problem": "مشكلة في السيارة",
+  "problem_x": "مشكلة X",
+  "problem_y": "مشكلة Y",
+  "password_changed_successfully": "تم تغيير كلمة المرور بنجاح",
+  "not_availble": "غير متاح",
+  "vets": "فاتس",
+  "take_the_first_exit_off_the_roundabout": "خرج الأول من دائرة الرصيف",
+  "x_m": "{x} متر",
+  "@x_m": {
+    "description": "X metre",
+    "placeholders": {
+      "x": {
+        "type": "String",
+        "default": "30"
+      }
+    }
+  },
+  "ariana": "أريانة",
+  "beja": "باجة",
+  "ben_arous": "بن عروس",
+  "bizerte": "بنزرت",
+  "gabes": "قابس",
+  "gafsa": "قفصة",
+  "jendouba": "جندوبة",
+  "kairouan": "القيروان",
+  "kasserine": "القصرين",
+  "kebili": "قبلي",
+  "kef": "الكاف",
+  "mahdia": "المهدية",
+  "manouba": "منوبة",
+  "medenine": "مدنين",
+  "monastir": "المنستير",
+  "nabeul": "نابل",
+  "sfax": "صفاقس",
+  "sidi_bouzid": "سيدي بوزيد",
+  "siliana": "سليانة",
+  "sousse": "سوسة",
+  "tataouine": "تطاوين",
+  "tozeur": "توزر",
+  "tunis": "تونس",
+  "zaghouan": "زغوان",
+  "password_doesnt_match": "كلمة المرور غير متطابقة!",
+  "confirm_your_password": "تأكيد كلمة المرور الجديدة",
+  "new_password": "كلمة مرور جديدة",
+  "change_password": "تغيير كلمة المرور الخاصة بك",
+  "animal_details_message": "حيوان آخر\n نوع: {speciesValue}\n سلالة: {raceName}\n عمر: {ageValue}\n سبب: {motifValue}",
+  "@animal_details_message": {
+      "description": "Anonymous Animal Details Message",
+      "placeholders": {
+        "speciesValue": {
+          "type": "String"
+        },
+        "raceName": {
+          "type": "String"
+        },
+        "ageValue": {
+          "type": "String"
+        },
+        "motifValue": {
+          "type": "String"
+        }
+      }
+    },
+  "error_sending_file": "خطأ في إرسال الملف!",
+  "price": "د",
+  "x_price": "{x} د",
+    "@x_price": {
+      "description": "price",
+      "placeholders": {
+        "x": {
+          "type": "String"
+        }
+      }
+    },
+  "intervention_workplan_morning": "من الساعة 09:00  حتى الساعة 07:00 ",
+  "intervention_workplan_night": "من الساعة 07:00  حتى الساعة 09:00 ",
+  "free": "مجاني",
+  "x_price_per_km": "{x} دينار تونسي لكل كيلومتر",
+    "@x_price_per_km": {
+      "description": "extra price per kilometer ",
+      "placeholders": {
+        "x": {
+          "type": "String"
+        }
+      }
+    },
+    "grand_tunis": "تونس الكبرى",
+  "transport_with_consultation": "(نقل + استشارة)",
+  "accepted": "تم قبوله",
+  "declined": "تم رفضه",
+  "postponed": "تم تأجيله",
+  "rescheduled": "تم إعادة جدولته",
+  "rejected": "تم رفضه",
+  "completed": "تم الانتهاء منه",
+  "absent": "غائب",
+  "cancelled": "تم الإلغاء",
+  "black": "أسود",
+  "brown": "بني",
+  "blue": "أزرق",
+  "no_particular_sign": "لا يوجد علامات خاصة",
+  "would_you_like_to_restore_your_pet": "هل ترغب في استعادة حيوانك؟",
+  "all": "الكل",
+  "empty": "فارغ",
+  "error": "خطأ!",
+  "passwords_are_not_identical": "كلمات المرور غير متطابقة!",
+  "confirm_password": "يرجى تأكيد كلمة المرور الجديدة",
+  "new_password": "كلمة المرور الجديدة",
+  "old_password": "كلمة المرور القديمة",
+  "change_password": "تغيير كلمة المرور",
+  "accomplished": "تم الانجاز",
+  "appointment_completed": "تم انجاز الموعد!",
+  "client_absent": "العميل غائب",
+  "reject_appointment": "رفض الموعد",
+  "reject_appointment_text": "هل تريد حقًا رفض هذا الموعد؟",
+  "absent_appointment": "تمييز الموعد كغائب",
+  "absent_appointment_text": "هل تريد حقًا تمييز هذا الموعد كغائب؟",
+  "reject": "رفض",
+  "present": "حاضر",
+  "happy_birthday": "عيد ميلاد سعيد لـ",
+  "birthday_date": "03 أكتوبر 2020 (3 سنوات)",
+  "vaccination_alert": "تذكير التطعيم لـ",
+  "disease": "إنفلونزا القطط",
+  "your_account_has_become_vip": "حسابك أصبح VIP",
+  "notification_time": "12 سبتمبر",
+  "fonctionnality_in_progess":"هذه الميزة قيد التطوير",
+  "veterinarian_role": " بيطري",
+  "driver_role": "سائق",
+  "asv_role": "ممرض",
+  "appointment_creation_date": "تم إرسال طلب موعد في\n {date} في {time}",
+  "@appointment_creation_date": {
+  "description": "appointment creation date by the client ",
+  "placeholders": {
+      "date": {
+      "type": "String"
+      },
+      "time": {
+      "type": "String"
+      }
+    }
+  },
+  "file_too_large_error_msg": "حجم الملف يتجاوز 16 ميجابايت",
+  "file_size_msg": "يجب أن يكون حجم الملف أقل من 16 ميجابايت",
+  "invalid_password": "كلمة المرور مطلوبة!",
+  "password_too_short": "يجب أن تكون كلمة المرور على الأقل 8 أحرف!",
+  "password_must_contains_alphanumeric": "يجب أن تحتوي كلمة المرور على حرف أو رقم واحد على الأقل!",
+  "anonymous":"مجهول"
+
+}

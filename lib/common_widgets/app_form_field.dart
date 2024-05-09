@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/radius.dart';
 import 'package:mobile/theme/text_styles.dart';
@@ -12,6 +11,7 @@ class AppFormField extends StatelessWidget {
   final bool? obscured;
   final void Function(String?)? onSubmitted;
   final TextEditingController controller;
+  final bool readOnly;
 
   const AppFormField({
     super.key,
@@ -21,6 +21,7 @@ class AppFormField extends StatelessWidget {
     this.obscured = false,
     this.onSubmitted,
     required this.controller,
+    this.readOnly = false,
   });
 
   @override
@@ -38,6 +39,7 @@ class AppFormField extends StatelessWidget {
         child: TextField(
           controller: controller,
           obscureText: obscured!,
+          readOnly: readOnly,
           onTap: () {},
           style: TextStyles.mediumTextStyle.copyWith(
             color: AppColors.greyDarkColor,
@@ -46,7 +48,6 @@ class AppFormField extends StatelessWidget {
           decoration: InputDecoration(
             suffixIcon: suffixIcon,
             prefixIcon: prefixIcon,
-
             hintText: hintText,
             border: InputBorder.none,
             hintStyle: const TextStyle(

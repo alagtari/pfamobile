@@ -11,18 +11,20 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
   cupertino_icons: ^1.0.2
   flutter_svg: ^2.0.10+1
   dotted_border: ^2.1.0
   auto_route: ^8.0.3
-  table_calendar: ^3.1.1
-  intl: ^0.19.0
+  table_calendar: ^3.0.9
+  intl: ^0.18.1
   get_it:
   shared_preferences:
   dio:
   equatable:
-  flutter_dotenv:
+  flutter_dotenv: ^5.1.0
   flutter_screenutil:
   dartz:
   flutter_bloc:
@@ -30,6 +32,10 @@ dependencies:
   salomon_bottom_bar:
   rxdart:
   top_snackbar_flutter: ^3.1.0
+  visibility_detector: ^0.4.0+2
+  image_picker: ^1.1.1
+  mime: ^1.0.5
+  http_parser: ^4.0.2
   
 dev_dependencies:
   flutter_test:
@@ -40,10 +46,13 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  generate: true
+
 
   assets:
     - assets/images/
     - assets/svg/
+    - .env
 
   fonts:
     - family: Poppins
