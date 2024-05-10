@@ -15,7 +15,10 @@ class ThirdSignupStepWidget extends StatefulWidget {
     required this.submit,
   });
 
-  final VoidCallback submit;
+  final Function(
+    String city,
+    String street,
+  ) submit;
   @override
   State<ThirdSignupStepWidget> createState() => _ThirdSignupStepWidgetState();
 }
@@ -105,7 +108,9 @@ class _ThirdSignupStepWidgetState extends State<ThirdSignupStepWidget> {
             ),
             AppBotton(
               bottonText: "Finish",
-              onClick: widget.submit,
+              onClick: () {
+                widget.submit(_city.value!.id!, _streetController.text);
+              },
             ),
           ],
         ),

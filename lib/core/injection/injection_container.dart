@@ -18,6 +18,9 @@ import 'package:mobile/features/plan/domain/repositories/plan_repository.dart';
 import 'package:mobile/features/profile/data/data_sources/profile_remote_data_source.dart';
 import 'package:mobile/features/profile/data/repositories/profile_repository_impl.dart';
 import 'package:mobile/features/profile/domain/repositories/profile_repository.dart';
+import 'package:mobile/features/signup/data/data_sources/signup_remote_data_source.dart';
+import 'package:mobile/features/signup/data/repositories/signup_repository_impl.dart';
+import 'package:mobile/features/signup/domain/repositories/signup_repository.dart';
 import 'package:mobile/features/truck/data/data_sources/truck_remote_data_source.dart';
 import 'package:mobile/features/truck/data/repositories/truck_repository_impl.dart';
 import 'package:mobile/features/truck/domain/repositories/truck_repository.dart';
@@ -79,11 +82,20 @@ Future<void> init() async {
     ),
   );
 
-   sl.registerLazySingleton<ProfileOnlineDataSource>(
+  sl.registerLazySingleton<ProfileOnlineDataSource>(
     () => ProfileOnlineDataSourceImpl(),
   );
   sl.registerLazySingleton<ProfileRepository>(
     () => ProfileRepositoryImpl(
+      dataSource: sl(),
+    ),
+  );
+
+  sl.registerLazySingleton<SignupOnlineDataSource>(
+    () => SignupOnlineDataSourceImpl(),
+  );
+  sl.registerLazySingleton<SignupRepository>(
+    () => SignupRepositoryImpl(
       dataSource: sl(),
     ),
   );

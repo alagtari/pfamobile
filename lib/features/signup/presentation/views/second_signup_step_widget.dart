@@ -11,7 +11,12 @@ class SecondSignupStepWidget extends StatefulWidget {
     required this.submit,
   });
 
-  final VoidCallback submit;
+  final Function(
+    String phone,
+    String cin,
+    String password,
+    String email,
+  ) submit;
   @override
   State<SecondSignupStepWidget> createState() => _SecondSignupStepWidgetState();
 }
@@ -148,7 +153,12 @@ class _SecondSignupStepWidgetState extends State<SecondSignupStepWidget> {
     _validatePasswords();
     if (!valid) return;
 
-    widget.submit();
+    widget.submit(
+      _phoneController.text,
+      _cinController.text,
+      _passwordController.text,
+      _emailController.text,
+    );
   }
 
   @override

@@ -1,10 +1,14 @@
+import 'dart:developer';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mobile/common_widgets/app_stepper.dart';
 import 'package:mobile/common_widgets/auth_bottom_text.dart';
+import 'package:mobile/core/routes/app_router.gr.dart';
 import 'package:mobile/features/city/presentation/bloc/bloc.dart';
+import 'package:mobile/features/signup/data/models/signup_model.dart';
 import 'package:mobile/features/signup/presentation/bloc/bloc.dart';
 import 'package:mobile/features/signup/presentation/views/first_signup_step_widget.dart';
 import 'package:mobile/common_widgets/screen_title.dart';
@@ -45,8 +49,6 @@ class _SignupState extends State<Signup> {
   late String _cin;
   late String _email;
   late String _password;
-  late String _city;
-  late String _street;
 
   @override
   void initState() {
@@ -90,10 +92,20 @@ class _SignupState extends State<Signup> {
     String city,
     String street,
   ) {
-    setState(() {
-      _city = city;
-      _street = street;
-    });
+    final signup = SignupModel(
+      firstName: _firstName,
+      lastName: _lastName,
+      birthDate: _birthDate,
+      gender: _gender,
+      image: _image,
+      phone: _phone,
+      cin: _cin,
+      email: _email,
+      password: _password,
+      city: city,
+      street: street,
+    );
+    context.read<SignupBloc>().add(SignupUserEvent(request: signup));
   }
 
   void nextStep() {
@@ -112,48 +124,55 @@ class _SignupState extends State<Signup> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Container(
-          width: double.infinity,
-          height: double.infinity,
-          padding: const EdgeInsets.symmetric(horizontal: 30),
-          child: Column(
-            children: [
-              const ScreenTitle(
-                title: "Signup",
-                arrowBack: false,
-              ),
-              smallVerticalSpacer,
-              ValueListenableBuilder(
-                valueListenable: step,
-                builder: (context, value, child) {
-                  return AppStepper(step: value, goToStep: goToStep);
-                },
-              ),
-              smallVerticalSpacer,
-              ValueListenableBuilder(
-                valueListenable: step,
-                builder: (context, value, child) {
-                  if (value == 2) {
-                    return SecondSignupStepWidget(
-                      submit: nextStep,
-                    );
-                  }
-                  if (value == 3) {
-                    return ThirdSignupStepWidget(
-                      submit: nextStep,
-                    );
-                  }
+    return BlocListener<SignupBloc, SignupState>(
+      listener: (context, state) {
+        if (state is SignupUserSuccess) {
+          context.router.replace(const LoginRoute());
+        }
+      },
+      child: Scaffold(
+        body: SafeArea(
+          child: Container(
+            width: double.infinity,
+            height: double.infinity,
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Column(
+              children: [
+                const ScreenTitle(
+                  title: "Signup",
+                  arrowBack: false,
+                ),
+                smallVerticalSpacer,
+                ValueListenableBuilder(
+                  valueListenable: step,
+                  builder: (context, value, child) {
+                    return AppStepper(step: value);
+                  },
+                ),
+                smallVerticalSpacer,
+                ValueListenableBuilder(
+                  valueListenable: step,
+                  builder: (context, value, child) {
+                    if (value == 2) {
+                      return SecondSignupStepWidget(
+                        submit: toThirdStep,
+                      );
+                    }
+                    if (value == 3) {
+                      return ThirdSignupStepWidget(
+                        submit: submit,
+                      );
+                    }
 
-                  return FirstSignupStepWidget(
-                    submit: toSecondStep,
-                  );
-                },
-              ),
-              miniVerticalSpacer,
-              const AuthBottomText(),
-            ],
+                    return FirstSignupStepWidget(
+                      submit: toSecondStep,
+                    );
+                  },
+                ),
+                miniVerticalSpacer,
+                const AuthBottomText(),
+              ],
+            ),
           ),
         ),
       ),

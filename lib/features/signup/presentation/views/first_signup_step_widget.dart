@@ -150,7 +150,7 @@ class _FirstSignupStepWidgetState extends State<FirstSignupStepWidget> {
       _lastNameController.text,
       _date.value!,
       _gender.value!,
-      ,
+      imageFile?.path,
     );
   }
 

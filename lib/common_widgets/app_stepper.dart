@@ -6,40 +6,33 @@ class AppStepper extends StatelessWidget {
   const AppStepper({
     super.key,
     required this.step,
-    required this.goToStep,
   });
 
   final int step;
-  final void Function(int destinationStep) goToStep;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        GestureDetector(
-          onTap: () {
-            goToStep(1);
-          },
-          child: Container(
-            width: 50,
-            height: 50,
-            decoration: BoxDecoration(
-              color: AppColors.greenDarkColor,
-              borderRadius: BorderRadius.circular(50.0),
-            ),
-            child: Center(
-              child: step == 1
-                  ? Text(
-                      "1",
-                      style: TextStyles.largeTextStyle.copyWith(
-                          color: AppColors.whiteDarkColor,
-                          fontWeight: FontWeight.w600),
-                    )
-                  : const Icon(
-                      Icons.check,
-                      color: AppColors.whiteDarkColor,
-                    ),
-            ),
+        Container(
+          width: 50,
+          height: 50,
+          decoration: BoxDecoration(
+            color: AppColors.greenDarkColor,
+            borderRadius: BorderRadius.circular(50.0),
+          ),
+          child: Center(
+            child: step == 1
+                ? Text(
+                    "1",
+                    style: TextStyles.largeTextStyle.copyWith(
+                        color: AppColors.whiteDarkColor,
+                        fontWeight: FontWeight.w600),
+                  )
+                : const Icon(
+                    Icons.check,
+                    color: AppColors.whiteDarkColor,
+                  ),
           ),
         ),
         Expanded(
@@ -57,30 +50,25 @@ class AppStepper extends StatelessWidget {
           ),
         ),
         step >= 2
-            ? GestureDetector(
-                onTap: () {
-                  goToStep(2);
-                },
-                child: Container(
-                  width: 50,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: AppColors.greenDarkColor,
-                    borderRadius: BorderRadius.circular(50.0),
-                  ),
-                  child: Center(
-                    child: step == 2
-                        ? Text(
-                            "2",
-                            style: TextStyles.largeTextStyle.copyWith(
-                                color: AppColors.whiteDarkColor,
-                                fontWeight: FontWeight.w600),
-                          )
-                        : const Icon(
-                            Icons.check,
-                            color: AppColors.whiteDarkColor,
-                          ),
-                  ),
+            ? Container(
+                width: 50,
+                height: 50,
+                decoration: BoxDecoration(
+                  color: AppColors.greenDarkColor,
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+                child: Center(
+                  child: step == 2
+                      ? Text(
+                          "2",
+                          style: TextStyles.largeTextStyle.copyWith(
+                              color: AppColors.whiteDarkColor,
+                              fontWeight: FontWeight.w600),
+                        )
+                      : const Icon(
+                          Icons.check,
+                          color: AppColors.whiteDarkColor,
+                        ),
                 ),
               )
             : Container(

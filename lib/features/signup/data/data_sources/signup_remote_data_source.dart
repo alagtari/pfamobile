@@ -11,10 +11,9 @@ class SignupOnlineDataSourceImpl implements SignupOnlineDataSource {
   @override
   Future<Unit> signup(SignupModel signup) async {
     await sl<Dio>().post(
-      "/signup",
-      data: signup.toJson(),
+      "/auth/signup/citizen",
+      data: await signup.toFormData(),
     );
     return unit;
   }
-
 }
