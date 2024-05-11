@@ -6,6 +6,7 @@ import 'package:mobile/core/routes/app_router.gr.dart';
 import 'package:mobile/features/city/presentation/bloc/bloc.dart';
 import 'package:mobile/features/city/presentation/widgets/city_card_widget.dart';
 import 'package:mobile/common_widgets/screen_title.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
 import 'package:visibility_detector/visibility_detector.dart';
@@ -31,7 +32,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: VisibilityDetector(
-        key: const Key("drivers"),
+        key: const Key('Cities'),
         onVisibilityChanged: (VisibilityInfo info) {
           if (info.visibleFraction == 1.0) {
             context.read<CityBloc>().add(GetCitiesEvent());
@@ -51,8 +52,8 @@ class _CitiesScreenState extends State<CitiesScreen> {
                 horizontal: MediaQuery.of(context).size.width * .075),
             child: Column(
               children: [
-                const ScreenTitle(
-                  title: "Cities",
+                ScreenTitle(
+                  title: context.l10n.cities,
                 ),
                 largeVerticalSpacer,
                 Expanded(
@@ -84,7 +85,7 @@ class _CitiesScreenState extends State<CitiesScreen> {
                 Container(
                   padding: const EdgeInsets.symmetric(vertical: 15),
                   child: AppBotton(
-                    bottonText: 'Add City',
+                    bottonText: context.l10n.add_city,
                     onClick: () {
                       context.router.push(const AddCityRoute());
                     },

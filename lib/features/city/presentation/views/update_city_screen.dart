@@ -6,6 +6,7 @@ import 'package:mobile/common_widgets/app_botton.dart';
 import 'package:mobile/common_widgets/app_form_field.dart';
 import 'package:mobile/features/city/data/models/city_model.dart';
 import 'package:mobile/features/city/presentation/bloc/bloc.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
 import 'package:mobile/theme/text_styles.dart';
@@ -41,7 +42,7 @@ class _UpdateCityScreenState extends State<UpdateCityScreen> {
   void _validatePostalCode(String? value) {
     if (value == null || value.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter the city postal code.';
+        errorMessage.value = context.l10n.city_postal_code_prompt;
         valid = false;
       });
     } else {
@@ -51,7 +52,7 @@ class _UpdateCityScreenState extends State<UpdateCityScreen> {
 
       if (!isValid) {
         setState(() {
-          errorMessage.value = 'Invalid city postal code.';
+          errorMessage.value = context.l10n.invalid_city_postal_code;
           valid = false;
         });
       } else {
@@ -66,12 +67,12 @@ class _UpdateCityScreenState extends State<UpdateCityScreen> {
   void _validateName(String? value) {
     if (value == null || value.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter the city name.';
+        errorMessage.value = context.l10n.city_name_prompt;
         valid = false;
       });
     } else if (value.length < 3) {
       setState(() {
-        errorMessage.value = 'City name must be at least 3 characters long.';
+        errorMessage.value = context.l10n.city_name_length_error;
         valid = false;
       });
     } else {
@@ -148,7 +149,7 @@ class _UpdateCityScreenState extends State<UpdateCityScreen> {
                     child: Column(
                       children: [
                         AppFormField(
-                          hintText: "Name",
+                          hintText: context.l10n.name,
                           controller: _nameController,
                           prefixIcon: const Icon(
                             Icons.email_outlined,
@@ -158,7 +159,7 @@ class _UpdateCityScreenState extends State<UpdateCityScreen> {
                         ),
                         extraSmallVerticalSpacer,
                         AppFormField(
-                          hintText: "Postal Code",
+                          hintText: context.l10n.postal_code,
                           controller: _postalCodeController,
                           prefixIcon: const Icon(
                             Icons.email_outlined,

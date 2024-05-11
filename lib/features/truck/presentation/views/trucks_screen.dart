@@ -5,6 +5,7 @@ import 'package:mobile/common_widgets/app_botton.dart';
 import 'package:mobile/common_widgets/screen_title.dart';
 import 'package:mobile/core/routes/app_router.gr.dart';
 import 'package:mobile/features/truck/presentation/bloc/bloc.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
 import 'package:mobile/features/truck/presentation/widgets/truck_card_widget.dart';
@@ -29,7 +30,7 @@ class _TrucksScreenState extends State<TrucksScreen> {
   @override
   Widget build(BuildContext context) {
     return VisibilityDetector(
-      key: const Key("truck"),
+      key: const Key('trucks'),
       onVisibilityChanged: (VisibilityInfo info) {
         if (info.visibleFraction == 1.0) {
           context.read<TruckBloc>().add(GetTrucksEvent());
@@ -52,8 +53,8 @@ class _TrucksScreenState extends State<TrucksScreen> {
                 horizontal: MediaQuery.of(context).size.width * .075),
             child: Column(
               children: [
-                const ScreenTitle(
-                  title: "Trucks",
+                ScreenTitle(
+                  title: context.l10n.trucks,
                 ),
                 largeVerticalSpacer,
                 Expanded(
@@ -86,7 +87,7 @@ class _TrucksScreenState extends State<TrucksScreen> {
                 Container(
                   padding: const EdgeInsets.symmetric(vertical: 15),
                   child: AppBotton(
-                    bottonText: 'Add Truck',
+                    bottonText: context.l10n.add_truck,
                     onClick: () => context.router.push(const AddTruckRoute()),
                   ),
                 )

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile/core/routes/app_router.gr.dart';
 import 'package:mobile/common_widgets/screen_title.dart';
 import 'package:mobile/common_widgets/setting_option_widget.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
 import 'package:mobile/theme/text_styles.dart';
@@ -24,15 +25,15 @@ class ProfileScreen extends StatelessWidget {
             horizontal: MediaQuery.of(context).size.width * .075),
         child: Column(
           children: [
-            const ScreenTitle(
-              title: "Profile",
+            ScreenTitle(
+              title: context.l10n.profile,
               arrowBack: false,
             ),
             largeVerticalSpacer,
             SizedBox(
               width: double.infinity,
               child: Text(
-                "Account Settings",
+                context.l10n.account_settings,
                 style: TextStyles.mediumTextStyle.copyWith(
                   color: AppColors.greyDarkColor,
                   fontWeight: FontWeight.w500,
@@ -40,10 +41,10 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
             largeVerticalSpacer,
-            const SettingOptionWidget(
+            SettingOptionWidget(
               route: UpdateGeneralInformationRoute(),
               icon: "assets/svg/profile_icon.svg",
-              settingTitle: "General Informations",
+              settingTitle: context.l10n.general_info,
             ),
             miniVerticalSpacer,
             Container(
@@ -58,10 +59,10 @@ class ProfileScreen extends StatelessWidget {
               // margin: const EdgeInsets.symmetric(horizontal: 5),
             ),
             miniVerticalSpacer,
-            const SettingOptionWidget(
+            SettingOptionWidget(
               route: ChangePasswordRoute(),
               icon: "assets/svg/lock.svg",
-              settingTitle: "Change Password",
+              settingTitle: context.l10n.change_password,
             ),
             miniVerticalSpacer,
             Container(
@@ -76,10 +77,10 @@ class ProfileScreen extends StatelessWidget {
               // margin: const EdgeInsets.symmetric(horizontal: 5),
             ),
             miniVerticalSpacer,
-            const SettingOptionWidget(
+            SettingOptionWidget(
               route: ChangePreferencesRoute(),
               icon: "assets/svg/preferences.svg",
-              settingTitle: "Preferences",
+              settingTitle: context.l10n.preferences,
             ),
           ],
         ),

@@ -6,6 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
 import 'package:mobile/features/plan/data/models/plan_model.dart';
 import 'package:mobile/features/plan/presentation/bloc/bloc.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
 import 'package:mobile/theme/text_styles.dart';
@@ -69,7 +70,7 @@ class _PlanCardWidgetState extends State<PlanCardWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Day",
+                          context.l10n.day,
                           style: TextStyles.smallTextStyle.copyWith(
                             color: AppColors.greyDarkColor,
                             fontWeight: FontWeight.w600,
@@ -107,7 +108,7 @@ class _PlanCardWidgetState extends State<PlanCardWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Time",
+                          context.l10n.time,
                           style: TextStyles.smallTextStyle.copyWith(
                             color: AppColors.greyDarkColor,
                             fontWeight: FontWeight.w600,
@@ -147,7 +148,7 @@ class _PlanCardWidgetState extends State<PlanCardWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Garbage",
+                          context.l10n. garbage,
                           style: TextStyles.smallTextStyle.copyWith(
                             color: AppColors.greyDarkColor,
                             fontWeight: FontWeight.w600,
@@ -185,7 +186,7 @@ class _PlanCardWidgetState extends State<PlanCardWidget> {
                       ),
                       extraMiniHorizantalSpacer,
                       Text(
-                        "Update",
+                        context.l10n.update,
                         style: TextStyles.smallTextStyle.copyWith(
                           fontWeight: FontWeight.w600,
                           color: AppColors.blackDarkColor,
@@ -204,7 +205,7 @@ class _PlanCardWidgetState extends State<PlanCardWidget> {
                       ),
                       extraMiniHorizantalSpacer,
                       Text(
-                        "Delete",
+                        context.l10n.delete,
                         style: TextStyles.smallTextStyle.copyWith(
                           fontWeight: FontWeight.w600,
                           color: AppColors.blackDarkColor,

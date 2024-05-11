@@ -14,6 +14,7 @@ import 'package:mobile/features/plan/data/models/plan_model.dart';
 import 'package:mobile/features/plan/presentation/bloc/bloc.dart';
 import 'package:mobile/features/truck/data/models/truck_model.dart';
 import 'package:mobile/features/truck/presentation/bloc/bloc.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
 import 'package:mobile/theme/text_styles.dart';
@@ -142,37 +143,37 @@ class _AddPlanScreenState extends State<AddPlanScreen> {
   void _onSubmit() {
     if (_startTime == null) {
       setState(() {
-        errorMessage.value = 'Start time is required.';
+        errorMessage.value = context.l10n.start_time_required;
       });
       return;
     }
     if (_endTime == null) {
       setState(() {
-        errorMessage.value = 'End time is required.';
+        errorMessage.value = context.l10n.end_time_required;
       });
       return;
     }
     if (_date == null) {
       setState(() {
-        errorMessage.value = 'Date is required.';
+        errorMessage.value = context.l10n.date_required;
       });
       return;
     }
     if (_truck.value == null) {
       setState(() {
-        errorMessage.value = 'Truck is required.';
+        errorMessage.value = context.l10n.truck_required;
       });
       return;
     }
     if (_city.value == null) {
       setState(() {
-        errorMessage.value = 'City is required.';
+        errorMessage.value = context.l10n.city_required;
       });
       return;
     }
     if (_garbageType.value == null) {
       setState(() {
-        errorMessage.value = 'Garbage type is required.';
+        errorMessage.value = context.l10n.garbage_type_required;
       });
       return;
     }
@@ -280,8 +281,8 @@ class _AddPlanScreenState extends State<AddPlanScreen> {
             child: Form(
               child: Column(
                 children: [
-                  const ScreenTitle(
-                    title: "Add Plan",
+                   ScreenTitle(
+                    title: context.l10n.add_plan,
                     arrowBack: true,
                   ),
                   largeVerticalSpacer,
@@ -290,37 +291,37 @@ class _AddPlanScreenState extends State<AddPlanScreen> {
                       children: [
                         AppTimePickerField(
                           onTimeSelected: selectStartTime,
-                          hint: 'Start Date',
+                          hint: context.l10n.start_date,
                         ),
                         extraSmallVerticalSpacer,
                         AppTimePickerField(
                           onTimeSelected: selectEndTime,
-                          hint: 'End Date',
+                          hint: context.l10n.end_date,
                         ),
                         extraSmallVerticalSpacer,
                         AppDatePickerField(
                           onDateSelected: onDateSelected,
-                          hint: 'Date',
+                          hint: context.l10n. date,
                         ),
                         extraSmallVerticalSpacer,
                         AppDropdownWidget(
                           items: _cityItems.value,
                           onChange: changeCity,
-                          hint: 'City',
+                          hint: context.l10n. city,
                           icon: Icons.location_city,
                         ),
                         extraSmallVerticalSpacer,
                         AppDropdownWidget(
                           items: _truckItems.value,
                           onChange: changeTruck,
-                          hint: 'Truck',
+                          hint: context.l10n. truck,
                           icon: Icons.fire_truck,
                         ),
                         extraSmallVerticalSpacer,
                         AppDropdownWidget(
                           items: _garbageTypeItems,
                           onChange: changeGarbageType,
-                          hint: 'Garbage Type',
+                          hint: context.l10n.garbage_type,
                           icon: Icons.fire_truck,
                         ),
                         extraSmallVerticalSpacer,
@@ -343,9 +344,9 @@ class _AddPlanScreenState extends State<AddPlanScreen> {
                     ),
                   ),
                   Container(
-                    padding: const EdgeInsets.symmetric(vertical: 15),
+                    padding:  EdgeInsets.symmetric(vertical: 15),
                     child: AppBotton(
-                      bottonText: "Add Plan",
+                      bottonText: context.l10n.add_plan,
                       onClick: () {
                         _onSubmit();
                       },

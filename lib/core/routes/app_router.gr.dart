@@ -50,7 +50,7 @@ import 'package:mobile/files/admin_chat_room_screen.dart' as _i6;
 import 'package:mobile/files/admin_chat_rooms_screen.dart' as _i7;
 import 'package:mobile/files/admin_home_screen.dart' as _i8;
 import 'package:mobile/files/category_screen.dart' as _i9;
-import 'package:mobile/files/change_prefrences_screen.dart' as _i11;
+import 'package:mobile/features/profile/presentation/views/change_prefrences_screen.dart' as _i11;
 import 'package:mobile/files/citizen_app_frame.dart' as _i13;
 import 'package:mobile/files/citizen_calendar_screen.dart' as _i14;
 import 'package:mobile/files/citizen_home_screen.dart' as _i15;

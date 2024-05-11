@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/common_widgets/app_botton.dart';
 import 'package:mobile/common_widgets/app_form_field.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
 import 'package:mobile/theme/text_styles.dart';
@@ -38,14 +39,14 @@ class _SecondSignupStepWidgetState extends State<SecondSignupStepWidget> {
   void _validateEmail(String? value) {
     if (value == null || value.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter your email address.';
+        errorMessage.value = context.l10n.email_prompt;
         valid = false;
       });
     } else if (!RegExp(
             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z]+")
         .hasMatch(value)) {
       setState(() {
-        errorMessage.value = 'Please enter a valid email address.';
+        errorMessage.value = context.l10n.valid_email_error;
         valid = false;
       });
     } else {
@@ -59,17 +60,17 @@ class _SecondSignupStepWidgetState extends State<SecondSignupStepWidget> {
   void _validateCin(String? value) {
     if (value == null || value.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter your CIN.';
+        errorMessage.value = context.l10n.cin_prompt;
         valid = false;
       });
     } else if (value.length != 8) {
       setState(() {
-        errorMessage.value = 'CIN must be exactly 8 digits long.';
+        errorMessage.value = context.l10n.cin_length_error;
         valid = false;
       });
     } else if (value[0] != '0' && value[0] != '1') {
       setState(() {
-        errorMessage.value = 'CIN must start with 0 or 1.';
+        errorMessage.value = context.l10n.cin_format_error;
         valid = false;
       });
     } else {
@@ -83,17 +84,17 @@ class _SecondSignupStepWidgetState extends State<SecondSignupStepWidget> {
   void _validatePhone(String? value) {
     if (value == null || value.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter your phone number.';
+        errorMessage.value = context.l10n.phone_number_prompt;
         valid = false;
       });
     } else if (value.length != 8) {
       setState(() {
-        errorMessage.value = 'Phone number must be exactly 8 digits long.';
+        errorMessage.value = context.l10n.phone_number_length_error;
         valid = false;
       });
     } else if (!['2', '3', '4', '5', '7', '9'].contains(value[0])) {
       setState(() {
-        errorMessage.value = "This phone number isn't a tunisian number.";
+        errorMessage.value = context.l10n.non_tunisian_number_error;
         valid = false;
       });
     } else {
@@ -107,22 +108,22 @@ class _SecondSignupStepWidgetState extends State<SecondSignupStepWidget> {
   void _validatePasswords() {
     if (_passwordController.text.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter your password.';
+        errorMessage.value = context.l10n.password_prompt;
         valid = false;
       });
     } else if (_passwordController.text.length < 6) {
       setState(() {
-        errorMessage.value = 'Password must be at least 6 characters long.';
+        errorMessage.value = context.l10n.password_length_error;
         valid = false;
       });
     } else if (_confirmPasswordController.text.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter your password confirmation.';
+        errorMessage.value = context.l10n.password_prompt;
         valid = false;
       });
     } else if (_confirmPasswordController.text != _passwordController.text) {
       setState(() {
-        errorMessage.value = 'Password confirmation do not match.';
+        errorMessage.value = context.l10n.password_confirmation_mismatch;
         valid = false;
       });
     } else {
@@ -168,7 +169,7 @@ class _SecondSignupStepWidgetState extends State<SecondSignupStepWidget> {
         children: [
           extraMiniVerticalSpacer,
           AppFormField(
-            hintText: "Phone Number",
+            hintText: context.l10n.phone_number,
             controller: _phoneController,
             prefixIcon: const Icon(
               Icons.local_phone_outlined,
@@ -188,7 +189,7 @@ class _SecondSignupStepWidgetState extends State<SecondSignupStepWidget> {
           ),
           extraSmallVerticalSpacer,
           AppFormField(
-            hintText: "Email",
+            hintText: context.l10n.email,
             controller: _emailController,
             prefixIcon: const Icon(
               Icons.email_outlined,
@@ -201,7 +202,7 @@ class _SecondSignupStepWidgetState extends State<SecondSignupStepWidget> {
             valueListenable: obscured,
             builder: (_, obs, __) => AppFormField(
               obscured: obs,
-              hintText: "Password",
+              hintText: context.l10n.password,
               controller: _passwordController,
               prefixIcon: const Icon(
                 Icons.lock_outline,
@@ -229,7 +230,7 @@ class _SecondSignupStepWidgetState extends State<SecondSignupStepWidget> {
             valueListenable: confirmObscured,
             builder: (_, obs, __) => AppFormField(
               obscured: obs,
-              hintText: "Confirm Password",
+              hintText: context.l10n.confirm_password,
               controller: _confirmPasswordController,
               prefixIcon: const Icon(
                 Icons.lock_outline,
@@ -271,7 +272,7 @@ class _SecondSignupStepWidgetState extends State<SecondSignupStepWidget> {
             child: SizedBox(),
           ),
           AppBotton(
-            bottonText: "Continue",
+            bottonText: context.l10n.continue_step,
             onClick: _onSubmit,
           ),
         ],

@@ -29,8 +29,6 @@ class _AppDropdownWidgetState extends State<AppDropdownWidget> {
 
   @override
   void initState() {
-    log(widget.initialValue ?? "");
-    log("ddd");
     selectedItem = ValueNotifier<String?>(null);
     super.initState();
   }

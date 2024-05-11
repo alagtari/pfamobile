@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mobile/files/bottom_navigation_icon_widget.dart';
 import 'package:mobile/core/routes/app_router.gr.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/text_styles.dart';
 
@@ -51,7 +52,7 @@ class _AdminAppFrameState extends State<AdminAppFrame> {
               index: 0,
               icon: 'assets/svg/home_icon.svg',
             ),
-            label: 'Home',
+            label: context.l10n.home,
           ),
           BottomNavigationBarItem(
             icon: BottomNavigationIconWidget(
@@ -59,7 +60,7 @@ class _AdminAppFrameState extends State<AdminAppFrame> {
               index: 1,
               icon: 'assets/svg/chat_icon.svg',
             ),
-            label: 'Chat',
+            label: context.l10n.chat,
           ),
           BottomNavigationBarItem(
             icon: BottomNavigationIconWidget(
@@ -67,7 +68,7 @@ class _AdminAppFrameState extends State<AdminAppFrame> {
               index: 2,
               icon: 'assets/svg/report_icon.svg',
             ),
-            label: 'Report',
+            label: context.l10n.report,
           ),
           BottomNavigationBarItem(
             icon: BottomNavigationIconWidget(
@@ -75,7 +76,7 @@ class _AdminAppFrameState extends State<AdminAppFrame> {
               index: 3,
               icon: 'assets/svg/profile_icon.svg',
             ),
-            label: 'Profile',
+            label: context.l10n.profile,
           ),
         ],
         currentIndex: _selectedIndex,

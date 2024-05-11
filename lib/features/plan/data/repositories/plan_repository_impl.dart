@@ -20,7 +20,6 @@ class PlanRepositoryImpl implements PlanRepository {
   Future<Either<AppFailure, ResponseWrapper<PlanModel>>> addPlan(PlanModel request) async {
     try {
       final res = await dataSource.addPlan(request);
-      log(res.toString());
       return right(res);
     } on AppException catch (e) {
       return Left(AppFailure(message: e.message));
@@ -39,7 +38,6 @@ class PlanRepositoryImpl implements PlanRepository {
   Future<Either<AppFailure, Unit>> deletePlan(String id) async {
     try {
       final res = await dataSource.deletePlan(id);
-      log(res.toString());
       return right(res);
     } on AppException catch (e) {
       return Left(AppFailure(message: e.message));
@@ -59,7 +57,6 @@ class PlanRepositoryImpl implements PlanRepository {
       getPlans() async {
     try {
       final res = await dataSource.getPlans();
-      log(res.toString());
       return right(res);
     } on AppException catch (e) {
       return Left(AppFailure(message: e.message));
@@ -79,7 +76,6 @@ class PlanRepositoryImpl implements PlanRepository {
       PlanModel request, String id) async {
     try {
       final res = await dataSource.updatePlan(request, id);
-      log(res.toString());
       return right(res);
     } on AppException catch (e) {
       return Left(AppFailure(message: e.message));

@@ -20,7 +20,6 @@ class SignupRepositoryImpl implements SignupRepository {
   Future<Either<AppFailure, Unit>> signup(SignupModel request) async {
     try {
       final res = await dataSource.signup(request);
-      log(res.toString());
       return right(res);
     } on AppException catch (e) {
       return Left(AppFailure(message: e.message));

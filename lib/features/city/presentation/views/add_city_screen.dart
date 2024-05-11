@@ -6,6 +6,7 @@ import 'package:mobile/common_widgets/app_botton.dart';
 import 'package:mobile/common_widgets/app_form_field.dart';
 import 'package:mobile/features/city/data/models/city_model.dart';
 import 'package:mobile/features/city/presentation/bloc/bloc.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
 import 'package:mobile/theme/text_styles.dart';
@@ -36,7 +37,7 @@ class _AddCityScreenState extends State<AddCityScreen> {
   void _validatePostalCode(String? value) {
     if (value == null || value.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter the city postal code.';
+        errorMessage.value = context.l10n.city_postal_code_prompt;
         valid = false;
       });
     } else {
@@ -46,7 +47,7 @@ class _AddCityScreenState extends State<AddCityScreen> {
 
       if (!isValid) {
         setState(() {
-          errorMessage.value = 'Invalid city postal code.';
+          errorMessage.value = context.l10n.invalid_city_postal_code;
           valid = false;
         });
       } else {
@@ -61,12 +62,12 @@ class _AddCityScreenState extends State<AddCityScreen> {
   void _validateName(String? value) {
     if (value == null || value.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter the city name.';
+        errorMessage.value = context.l10n.city_name_prompt;
         valid = false;
       });
     } else if (value.length < 3) {
       setState(() {
-        errorMessage.value = 'City name must be at least 3 characters long.';
+        errorMessage.value = context.l10n.city_name_length_error;
         valid = false;
       });
     } else {
@@ -127,8 +128,8 @@ class _AddCityScreenState extends State<AddCityScreen> {
             child: Form(
               child: Column(
                 children: [
-                  const ScreenTitle(
-                    title: "Add City",
+                  ScreenTitle(
+                    title: context.l10n.add_city,
                     arrowBack: true,
                   ),
                   largeVerticalSpacer,
@@ -136,7 +137,7 @@ class _AddCityScreenState extends State<AddCityScreen> {
                     child: Column(
                       children: [
                         AppFormField(
-                          hintText: "Name",
+                          hintText: context.l10n.name,
                           controller: _nameController,
                           prefixIcon: const Icon(
                             Icons.email_outlined,
@@ -146,7 +147,7 @@ class _AddCityScreenState extends State<AddCityScreen> {
                         ),
                         extraSmallVerticalSpacer,
                         AppFormField(
-                          hintText: "Postal Code",
+                          hintText: context.l10n.postal_code,
                           controller: _postalCodeController,
                           prefixIcon: const Icon(
                             Icons.email_outlined,
@@ -176,7 +177,7 @@ class _AddCityScreenState extends State<AddCityScreen> {
                   Container(
                     padding: const EdgeInsets.symmetric(vertical: 15),
                     child: AppBotton(
-                      bottonText: "Add City",
+                      bottonText: context.l10n.add_city,
                       onClick: () {
                         _onSubmit();
                       },

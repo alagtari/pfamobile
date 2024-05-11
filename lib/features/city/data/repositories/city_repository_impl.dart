@@ -20,7 +20,6 @@ class CityRepositoryImpl implements CityRepository {
   Future<Either<AppFailure, ResponseWrapper<CityModel>>> addCity(CityModel request) async {
     try {
       final res = await dataSource.addCity(request);
-      log(res.toString());
       return right(res);
     } on AppException catch (e) {
       return Left(AppFailure(message: e.message));
@@ -39,7 +38,7 @@ class CityRepositoryImpl implements CityRepository {
   Future<Either<AppFailure, Unit>> deleteCity(String id) async {
     try {
       final res = await dataSource.deleteCity(id);
-      log(res.toString());
+
       return right(res);
     } on AppException catch (e) {
       return Left(AppFailure(message: e.message));
@@ -59,7 +58,6 @@ class CityRepositoryImpl implements CityRepository {
       getCities() async {
     try {
       final res = await dataSource.getCities();
-      log(res.toString());
       return right(res);
     } on AppException catch (e) {
       return Left(AppFailure(message: e.message));
@@ -79,7 +77,6 @@ class CityRepositoryImpl implements CityRepository {
       CityModel request, String id) async {
     try {
       final res = await dataSource.updateCity(request, id);
-      log(res.toString());
       return right(res);
     } on AppException catch (e) {
       return Left(AppFailure(message: e.message));

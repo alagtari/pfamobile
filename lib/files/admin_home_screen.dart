@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mobile/core/routes/app_router.gr.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
 import 'package:mobile/theme/text_styles.dart';
@@ -23,7 +24,7 @@ class AdminHomeScreen extends StatelessWidget {
             horizontal: MediaQuery.of(context).size.width * .075),
         child: Column(
           children: [
-           extraLargeVerticalSpacer,
+            extraLargeVerticalSpacer,
             Container(
               width: double.infinity,
               height: MediaQuery.of(context).size.height * .16,
@@ -39,7 +40,7 @@ class AdminHomeScreen extends StatelessWidget {
                       children: [
                         miniVerticalSpacer,
                         Text(
-                          "Take control of your truck management .",
+                          context.l10n.take_control_of_your_truck_management,
                           style: TextStyles.smallTextStyle.copyWith(
                               color: AppColors.whiteDarkColor,
                               fontWeight: FontWeight.w600),
@@ -60,7 +61,7 @@ class AdminHomeScreen extends StatelessWidget {
                               ),
                               child: Center(
                                 child: Text(
-                                  "Go Now",
+                                  context.l10n.go_now,
                                   style: TextStyles.smallTextStyle.copyWith(
                                     fontWeight: FontWeight.w700,
                                     color: AppColors.greenDarkColor,
@@ -99,7 +100,7 @@ class AdminHomeScreen extends StatelessWidget {
                       children: [
                         miniVerticalSpacer,
                         Text(
-                          "Take charge of your driver management .",
+                          context.l10n.take_charge_of_your_driver_management,
                           style: TextStyles.smallTextStyle.copyWith(
                               color: AppColors.whiteDarkColor,
                               fontWeight: FontWeight.w600),
@@ -120,7 +121,7 @@ class AdminHomeScreen extends StatelessWidget {
                               ),
                               child: Center(
                                 child: Text(
-                                  "Go Now",
+                                  context.l10n.go_now,
                                   style: TextStyles.smallTextStyle.copyWith(
                                     fontWeight: FontWeight.w700,
                                     color: AppColors.greenDarkColor,
@@ -159,7 +160,7 @@ class AdminHomeScreen extends StatelessWidget {
                       children: [
                         miniVerticalSpacer,
                         Text(
-                          "Seamlessly organize your schedules .",
+                          context.l10n.seamlessly_organize_your_schedules,
                           style: TextStyles.smallTextStyle.copyWith(
                               color: AppColors.whiteDarkColor,
                               fontWeight: FontWeight.w600),
@@ -180,7 +181,7 @@ class AdminHomeScreen extends StatelessWidget {
                               ),
                               child: Center(
                                 child: Text(
-                                  "Go Now",
+                                  context.l10n.go_now,
                                   style: TextStyles.smallTextStyle.copyWith(
                                     fontWeight: FontWeight.w700,
                                     color: AppColors.greenDarkColor,
@@ -219,7 +220,8 @@ class AdminHomeScreen extends StatelessWidget {
                       children: [
                         miniVerticalSpacer,
                         Text(
-                          "Create & mange the cities and locations .",
+                          context
+                              .l10n.create_and_manage_the_cities_and_locations,
                           style: TextStyles.smallTextStyle.copyWith(
                               color: AppColors.whiteDarkColor,
                               fontWeight: FontWeight.w600),
@@ -240,7 +242,7 @@ class AdminHomeScreen extends StatelessWidget {
                               ),
                               child: Center(
                                 child: Text(
-                                  "Go Now",
+                                  context.l10n.go_now,
                                   style: TextStyles.smallTextStyle.copyWith(
                                     fontWeight: FontWeight.w700,
                                     color: AppColors.greenDarkColor,

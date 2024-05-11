@@ -4,731 +4,149 @@
   "en": "English",
   "fr": "French",
   "ar": "Arabic",
-  "invalidEmail": "Invalid Email Address !",
-  "invalidPassword": "Invalid Password !",
-  "authError": "Authentication Error",
-  "generaleError": "Something happened and we could not process your request. Please try again later.",
-  "okay": "Okay",
-  "invalidFirstName": "Invalid first name",
-  "invalidLastName": "Invalid name",
-  "invalidAddress": "Invalid address",
-  "requiredField": "Required field",
-  "accountCreated": "Account successfully created",
-  "waitForConfirmation": "Your account has been created, you will receive an email once you have been confirmed.",
-  "invalidPhoneNumber": "Invalid Phone Number!",
-  "clientCodeAdded": "Client code successfully added !",
-  "clientCodeInvalid": "The provided client code is invalid !",
-  "remeberMeText": "Remember me",
-  "stepTwoText": "Step 2/2",
-  "animalOwnerText": "Owner",
-  "youWishToBenefitFromOurServicesText": "Would you like to benefit from our services?",
-  "vetirninaryDoctorText": "Veterinary",
-  "youWishToJoinOurVetsText": "Would you like to join Vets network?",
-  "verifyYourEmailText": "Please, check your email.",
-  "weSendAnEmailToResetYourPasswordText": "We sent you an email containing password reset instructions.",
-  "searchText": "search",
-  "sharedMediaText": "Shared Media",
-  "emergencyDoctorText": "Emergency Veterinary",
-  "yourAnimalNeedAnEmergencyTeam": "Your pet needs urgent care!",
-  "clickHereText": "Click here",
-  "chooseYourProfileText": "Choose Your Profile",
-  "stepOneText": "Step 1/2",
-  "doYouWantToMakeAnEmergencyCallText": "Would you like to make an emergency call?",
-  "emergencyServiceText": "Urgent Care",
-  "letsGoText": "Let's Go",
-  "signupText": "Sign up",
-  "nextText": "Next",
-  "verficationText": "OTP Verification",
-  "enterCodeText": "Please enter the code sent to ",
-  "receiveCodeQuestionText": "Have you not received the code?",
-  "demandeAgainText": "send again",
-  "demandeAgainTextInform": "Ask again",
-  "congratsText": "Congratulations!",
-  "createdAccountSuccessText": "Your account was created successfully!",
-  "completeMyAccountText": "Complete the signup process",
-  "ifYouAreAvetsClient": "If you're a Vets client, please contact the administrator to get your VIP code.",
-  "emergencyDoctorWithoutParenthesesText": "Emergency Veterinary",
-  "medicalAnimalTransportText": "Medical Transport for animals ",
-  "loginText": "Log in",
-  "addressEmailText": "E-mail",
-  "passwordText": "Password",
-  "forgotPasswordText": "Forgot password?",
-  "orLoginWithText": "Or login with ",
-  "youAreANewUserText": "New here?",
-  "createAnewAccountText": "Make a new account!",
-  "aNewAccountText": "New Account",
-  "nameText": "Last Name",
-  "lastNameText": "First Name",
-  "pet_name" :"Name",
-  "phoneNumberText": "Phone Number",
-  "conditionAndTermsText": "I accept the Terms and conditions",
-  "orSignupWithText": "Or sign up with ",
-  "youHaveAnAccountText": "Already have an account?",
-  "connectedText": "Log in",
-  "aCodeHasBenSentToYourEmailText": "A code has been sent to your Email!",
-  "sendText": "Send",
-  "genderText": "Gender",
-  "personalInformationText": "Personal Information",
-  "accountAccessText": "Account access",
-  "visitorText": "guest",
-  "clientCodeText": "VIP Code",
-  "youHaveACLientCodeText": "You already have a VIP code? Insert it here!",
-  "verifyText": "Verify",
-  "myProfileText": "My profile",
-  "okText": "Ok",
-  "askAQuestionText": "Contact a Veterinary",
-  "emergencyContactText": "Contact Urgent Care",
-  "makeAnAppointmentText": "Make an Appointment",
-  "myPetsText": "My Pets",
-  "questionsSloganText": "Our experts will answer all your questions!",
-  "emergencySloganText": "Urgent Care 24/7",
-  "appointmentSloganText": "Make an Appointment",
-  "myPetsSloganText": "Manage your pet's Medical Record",
-  "welcomeText": "Hello",
-  "cancelSelectText": "Cancel Selection",
-  "continueText": "Continue",
-  "onlineText": "Online",
-  "fileText": "File",
-  "audioTEXT": "Audio",
-  "positionText": "Position",
-  "emergencyAgentText": "Emergency Veterinary",
-  "whatYourPetEmergencyQuestionText": "Which of your pets needs urgent care?",
-  "whatYouPetQuestionText": "Which of your pets do you want to ask questions about?",
-  "cancelText": "Cancel",
-  "confirmText": "Confirm",
-  "chatMessagerieText": "Chat",
-  "copyText": "Copy",
-  "replyText": "Answer",
-  "deleteText": "Delete",
-  "youWantToDeleteTHisMesageText": "Are you sure you want to delete this message?",
-  "clientStatusText": "VIP",
-  "addYourCLientCode": "Add VIP code",
-  "saveText": "Save",
-  "verifiedClientCode": "Vip code successfully verified!",
-  "addYourClientCodeText": "Add your VIP code",
-  "assuranceText": "Insurance",
-  "emergencyAlertText": "Emergency Alert",
-  "yourPetNeedEmergencyTransportText": "Your Pet needs to be transported to our clinic!",
-  "constactEmergencyServiceText": "Contact our Urgent care specialists",
-  "withWhatMeansOfTransportText": "What means of transport would you prefer?",
-  "ourAmbulanceText": "Our Ambulance",
-  "yourTransportText": "Your own Transport Method",
-  "localisationText": "Localisation",
-  "authorizeText": "Yes, Authorize",
-  "dissmissAuhtorizeText": "do not Authorize",
-  "localisationAccessRequestText": "would you allow this app to access your location?",
-  "emergencyConfirmedText": "Emergency confirmed",
-  "maleText": "Male",
-  "femaleText": "Female",
-  "malePetText": "Male",
-  "femalePetText": "Female",
-  "addressText": "Address",
-  "yourAddressHereText": "Your Address Here",
-  "petSelection": "Pet Selection",
-  "messageFailed": "Failed to send your last message !",
-  "getPetsError": "Sorry, we were unable to load your pets!",
-  "errorTitle": "Something went wrong...",
-  "addPetText": "Add A Pet",
-  "addPetError": "Sorry, we were unable to add that pet!",
-  "numberInUse": "The provided phone number already in use !",
-  "invalidCredentials": "The provided email or phone number are invalid !",
-  "locationDisabled": "Location service is not enabled. Please go to your device settings and enable it.",
-  "openDeviceSettings": "Open Location Settings",
-  "locationDenied": "Autorisation de localisation refusée.",
-  "openAppSettings": "Ouvrir les paramètres de l'application",
-  "sentAudio": "{name} sent an audio",
-  "@sentAudio": {
-    "description": "someone sent an audio",
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "sentImage": "{name} sent an image",
-  "@sentImage": {
-    "description": "someone sent an image",
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "sentFile": "{name} sent a file",
-  "@sentFile": {
-    "description": "someone sent a file",
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "sentVideo": "{name} sent an video",
-  "@sentVideo": {
-    "description": "someone sent an video",
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "you": "You",
-  "online": "Online",
-  "offline": "Offline",
-  "petAgeInYears": "{age, plural, =0{0 year} =1{1 year} other{{age} years}}",
-  "@petAgeInYears": {
-    "description": "A plural message",
-    "placeholders": {
-      "age": {
-        "type": "num",
-        "format": "compact"
-      }
-    }
-  },
-  "petAgeInMonths": "{age, plural, =0{0 month} =1{1 month} other{{age} months}}",
-  "@petAgeInMonths": {
-    "description": "A plural message",
-    "placeholders": {
-      "age": {
-        "type": "num",
-        "format": "compact"
-      }
-    }
-  },
-  "petAgeInDays": "{age, plural, =0{0 day} =1{1 day} other{{age} days}}",
-  "@petAgeInDays": {
-    "description": "A plural message",
-    "placeholders": {
-      "age": {
-        "type": "num",
-        "format": "compact"
-      }
-    }
-  },
-  "slogan_text": "A Vet in Your Pocket",
-  "create_account_and_get_access": "Create your account and get access to our services.",
-  "after_s": "after {seconds} s",
-  "@after_s": {
-    "description": "after X seconds",
-    "placeholders": {
-      "seconds": {
-        "type": "num"
-      }
-    }
-  },
- "vets_network_text": "Vets Network",
-  "first_name_text": "First Name",
-  "select_an_animal": "Select an animal",
-  "a_domicile": "At home",
-  "calendrier": "Calendar",
-  "x_rendez_vous": "{count} Appointments",
-  "@x_rendez_vous": {
-    "description": "X Rendez-vous",
-    "placeholders": {
-      "count": {
-        "type": "num"
-      }
-    }
-  },
-  "select_a_client": "Select a client",
-  "pending": "Pending",
-  "confirmed": "Confirmed",
-  "refused": "Refused",
-  "mes_rdv": "My Appointments",
-  "x_rdv_confirmed": "{count} confirmed appointments",
-  "@x_rdv_confirmed": {
-    "description": "X rendez-vous confirmés",
-    "placeholders": {
-      "count": {
-        "type": "num"
-      }
-    }
-  },
-  "x_rdv_pending": "{count} appointments pending confirmation",
-  "@x_rdv_pending": {
-    "description": "X rendez-vous en attente de confirmation",
-    "placeholders": {
-      "count": {
-        "type": "num"
-      }
-    }
-  },
-  "x_rdv_refused": "{count} appointments canceled",
-  "@x_rdv_refused": {
-    "description": "X rendez-vous annulés",
-    "placeholders": {
-      "count": {
-        "type": "num"
-      }
-    }
-  },
-  "confirmation_des_rdv": "Appointment Confirmation",
-  "rdv_request_sent_at": "Appointment request sent\n{date}",
-  "@rdv_request_sent_at": {
-    "description": "Demande de rendez-vous envoyé DATE_X",
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "refuser": "Decline",
-  "confirmer": "Confirm",
-  "modifier_le_rdv": "Modify the appointment",
-  "cancel_rdv": "Cancel Appointment",
-  "confirm_cancel_rdv_message": "Do you really want to decline\nthis appointment request?",
-  "rdv_refused_title": "Appointment Declined",
-  "rdv_refused_desc": "Appointment request \nhas been declined!",
-  "rdv_confirmed_success_desc": "Appointment request has been\nconfirmed successfully.",
-  "rdv_modified_success_desc": "Appointment request has been\nmodified successfully.",
-  "rendez_vous_text": "Appointment",
-  "no_users": "No users",
-  "notice": "Notice",
-  "animal_already_appointment_that_day": "The animal already has an appointment on that day!",
-  "modifier_un_rdv": "Modify an appointment",
-  "ajouter_un_rdv": "Add an appointment",
-  "client": "Client",
-  "animal": "Animal",
-  "clinic_ou_a_domicile": "Clinic or at Home",
-  "select_date": "Select Date",
-  "select_time": "Select Time",
-  "add_and_confirm": "Add and Confirm",
-  "gallery": "Gallery",
-  "camera": "Camera",
-  "ambulancier": "Ambulance driver",
-  "your_current_position": "Your current position",
-  "loading": "Loading",
-  "acceuil": "Home",
-  "transfert": "Transfer",
-  "messages": "Messages",
-  "distance": "Distance",
-  "km": "Km",
-  "estimated": "Estimated",
-  "min": "min",
-  "achieved": "Achieved",
-  "demande_sent_by": "Request sent by: ",
-  "dr_x": "Dr. {name}",
-  "@dr_x": {
-    "description": "Dr. X",
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "doctor_vets": "Veterinary Doctor",
-  "transfert_history": "Transfer History",
-  "a_clinic": "to the clinic",
-  "urgent_request": "Urgent Request",
-  "intervention_a_domicile": "Home Intervention",
-  "transport_a_clinic": "Animal Transport to the Clinic",
-  "estimations": "Estimations",
-  "step_x": "Step {step}",
-  "@step_x": {
-    "description": "étape X",
-    "placeholders": {
-      "step": {
-        "type": "num"
-      }
-    }
-  },
-  "demarrer": "Start",
-  "distance_total_trajectoire": "Total distance of the trajectory: ",
-  "x_km": "{x} Km",
-  "@x_km": {
-    "description": "X Km",
-    "placeholders": {
-      "x": {
-        "type": "String"
-      }
-    }
-  },
-  "x_min": "{x} min",
-  "@x_min": {
-    "description": "X min",
-    "placeholders": {
-      "x": {
-        "type": "String"
-      }
-    }
-  },
-"en_route": "On the way",
-"arrived_to_client_home": "Arrived at the client's home",
-"continuer": "Continue",
-"your_dest_ici": "Your destination \nis here",
-"mission_accomplie": "Mission Accomplished",
-"arrival_to_client_home_completed": "Arrival to the client's home completed",
-"arrival_to_client_home": "Arrival to the client's home",
-"step_x_completed": "Step {step} completed",
-  "@step_x_completed": {
-    "description": "étape X accomplie",
-    "placeholders": {
-      "step": {
-        "type": "num"
-      }
-    }
-  },
-  "terminer_step_x": "Finish step {x}",
-  "@terminer_step_x": {
-    "description": "Terminer l’étape X",
-    "placeholders": {
-      "x": {
-        "type": "num"
-      }
-    }
-  },
-  "end_mission": "End Mission",
-  "glisser_to_see_request": "Swipe to view the request",
-  "doctor_vets_urgent": "Urgent Veterinary Doctor",
-  "donner_time_estimations": "Provide your time estimate",
-  "before_disponiblite": "Before availability",
-  "arrival_chez_client": "Arrival at the client's place",
-  "demande_expired_info_text": "The urgent request has expired. Please contact your emergency assistance for a new request.",
-  "car_transport_type_desc": "We are waiting for you at the clinic",
-  "home_transport_type_desc": "Our emergency team is on its way for the home intervention",
-  "clinic_transport_type_desc": "Our ambulance driver is on its way to transport your animal",
-  "veuillez_patienter_moment": "Please wait a moment",
-  "demande_in_progress_trai": "Request in progress of processing!",
-  "confirmation": "Confirmation",
-  "demande_confirme": "Request confirmed!",
-  "echec": "Failure",
-  "demande_echouee": "Request failed!",
-  "demande_echouee_general_desc": "Something went wrong, please try again later.",
-  "mission_x": "Mission {name}",
-  "@mission_x": {
-    "description": "Mission X",
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "arrive_dans_x_min": "Arrives in {x} Min",
-  "@arrive_dans_x_min": {
-    "description": "Arrive dans X Min",
-    "placeholders": {
-      "x": {
-        "type": "String"
-      }
-    }
-  },
-"aucun_ambulancier_dispo_desc": "No ambulance available at the moment, please try again later.",
-"arrive_dans": "Arrives in",
-"arrive": "Arrived",
-"depart": "Departure",
-"equipe_in_route": "The emergency team is on the way...",
-"request_accepted": "ACCEPTED",
-"request_completed": "COMPLETED",
-"request_canceled": "CANCELLED",
-"which_transport_type": "Which type of transport do you prefer?",
-"clinic_transport_type_service_desc": "Beyond 20km from the clinic, additional 2DT/km",
-"home_transport_type_service_overview": "Emergency team transport to your home (Transport + Consultation)",
-"home_transport_type_service_desc": "Beyond 20km from the clinic, additional 3DT/km",
-"car_transport_type_service_overview": "Animal transport to the clinic by your means",
-"car_transport_type_service_desc": "Integer malesuada tristique risus, eget commodo ante",
-"add_comment": "Add a comment...",
-"poser_vos_questions": "Ask your questions",
-"add_to_list": "Add to my list",
-"another_animal": "Another animal",
-"espece": "Species",
-"race": "Breed",
-"age": "Age",
-"motif": "Reason",
-"profil": "Profile",
-"member_since": "Member since: ",
-"phone": "Phone",
-"yes": "Yes",
-"no": "No",
-"clinic": "Clinic",
-"videos": "Videos",
-"send_alert_message_confirm_question": "Do you really want to send the alert message?",
-"your_animal_need_urgence_message": "Your animal requires urgent care",
-"download_file_here": "Download the file here",
-  "x_kg": "{x} Kg",
-  "@x_kg": {
-    "description": "X Kg",
-    "placeholders": {
-      "x": {
-        "type": "String"
-      }
-    }
-  },
-"poids_x_kg": "Weight {x} Kg",
-  "@poids_x_kg": {
-    "description": "Poids X Kg",
-    "placeholders": {
-      "x": {
-        "type": "String"
-      }
-    }
-  },
-  "sexe_x": "Gender {x}",
-  "@sexe_x": {
-    "description": "Sexe X",
-    "placeholders": {
-      "x": {
-        "type": "String"
-      }
-    }
-  },
-  "age_x": "Age   {x}",
-  "@age_x": {
-    "description": "Age X",
-    "placeholders": {
-      "x": {
-        "type": "String"
-      }
-    }
-  },
-  "asv" : "ASV",
- "support_role": "Customer Support",
-"your_clinic": "Your Clinic",
-"code_postal": "Postal Code",
-"bad_crendentials_message": "The login credentials you entered are incorrect.",
-"your_profil": "Your Profile",
-"annuler_le_rdv": "Cancel the appointment",
-"take_rdv": "Schedule an appointment",
-"where_you_want_rdv_for_x": "Where do you want to schedule appointment for {x}?",
-  "@where_you_want_rdv_for_x": {
-    "description": "Où souhaitez vous prendre un rendez-vous pour X",
-    "placeholders": {
-      "x": {
-        "type": "String"
-      }
-    }
-  },
- "choose_pet_for_rdv_message": "For which animal would you like to make an appointment?",
-"a_clinic_desc": "Take your pet to the nearest clinic.",
-"a_domicile_desc": "The MyVets team will come to your home.",
-"prendre_rendez_vous": "Schedule an appointment",
-"time": "Time",
-"date": "Date",
-"rdv_plus_proche": "Closest appointment",
-"date_time_dispos": "Available date and time",
-"take_rdv_en_select_clinic": "Schedule an appointment by choosing the clinic.",
-"which_clinic_you_want": "In which clinic would you like to schedule an appointment?",
-"take_rdv_plus_proche": "Schedule the closest appointment",
-"tap_here_for_closest_dispo": "Click here for the next available appointment",
-"voir_dispo": "View availability",
-"new_rdv": "New appointment",
-"animal_choisi": "Chosen animal",
-"sexe": "Gender",
-"poids": "Weight",
-"edit_animal": "Edit an animal",
-"add_animal": "Add an animal",
-"date_naissance": "Date of birth",
-"color": "Color",
-"puce_electronique": "Electronic chip",
-"sterilise": "Sterilized",
-"signe_partic": "Particular sign",
-"vet_traitant": "Treating veterinarian",
-"mise_a_jour": "Update",
-"add_photo_for_your_pet": "Add a photo of your pet",
-"click_here": "Click here",
-"archive_pet": "Archive your pet",
-"modifier": "Modify",
-"archiver": "Archive",
-"ajout_animal_x_to_archive_list_confirm": "Do you really want to add {x} to your archived animals list?",
-  "@ajout_animal_x_to_archive_list_confirm": {
-    "description": "Voulez-vous vraiment ajouter X à la liste de vos animaux archivés?",
-    "placeholders": {
-      "x": {
-        "type": "String"
-      }
-    }
-  },
- "hide": "Hide",
-"show": "Show",
-"archived_animals": "Archived Animals",
-"restore_your_animal": "Restore Your Animal",
-"animal_perdu": "Lost Animal",
-"animal_decede": "Deceased Animal",
-"animal_cede_ou_vedu": "Animal Sold or Given",
-"archive": "Archived",
-"mon_compte": "My Account",
-"logout": "Logout",
-"notifications": "Notifications",
-"son_et_notifications": "Sound and Notifications",
-"notification_for_chat": "Chat Notifications",
-"son": "Sound",
-"active": "Active",
-"vibration": "Vibration",
-"push": "Push",
-"faq": "FAQ",
-"rdv": "Appointments",
-"manage_rdsv": "Manage Appointments",
-"new_message": "New Message",
-"questions": "Questions",
-"urgence": "Emergency",
-"intern": "Intern",
-"status_dispo": "Availability Status",
-"disponible": "Available",
-"occupe": "Occupied",
-"take_inter_urgence": "Take Emergency Interventions",
-"start_inter_urgence": "Start an Emergency Intervention",
-"stop_inter_urgence": "Extend Your Intervention Time",
-"duree": "Duration",
-"etendre": "Extend",
-"animals": "Animals",
-"cancel_rdv_confirm_message": "Do you really want to cancel your appointment request?",
-"rdv_request_success_sent_message": "Your appointment request has been sent successfully.",
-"rdv_canceled_success": "Your appointment request has been canceled!",
-"rdv_canceled": "Canceled Appointment",
-"need_help_question": "Need help?",
-"call_us_directly": "Call us directly",
-"call_urgence": "Call emergency services",
-"call_clinic": "Call the clinic",
-"request_time_out": "TIME OUT",
-"request_waiting_for_accept": "WAITING FOR ACCEPT",
-"last_modification_date": "Date of last modification:",
-"available": "Available",
-"occupied": "Occupied",
-"vehicle_problem": "Vehicle Problem",
-"problem_x": "Problem X",
-"problem_y": "Problem Y",
-"password_changed_successfully": "Your password has been changed successfully",
-"not_availble": "N/A",
-"vets": "Vets",
-"take_the_first_exit_off_the_roundabout": "Take the first exit off the roundabout",
-  "x_m": "{x} m",
-  "@x_m": {
-    "description": "X metre",
-    "placeholders": {
-      "x": {
-        "type": "String",
-        "default": "30"
-      }
-    }
-  },
-    "ariana": "Ariana",
-    "beja": "Beja",
-    "ben_arous": "Ben Arous",
-    "bizerte": "Bizerte",
-    "gabes": "Gabes",
-    "gafsa": "Gafsa",
-    "jendouba": "Jendouba",
-    "kairouan": "Kairouan",
-    "kasserine": "Kasserine",
-    "kebili": "Kebili",
-    "kef": "Kef",
-    "mahdia": "Mahdia",
-    "manouba": "Manouba",
-    "medenine": "Medenine",
-    "monastir": "Monastir",
-    "nabeul": "Nabeul",
-    "sfax": "Sfax",
-    "sidi_bouzid": "Sidi Bouzid",
-    "siliana": "Siliana",
-    "sousse": "Sousse",
-    "tataouine": "Tataouine",
-    "tozeur": "Tozeur",
-   "tunis": "Tunis",
-    "zaghouan": "Zaghouan",
-   "password_doesnt_match": "Password Doesn't Match!",
-    "confirm_your_password": "Confirm Your Password",
-    "new_password": "New Password",
-    "change_password": "Change Your Password",
-    "animal_details_message": "Other animal\n Species: {speciesValue}\n Race: {raceName}\n Age: {ageValue}\n Reason: {motifValue}",
-    "@animal_details_message": {
-      "description": "Anonymous Animal Details Message",
-      "placeholders": {
-        "speciesValue": {
-          "type": "String"
-        },
-        "raceName": {
-          "type": "String"
-        },
-        "ageValue": {
-          "type": "String"
-        },
-        "motifValue": {
-          "type": "String"
-        }
-      }
-    },
-    "error_sending_file":"Error sending a file!",
-    "price":"DT",
-    "x_price": "{x} DT",
-    "@x_price": {
-      "description": "price",
-      "placeholders": {
-        "x": {
-          "type": "String"
-        }
-      }
-    },
-    "intervention_workplan_morning": "From 09:00 AM to 07:00 PM",
-    "intervention_workplan_night": "From 07:00 PM to 09:00 AM",
-    "free": "Free",
-    "x_price_per_km": "{x} DT/km",
-    "@x_price_per_km": {
-      "description": "extra price per kilometer ",
-      "placeholders": {
-        "x": {
-          "type": "String"
-        }
-      }
-    },
-  "grand_tunis": "Greater Tunis",
-  "transport_with_consultation": "(Transport + Consultation)",
-  "accepted": "Accepted",
-  "declined": "Declined",
-  "postponed": "Postponed",
-  "rescheduled": "Rescheduled",
-  "rejected": "Rejected",
-  "completed": "Completed",
-  "absent": "Absent",
-  "cancelled": "Cancelled",
-  "black": "Black",
-  "brown": "Brown",
-  "blue": "Blue",
-  "no_particular_sign": "No Particular Sign",
-  "would_you_like_to_restore_your_pet": "Would you like to restore your pet?",
-  "all": "All",
-  "empty": "Empty",
-  "error": "Error",
-  "passwords_are_not_identical": "Passwords are not identical!",
-  "confirm_password": "Confirm the New Password",
-  "new_password": "New Password",
-  "old_password": "Old Password",
-  "change_password": "Change Password",
-  "accomplished": "Accomplished",
-  "appointment_completed": "Appointment completed",
-  "absent": "Absent",
-  "client_absent": "The client was absent",
-  "reject_appointment": "Reject appointment",
-  "reject_appointment_text": "Do you really want to reject this appointment?",
-  "absent_appointment": "Mark appointment as absent",
-  "absent_appointment_text": "Do you really want to mark this appointment as absent?",
-  "reject": "Reject",
-  "present": "Present",
-  "happy_birthday": "Happy Birthday to",
-  "birthday_date": "October 3, 2020 (3 years)",
-  "vaccination_alert": "Vaccination Reminder for",
-  "disease": "Feline Flu",
-  "your_account_has_become_vip": "Your account has become VIP",
-  "notification_time": "September 12",
-  "fonctionnality_in_progess":"This functionality is under development",
-  "veterinarian_role": "Veterinarian",
-  "driver_role": "Driver",
-  "asv_role": "Assistant",
-  "appointment_creation_date": "Appointment request sent \non {date} at {time}",
-  "@appointment_creation_date": {
-  "description": "appointment creation date by the client ",
-  "placeholders": {
-    "date": {
-      "type": "String"
-    },
-     "time": {
-      "type": "String"
-     }
-   }
- },
-  "file_too_large_error_msg":"File Size Exceeds 16MB",
-  "file_size_msg": "File size must be less than 16MB",
-  "invalid_password": "Password is required!",
-  "password_too_short":"Password must be at least 8 characters long!",
-  "password_must_contains_alphanumeric":"Password must contain at least one letter or digit!",
-  "anonymous":"Anonymous"
-
+  "verification_code_prompt": "Enter verification code",
+  "verification_code_instruction": "Please enter the verification code.",
+  "code_length_error": "Code must be 6 digits long.",
+  "code_numeric_error": "Code must contain only numbers.",
+  "email_code_prompt": "Enter the code sent to your email to proceed.",
+  "code_valid_duration": "The code is valid for the remaining time of",
+  "resend_code": "Resend code",
+  "send_code": "Send code",
+  "verify_code": "Verify code",
+  "email_prompt": "Please enter your email address.",
+  "valid_email_error": "Please enter a valid email address.",
+  "email_entry": "Enter your email",
+  "email_verification_prompt": "A verification code will be sent to your email address.",
+  "forgot_password": "Forgot password",
+  "password_prompt": "Please enter your password.",
+  "password_length_error": "Password must be at least 6 characters long.",
+  "sign_in": "Sign in",
+  "password": "Password",
+  "password_confirmation_prompt": "Please enter your password confirmation.",
+  "password_confirmation_mismatch": "Password confirmation does not match.",
+  "reset_password": "Reset password",
+  "new_password_prompt": "Enter a new password",
+  "new_password": "New password",
+  "confirm_password": "Confirm password",
+  "reset": "Reset",
+  "city_postal_code_prompt": "Please enter the city postal code.",
+  "invalid_city_postal_code": "Invalid city postal code.",
+  "city_name_prompt": "Please enter the city name.",
+  "city_name_length_error": "The city name must be at least 3 characters long.",
+  "city_added_successfully": "City added successfully",
+  "add_city": "Add city",
+  "name": "Name",
+  "postal_code": "Postal code",
+  "drivers": "Drivers",
+  "cities": "Cities",
+  "first_name_prompt": "Please enter your first name.",
+  "first_name_length_error": "First name must be at least 3 characters long.",
+  "last_name_prompt": "Please enter your last name.",
+  "last_name_length_error": "Last name must be at least 3 characters long.",
+  "cin_prompt": "Please enter your CIN.",
+  "cin_length_error": "CIN must be exactly 8 digits long.",
+  "cin_format_error": "CIN must start with 0 or 1.",
+  "phone_number_prompt": "Please enter your phone number.",
+  "phone_number_length_error": "Phone number must be exactly 8 digits long.",
+  "non_tunisian_number_error": "This phone number isn't a tunisian number.",
+  "driver_added_successfully": "Driver added successfully",
+  "add_driver": "Add driver",
+  "update_driver": "Update driver",
+  "start_time_required": "Start time is required.",
+  "end_time_required": "End time is required.",
+  "date_required": "Date is required.",
+  "truck_required": "Truck is required.",
+  "city_required": "City is required.",
+  "garbage_type_required": "Garbage type is required.",
+  "plan_added_successfully": "Plan added successfully",
+  "add_plan": "Add plan",
+  "start_date": "Start date",
+  "end_date": "End date",
+  "garbage_truck": "Truck",
+  "garbage_type": "Garbage type",
+  "plans": "Plans",
+  "day": "Day",
+  "time": "Time",
+  "old_password_prompt": "Please enter your old password.",
+  "old_password_length_error": "The old password must be at least 6 characters long.",
+  "new_password_prompt": "Please enter your new password.",
+  "new_password_confirmation_prompt": "Please enter your new password confirmation.",
+  "change_password": "Change password",
+  "old_password": "Old password",
+  "new_password": "New password",
+  "confirm_new_password": "Confirm new password",
+  "change": "Change",
+  "profile": "Profile",
+  "account_settings": "Account settings",
+  "general_info": "General information",
+  "preferences": "Preferences",
+  "gender_male": "Male",
+  "gender_female": "Female",
+  "birth_date_required": "Birth date is required.",
+  "gender_required": "Gender is required.",
+  "click_to_select_profile_pic": "Click here to select profile picture",
+  "birth_date": "Birth date",
+  "identity_number": "Identity number",
+  "email_prompt_short": "Enter your email address",
+  "valid_email_error_short": "Please enter a valid email address",
+  "cin_prompt_short": "Enter your CIN",
+  "phone_number_prompt_short": "Enter your phone number",
+  "password_prompt_short": "Enter your password",
+  "password_length_error_short": "Password must be at least 6 characters long",
+  "password_confirmation_prompt_short": "Confirm password",
+  "password_confirmation_mismatch_short": "Password confirmation do not match",
+  "phone_number": "Phone number",
+  "identity_number": "Identity number",
+  "email": "Email",
+  "password": "Password",
+  "confirm_password": "Confirm password",
+  "continue_step": "Continue",
+  "finish": "Finish",
+  "street": "Street",
+  "truck_number_prompt": "Please enter the truck number.",
+  "truck_number_format": "Truck number in this format xxx TUN xxxx",
+  "truck_capacity_prompt": "Please enter the truck capacity.",
+  "invalid_truck_capacity": "Invalid truck capacity.",
+  "truck_model_prompt": "Please enter the truck model.",
+  "truck_added_successfully": "Truck added successfully",
+  "add_truck": "Add truck",
+  "truck_number": "Number",
+  "truck_model": "Model",
+  "truck_capacity": "Capacity",
+  "update_truck": "Update truck",
+  "update": "Update",
+  "delete": "Delete",
+  "first_name": "First name",
+  "first_name_must_be_at_least_3_characters_long": "First name must be at least 3 characters long.",
+  "driver_added_succesfully": "Driver added successfully",
+  "add_driver": "Add Driver",
+  "please_enter_your_first_name": "Please enter your first name.",
+  "last_name": "Last Name",
+  "cin": "CIN",
+  "phone_number": "Phone Number",
+  "drivers": "Drivers",
+  "update_driver": "Update Driver",
+  "date": "Date",
+  "city": "City",
+  "truck": "Truck",
+  "garbage": "Garbage",
+  "new_password_length_error": "New password must be at least 6 characters long.",
+  "location_service": "Location Service",
+  "choose_a_language": "Choose a anguage",
+  "gender": "Gender",
+  "signup": "Signup",
+  "driver": "Driver",
+  "trucks": "Trucks",
+  "home": "Home",
+  "chat": "Chat",
+  "report": "Report",
+  "profile": "Profile",
+  "take_control_of_your_truck_management": "Take control of your truck management.",
+  "take_charge_of_your_driver_management": "Take charge of your driver management.",
+  "seamlessly_organize_your_schedules": "Seamlessly organize your schedules.",
+  "create_and_manage_the_cities_and_locations": "Create & manage the cities and locations.",
+  "go_now": "Go Now",
+  "location": "Location",
+  "locations": "Locations",
+  "kg": "Kg"
 }

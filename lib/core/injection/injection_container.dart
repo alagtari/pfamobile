@@ -24,6 +24,7 @@ import 'package:mobile/features/signup/domain/repositories/signup_repository.dar
 import 'package:mobile/features/truck/data/data_sources/truck_remote_data_source.dart';
 import 'package:mobile/features/truck/data/repositories/truck_repository_impl.dart';
 import 'package:mobile/features/truck/domain/repositories/truck_repository.dart';
+import 'package:mobile/l10n/bloc/language_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 final sl = GetIt.instance;
@@ -36,6 +37,9 @@ Future<void> init() async {
   );
   sl.registerLazySingleton<AppRouter>(
     () => AppRouter(),
+  );
+  sl.registerLazySingleton<LanguageBloc>(
+    () => LanguageBloc(),
   );
   sl.registerLazySingleton<Dio>(
     () => DioProvider.instance(),

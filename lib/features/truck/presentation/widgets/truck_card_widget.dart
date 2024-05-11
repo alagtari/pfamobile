@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:mobile/core/routes/app_router.gr.dart';
 import 'package:mobile/features/truck/data/models/truck_model.dart';
 import 'package:mobile/features/truck/presentation/bloc/bloc.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
 import 'package:mobile/theme/text_styles.dart';
@@ -74,7 +73,7 @@ class _TruckCardWidgetState extends State<TruckCardWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Driver",
+                          context.l10n.driver,
                           style: TextStyles.smallTextStyle.copyWith(
                             color: AppColors.greyDarkColor,
                             fontWeight: FontWeight.w600,
@@ -115,7 +114,7 @@ class _TruckCardWidgetState extends State<TruckCardWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Model",
+                            context.l10n.truck_model,
                             style: TextStyles.smallTextStyle.copyWith(
                               color: AppColors.greyDarkColor,
                               fontWeight: FontWeight.w600,
@@ -160,14 +159,14 @@ class _TruckCardWidgetState extends State<TruckCardWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Capacity",
+                          context.l10n.truck_capacity,
                           style: TextStyles.smallTextStyle.copyWith(
                             color: AppColors.greyDarkColor,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
                         Text(
-                          "${widget.truck.capacity} Kg",
+                          "${widget.truck.capacity} ${context.l10n.kg}",
                           style: TextStyles.smallTextStyle.copyWith(
                             fontWeight: FontWeight.w600,
                           ),
@@ -198,7 +197,7 @@ class _TruckCardWidgetState extends State<TruckCardWidget> {
                       ),
                       extraMiniHorizantalSpacer,
                       Text(
-                        "Update",
+                        context.l10n.update,
                         style: TextStyles.smallTextStyle.copyWith(
                           fontWeight: FontWeight.w600,
                           color: AppColors.blackDarkColor,
@@ -217,7 +216,7 @@ class _TruckCardWidgetState extends State<TruckCardWidget> {
                       ),
                       extraMiniHorizantalSpacer,
                       Text(
-                        "Delete",
+                        context.l10n.delete,
                         style: TextStyles.smallTextStyle.copyWith(
                           fontWeight: FontWeight.w600,
                           color: AppColors.blackDarkColor,
@@ -228,10 +227,8 @@ class _TruckCardWidgetState extends State<TruckCardWidget> {
                 ),
               ],
               onSelected: (value) {
-                log(value);
                 switch (value) {
                   case "1":
-                    log(widget.truck.id!);
                     context.router.push(UpdateTruckRoute(truck: widget.truck));
                   default:
                     context.read<TruckBloc>().add(

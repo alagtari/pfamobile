@@ -6,6 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:mobile/core/routes/app_router.gr.dart';
 import 'package:mobile/features/city/data/models/city_model.dart';
 import 'package:mobile/features/city/presentation/bloc/bloc.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
 import 'package:mobile/theme/text_styles.dart';
@@ -70,7 +71,7 @@ class _CityCardWidgetState extends State<CityCardWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "City",
+                          context.l10n.city,
                           style: TextStyles.smallTextStyle.copyWith(
                             color: AppColors.greyDarkColor,
                             fontWeight: FontWeight.w600,
@@ -110,7 +111,7 @@ class _CityCardWidgetState extends State<CityCardWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Postal Code",
+                          context.l10n.postal_code,
                           style: TextStyles.smallTextStyle.copyWith(
                             color: AppColors.greyDarkColor,
                             fontWeight: FontWeight.w600,
@@ -150,14 +151,14 @@ class _CityCardWidgetState extends State<CityCardWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Garbage",
+                          context.l10n.garbage,
                           style: TextStyles.smallTextStyle.copyWith(
                             color: AppColors.greyDarkColor,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
                         Text(
-                          "$locations location${locations > 1 ? "s" : ""}",
+                          "$locations ${locations > 1 ? context.l10n.locations : context.l10n.location}",
                           style: TextStyles.smallTextStyle.copyWith(
                             fontWeight: FontWeight.w600,
                           ),
@@ -173,7 +174,6 @@ class _CityCardWidgetState extends State<CityCardWidget> {
             top: 15,
             right: 15,
             child: PopupMenuButton<String>(
-             
               position: PopupMenuPosition.under,
               offset: Offset.fromDirection(10),
               color: AppColors.whiteDarkColor,
@@ -189,7 +189,7 @@ class _CityCardWidgetState extends State<CityCardWidget> {
                       ),
                       extraMiniHorizantalSpacer,
                       Text(
-                        "Update",
+                        context.l10n.update,
                         style: TextStyles.smallTextStyle.copyWith(
                           fontWeight: FontWeight.w600,
                           color: AppColors.blackDarkColor,
@@ -208,7 +208,7 @@ class _CityCardWidgetState extends State<CityCardWidget> {
                       ),
                       extraMiniHorizantalSpacer,
                       Text(
-                        "Delete",
+                        context.l10n.delete,
                         style: TextStyles.smallTextStyle.copyWith(
                           fontWeight: FontWeight.w600,
                           color: AppColors.blackDarkColor,
@@ -218,7 +218,7 @@ class _CityCardWidgetState extends State<CityCardWidget> {
                   ),
                 ),
               ],
-               onSelected: (value) {
+              onSelected: (value) {
                 switch (value) {
                   case "1":
                     context.router.push(UpdateCityRoute(city: widget.city));

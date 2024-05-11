@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:mobile/common_widgets/app_botton.dart';
 import 'package:mobile/common_widgets/app_form_field.dart';
 import 'package:mobile/common_widgets/screen_title.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/radius.dart';
 import 'package:mobile/theme/spacers.dart';
@@ -59,7 +60,7 @@ class _UpdateLocationScreenState extends State<UpdateLocationScreen> {
             ),
             extraSmallVerticalSpacer,
             AppFormField(
-              hintText: "City",
+              hintText: context.l10n.city,
               controller: _emailController,
               prefixIcon: const Icon(
                 Icons.location_on_outlined,

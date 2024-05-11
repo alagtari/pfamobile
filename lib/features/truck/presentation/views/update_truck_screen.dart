@@ -8,6 +8,7 @@ import 'package:mobile/common_widgets/app_form_field.dart';
 import 'package:mobile/features/driver/data/models/driver_model.dart';
 import 'package:mobile/features/truck/data/models/truck_model.dart';
 import 'package:mobile/features/truck/presentation/bloc/bloc.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
 import 'package:mobile/theme/text_styles.dart';
@@ -51,14 +52,14 @@ class _UpdateTruckScreenState extends State<UpdateTruckScreen> {
   void _validateNumber(String? value) {
     if (value == null || value.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter the truck number.';
+        errorMessage.value = context.l10n.truck_number_prompt;
         valid = false;
       });
     } else {
       List<String> parts = value.split(' ');
       if (parts.length != 3) {
         setState(() {
-          errorMessage.value = 'Truck number in this format xxx TUN xxxx';
+          errorMessage.value = context.l10n.truck_number_format;
           valid = false;
         });
         return;
@@ -76,7 +77,7 @@ class _UpdateTruckScreenState extends State<UpdateTruckScreen> {
 
       if (!isTUN || !isValidX || !isValidY) {
         setState(() {
-          errorMessage.value = 'Truck number in this format xxx TUN xxxx';
+          errorMessage.value = context.l10n.truck_number_format;
           valid = false;
         });
         return;
@@ -92,7 +93,7 @@ class _UpdateTruckScreenState extends State<UpdateTruckScreen> {
   void _validateCapacity(String? value) {
     if (value == null || value.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter the truck capacity.';
+        errorMessage.value = context.l10n.truck_capacity_prompt;
         valid = false;
       });
     } else {
@@ -100,7 +101,7 @@ class _UpdateTruckScreenState extends State<UpdateTruckScreen> {
 
       if (!isValid) {
         setState(() {
-          errorMessage.value = 'Invalid truck capacity.';
+          errorMessage.value = context.l10n.invalid_truck_capacity;
           valid = false;
         });
       } else {
@@ -115,7 +116,7 @@ class _UpdateTruckScreenState extends State<UpdateTruckScreen> {
   void _validateModel(String? value) {
     if (value == null || value.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter the truck model.';
+        errorMessage.value = context.l10n.truck_model_prompt;
         valid = false;
       });
     } else {
@@ -209,8 +210,8 @@ class _UpdateTruckScreenState extends State<UpdateTruckScreen> {
             child: Form(
               child: Column(
                 children: [
-                  const ScreenTitle(
-                    title: "Update Truck",
+                  ScreenTitle(
+                    title: context.l10n.update_truck,
                     arrowBack: true,
                   ),
                   largeVerticalSpacer,
@@ -218,7 +219,7 @@ class _UpdateTruckScreenState extends State<UpdateTruckScreen> {
                     child: Column(
                       children: [
                         AppFormField(
-                          hintText: "Number",
+                          hintText: context.l10n.truck_number,
                           controller: _numberController,
                           prefixIcon: const Icon(
                             Icons.email_outlined,
@@ -228,7 +229,7 @@ class _UpdateTruckScreenState extends State<UpdateTruckScreen> {
                         ),
                         extraSmallVerticalSpacer,
                         AppFormField(
-                          hintText: "Model",
+                          hintText: context.l10n.truck_model,
                           controller: _modelController,
                           prefixIcon: const Icon(
                             Icons.email_outlined,
@@ -238,7 +239,7 @@ class _UpdateTruckScreenState extends State<UpdateTruckScreen> {
                         ),
                         extraSmallVerticalSpacer,
                         AppFormField(
-                          hintText: "Capacity",
+                          hintText: context.l10n.truck_capacity,
                           controller: _capacityController,
                           prefixIcon: const Icon(
                             Icons.email_outlined,
@@ -274,7 +275,7 @@ class _UpdateTruckScreenState extends State<UpdateTruckScreen> {
                   Container(
                     padding: const EdgeInsets.symmetric(vertical: 15),
                     child: AppBotton(
-                      bottonText: "Update Truck",
+                      bottonText: context.l10n.update_truck,
                       onClick: () {
                         _onSubmit();
                       },

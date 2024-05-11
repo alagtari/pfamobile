@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile/common_widgets/app_botton.dart';
@@ -6,6 +5,7 @@ import 'package:mobile/common_widgets/app_dropdown_widget.dart';
 import 'package:mobile/common_widgets/app_form_field.dart';
 import 'package:mobile/features/city/data/models/city_model.dart';
 import 'package:mobile/features/city/presentation/bloc/bloc.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
 
@@ -79,12 +79,12 @@ class _ThirdSignupStepWidgetState extends State<ThirdSignupStepWidget> {
             AppDropdownWidget(
               items: _cityItems.value,
               onChange: changeCity,
-              hint: 'City',
+              hint: context.l10n. city,
               icon: Icons.location_on_outlined,
             ),
             extraSmallVerticalSpacer,
             AppFormField(
-              hintText: "Postal Code",
+              hintText: context.l10n.postal_code,
               controller: _postalCodeController,
               readOnly: true,
               prefixIcon: const Icon(
@@ -95,7 +95,7 @@ class _ThirdSignupStepWidgetState extends State<ThirdSignupStepWidget> {
             ),
             extraSmallVerticalSpacer,
             AppFormField(
-              hintText: "Street",
+              hintText: context.l10n.street,
               controller: _streetController,
               prefixIcon: const Icon(
                 Icons.location_on_outlined,
@@ -107,7 +107,7 @@ class _ThirdSignupStepWidgetState extends State<ThirdSignupStepWidget> {
               child: SizedBox(),
             ),
             AppBotton(
-              bottonText: "Finish",
+              bottonText: context.l10n.finish,
               onClick: () {
                 widget.submit(_city.value!.id!, _streetController.text);
               },

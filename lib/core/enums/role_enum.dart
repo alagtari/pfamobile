@@ -5,7 +5,7 @@ UserRole getUserRoleFromString(String role) {
   switch (role) {
     case "citizen":
       return UserRole.citizen;
-    case "driver":
+    case 'driver':
       return UserRole.driver;
     default:
       return UserRole.admin;

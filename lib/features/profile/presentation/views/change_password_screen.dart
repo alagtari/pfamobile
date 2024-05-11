@@ -6,6 +6,7 @@ import 'package:mobile/common_widgets/app_form_field.dart';
 import 'package:mobile/common_widgets/screen_title.dart';
 import 'package:mobile/features/profile/data/models/change_password_model.dart';
 import 'package:mobile/features/profile/presentation/bloc/bloc.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
 import 'package:mobile/theme/text_styles.dart';
@@ -40,34 +41,34 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   void _validatePasswords() {
     if (_oldPasswordController.text.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter your old password.';
+        errorMessage.value = context.l10n.old_password_prompt;
         valid = false;
       });
     } else if (_oldPasswordController.text.length < 6) {
       setState(() {
-        errorMessage.value = 'Old password must be at least 6 characters long.';
+        errorMessage.value = context.l10n.old_password_length_error;
         valid = false;
       });
     }
     if (_newPasswordController.text.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter your new password.';
+        errorMessage.value = context.l10n.new_password_prompt;
         valid = false;
       });
     } else if (_newPasswordController.text.length < 6) {
       setState(() {
-        errorMessage.value = 'New password must be at least 6 characters long.';
+        errorMessage.value = context.l10n.new_password_length_error;
         valid = false;
       });
     } else if (_confirmNewPasswordController.text.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter your new password confirmation.';
+        errorMessage.value = context.l10n.password_confirmation_prompt;
         valid = false;
       });
     } else if (_confirmNewPasswordController.text !=
         _newPasswordController.text) {
       setState(() {
-        errorMessage.value = 'New password confirmation do not match.';
+        errorMessage.value = context.l10n.password_confirmation_mismatch;
         valid = false;
       });
     } else {
@@ -119,15 +120,15 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
               horizontal: MediaQuery.of(context).size.width * .075),
           child: Column(
             children: [
-              const ScreenTitle(
-                title: "Change Password",
+              ScreenTitle(
+                title: context.l10n.change_password,
               ),
               largeVerticalSpacer,
               ValueListenableBuilder<bool>(
                 valueListenable: obscured,
                 builder: (_, obs, __) => AppFormField(
                   obscured: obs,
-                  hintText: "Old Password",
+                  hintText: context.l10n.old_password,
                   controller: _oldPasswordController,
                   prefixIcon: const Icon(
                     Icons.lock_outline,
@@ -155,7 +156,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                 valueListenable: obscured,
                 builder: (_, obs, __) => AppFormField(
                   obscured: obs,
-                  hintText: "New Password",
+                  hintText: context.l10n.new_password,
                   controller: _newPasswordController,
                   prefixIcon: const Icon(
                     Icons.lock_outline,
@@ -183,7 +184,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                 valueListenable: confirmObscured,
                 builder: (_, obs, __) => AppFormField(
                   obscured: obs,
-                  hintText: "Confirm New Password",
+                  hintText: context.l10n.confirm_new_password,
                   controller: _confirmNewPasswordController,
                   prefixIcon: const Icon(
                     Icons.lock_outline,
@@ -223,7 +224,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
               ),
               const Expanded(child: SizedBox()),
               AppBotton(
-                bottonText: "Change",
+                bottonText: context.l10n.change,
                 onClick: _onSubmit,
               ),
               miniVerticalSpacer,

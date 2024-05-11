@@ -7,6 +7,7 @@ import 'package:mobile/common_widgets/app_form_field.dart';
 import 'package:mobile/core/routes/app_router.gr.dart';
 import 'package:mobile/common_widgets/screen_title.dart';
 import 'package:mobile/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
 import 'package:mobile/theme/text_styles.dart';
@@ -34,14 +35,14 @@ class _ForgotPasswordEmailState extends State<ForgotPasswordEmail> {
   void _validateEmail(String? value) {
     if (value == null || value.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter your email address.';
+        errorMessage.value = context.l10n.email_prompt;
         valid = false;
       });
     } else if (!RegExp(
             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z]+")
         .hasMatch(value)) {
       setState(() {
-        errorMessage.value = 'Please enter a valid email address.';
+        errorMessage.value = context.l10n.valid_email_error;
         valid = false;
       });
     } else {
@@ -72,7 +73,6 @@ class _ForgotPasswordEmailState extends State<ForgotPasswordEmail> {
       );
     }
   }
-  
 
   @override
   Widget build(BuildContext context) {
@@ -84,15 +84,15 @@ class _ForgotPasswordEmailState extends State<ForgotPasswordEmail> {
           padding: const EdgeInsets.symmetric(horizontal: 30),
           child: Column(
             children: [
-              const ScreenTitle(
-                title: "Forgot password",
+              ScreenTitle(
+                title: context.l10n.forgot_password,
                 arrowBack: false,
               ),
               extraExtraLargeVerticalSpacer,
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Enter your email",
+                  context.l10n.email_entry,
                   style: TextStyles.extraExtraLargeTextStyle.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
@@ -102,7 +102,7 @@ class _ForgotPasswordEmailState extends State<ForgotPasswordEmail> {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "A verification code will be sent to your email address",
+                  context.l10n.email_verification_prompt,
                   style: TextStyles.smallTextStyle.copyWith(
                       fontWeight: FontWeight.w500,
                       color: AppColors.greyDarkColor),
@@ -110,7 +110,7 @@ class _ForgotPasswordEmailState extends State<ForgotPasswordEmail> {
               ),
               smallVerticalSpacer,
               AppFormField(
-                hintText: "Email",
+                hintText: context.l10n.email,
                 controller: _emailController,
                 prefixIcon: const Icon(
                   Icons.email_outlined,
@@ -137,7 +137,7 @@ class _ForgotPasswordEmailState extends State<ForgotPasswordEmail> {
                 child: SizedBox(),
               ),
               AppBotton(
-                bottonText: "Send Code",
+                bottonText: context.l10n.send_code,
                 onClick: () => _onSubmit(),
               ),
               miniVerticalSpacer,

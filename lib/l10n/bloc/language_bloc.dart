@@ -1,43 +1,33 @@
+import 'dart:developer';
 
-import 'package:flutter/cupertino.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
-import 'package:intl/date_symbol_data_local.dart';
+import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
 import 'package:mobile/core/common_used/app_prefs.dart';
-import 'package:mobile/main.dart';
+import 'package:mobile/core/injection/injection_container.dart';
 
 part 'language_event.dart';
 part 'language_state.dart';
 
-class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
-  final defaultLang = const Locale("fr");
-  LanguageBloc()
-      : super(
-          LanguageState(
-            
-              Locale(MyApp.supportedLocales.first.languageCode)),
-        ) {
-    on<LoadLanguageEvent>(
-      (event, emit) async {
-          emit(LanguageState(defaultLang));
-          initializeDateFormatting('fr', null);
-      },
-    );
-    on<ChangeLanguageEvent>(
-      (event, emit) async {
-                await GetIt.I<AppPrefs>().saveAppLanguage(
-          language: event.locale.languageCode,
-        );
-        emit(LanguageState(event.locale));
-        initializeDateFormatting(
-          event.locale.languageCode,
-          null,
-        );
-      },
-    );
-  }
-}
+const languagePrefsKey = 'languagePrefs';
 
-extension BuildContextX on BuildContext {
-  Locale get locale => read<LanguageBloc>().state.locale;
+class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
+  final _prefs = sl<AppPrefs>();
+  LanguageBloc() : super(const LanguageState()) {
+    on<ChangeLanguage>(_onChangeLanguage);
+    on<GetLanguage>(_onGetLanguage);
+  }
+
+  void _onChangeLanguage(
+      ChangeLanguage event, Emitter<LanguageState> emit) async {
+    await _prefs.saveAppLanguage(language: event.selectedLanguage);
+    emit(state.copyWith(selectedLanguage: event.selectedLanguage));
+  }
+
+  void _onGetLanguage(GetLanguage event, Emitter<LanguageState> emit) async {
+    final selectedLanguage = _prefs.getAppLanguage();
+    log("message : $selectedLanguage");
+    emit(state.copyWith(
+      selectedLanguage: selectedLanguage ?? "en",
+    ));
+  }
 }

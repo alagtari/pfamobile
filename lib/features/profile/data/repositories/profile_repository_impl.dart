@@ -22,7 +22,6 @@ class ProfileRepositoryImpl implements ProfileRepository {
       updatePassword(ChangePasswordModel request) async {
     try {
       final res = await dataSource.updatePassword(request);
-      log(res.toString());
       return right(res);
     } on AppException catch (e) {
       return Left(AppFailure(message: e.message));

@@ -22,7 +22,6 @@ class TruckRepositoryImpl implements TruckRepository {
       TruckModel request) async {
     try {
       final res = await dataSource.addTruck(request);
-      log(res.toString());
       return right(res);
     } on AppException catch (e) {
       return Left(AppFailure(message: e.message));
@@ -41,7 +40,6 @@ class TruckRepositoryImpl implements TruckRepository {
   Future<Either<AppFailure, Unit>> deleteTruck(String id) async {
     try {
       final res = await dataSource.deleteTruck(id);
-      log(res.toString());
       return right(res);
     } on AppException catch (e) {
       return Left(AppFailure(message: e.message));
@@ -61,7 +59,6 @@ class TruckRepositoryImpl implements TruckRepository {
       getTrucks() async {
     try {
       final res = await dataSource.getTrucks();
-      log(res.toString());
       return right(res);
     } on AppException catch (e) {
       return Left(AppFailure(message: e.message));
@@ -81,7 +78,6 @@ class TruckRepositoryImpl implements TruckRepository {
       TruckModel request, String id) async {
     try {
       final res = await dataSource.updateTruck(request, id);
-      log(res.toString());
       return right(res);
     } on AppException catch (e) {
       return Left(AppFailure(message: e.message));
@@ -101,7 +97,6 @@ class TruckRepositoryImpl implements TruckRepository {
       getAvailableDrivers() async {
     try {
       final res = await dataSource.getAvailableDrivers();
-      log(res.toString());
       return right(res);
     } on AppException catch (e) {
       return Left(AppFailure(message: e.message));

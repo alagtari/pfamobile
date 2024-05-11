@@ -6,6 +6,7 @@ import 'package:mobile/core/routes/app_router.gr.dart';
 import 'package:mobile/features/plan/presentation/bloc/bloc.dart';
 import 'package:mobile/features/plan/presentation/widgets/plan_card_widget.dart';
 import 'package:mobile/common_widgets/screen_title.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
 import 'package:visibility_detector/visibility_detector.dart';
@@ -53,8 +54,8 @@ class _PlansScreenState extends State<PlansScreen> {
                 horizontal: MediaQuery.of(context).size.width * .075),
             child: Column(
               children: [
-                const ScreenTitle(
-                  title: "Plans",
+                ScreenTitle(
+                  title: context.l10n.plans,
                 ),
                 largeVerticalSpacer,
                 Expanded(
@@ -89,7 +90,7 @@ class _PlansScreenState extends State<PlansScreen> {
                 Container(
                   padding: const EdgeInsets.symmetric(vertical: 15),
                   child: AppBotton(
-                    bottonText: 'Add Plan',
+                    bottonText: context.l10n.add_plan,
                     onClick: () => context.router.push(
                       const AddPlanRoute(),
                     ),

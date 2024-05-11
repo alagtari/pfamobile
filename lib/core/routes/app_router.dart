@@ -8,7 +8,7 @@ class AppRouter extends $AppRouter {
   List<AutoRoute> get routes => [
         AutoRoute(
           page: LoginRoute.page,
-          initial: true,
+          // initial: true,
         ),
         AutoRoute(page: Signup.page),
         AutoRoute(page: ForgotPasswordEmail.page),
@@ -42,7 +42,7 @@ class AppRouter extends $AppRouter {
         CustomRoute(
           page: AdminAppFrame.page,
           transitionsBuilder: TransitionsBuilders.noTransition,
-          // initial: true,
+          initial: true,
           children: [
             CustomRoute(
               page: AdminHomeRoute.page,

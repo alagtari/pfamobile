@@ -10,6 +10,7 @@ import 'package:mobile/common_widgets/screen_title.dart';
 import 'package:mobile/core/routes/app_router.gr.dart';
 import 'package:mobile/features/auth/data/models/reset_password_request_model.dart';
 import 'package:mobile/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
 import 'package:mobile/theme/text_styles.dart';
@@ -50,12 +51,12 @@ class _ResetPasswordState extends State<ResetPassword> {
   void _validatePasswords() {
     if (_passwordController.text.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter your password.';
+        errorMessage.value = context.l10n.password_prompt;
         valid = false;
       });
     } else if (_passwordController.text.length < 6) {
       setState(() {
-        errorMessage.value = 'Password must be at least 6 characters long.';
+        errorMessage.value = context.l10n.password_length_error;
         valid = false;
       });
     } else if (_confirmPasswordController.text.isEmpty) {
@@ -112,15 +113,15 @@ class _ResetPasswordState extends State<ResetPassword> {
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
               children: [
-                const ScreenTitle(
-                  title: "Reset password",
+                ScreenTitle(
+                  title: context.l10n.reset_password,
                   arrowBack: false,
                 ),
                 extraExtraLargeVerticalSpacer,
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    "Enter a new password",
+                    context.l10n.new_password_prompt,
                     style: TextStyles.extraExtraLargeTextStyle.copyWith(
                       fontWeight: FontWeight.w600,
                     ),
@@ -131,7 +132,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                   valueListenable: obscured,
                   builder: (_, obs, __) => AppFormField(
                     obscured: obs,
-                    hintText: "New Password",
+                    hintText: context.l10n.new_password,
                     controller: _passwordController,
                     prefixIcon: const Icon(
                       Icons.lock_outline,
@@ -159,7 +160,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                   valueListenable: confirmObscured,
                   builder: (_, obs, __) => AppFormField(
                     obscured: obs,
-                    hintText: "Confirm Password",
+                    hintText: context.l10n.confirm_new_password,
                     controller: _confirmPasswordController,
                     prefixIcon: const Icon(
                       Icons.lock_outline,
@@ -201,7 +202,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                   child: SizedBox(),
                 ),
                 AppBotton(
-                  bottonText: "Reset",
+                  bottonText: context.l10n.reset,
                   onClick: _onSubmit,
                 ),
                 miniVerticalSpacer,

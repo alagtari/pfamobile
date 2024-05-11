@@ -11,6 +11,7 @@ import 'package:mobile/common_widgets/app_botton.dart';
 import 'package:mobile/common_widgets/auth_bottom_text.dart';
 import 'package:mobile/common_widgets/app_form_field.dart';
 import 'package:mobile/core/routes/app_router.gr.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
 import 'package:mobile/theme/text_styles.dart';
@@ -42,14 +43,14 @@ class _LoginScreenState extends State<LoginScreen> {
   void _validateEmail(String? value) {
     if (value == null || value.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter your email address.';
+        errorMessage.value = context.l10n.email_prompt;
         valid = false;
       });
     } else if (!RegExp(
             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z]+")
         .hasMatch(value)) {
       setState(() {
-        errorMessage.value = 'Please enter a valid email address.';
+        errorMessage.value = context.l10n.valid_email_error;
         valid = false;
       });
     } else {
@@ -63,12 +64,12 @@ class _LoginScreenState extends State<LoginScreen> {
   String? _validatePassword(String? value) {
     if (value == null || value.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter your password.';
+        errorMessage.value = context.l10n.password_prompt;
         valid = false;
       });
     } else if (value.length < 6) {
       setState(() {
-        errorMessage.value = 'Password must be at least 6 characters long.';
+        errorMessage.value = context.l10n.password_length_error;
         valid = false;
       });
     } else {
@@ -153,7 +154,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: SizedBox(),
                   ),
                   AppFormField(
-                    hintText: "Email",
+                    hintText: context.l10n.email,
                     controller: _emailController,
                     prefixIcon: const Icon(
                       Icons.email_outlined,
@@ -166,7 +167,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     valueListenable: obscured,
                     builder: (_, obs, __) => AppFormField(
                       obscured: obs,
-                      hintText: "Password",
+                      hintText: context.l10n.password,
                       controller: _passwordController,
                       prefixIcon: const Icon(
                         Icons.lock_outline,
@@ -211,7 +212,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       onTap: () =>
                           context.router.replace(const ForgotPasswordEmail()),
                       child: Text(
-                        'Forgot password ?',
+                        context.l10n.forgot_password,
                         style: TextStyles.smallTextStyle.copyWith(
                             fontWeight: FontWeight.w600,
                             color: AppColors.greenDarkColor),
@@ -220,7 +221,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   extraExtraLargeVerticalSpacer,
                   AppBotton(
-                      bottonText: "Sign In",
+                      bottonText: context.l10n.sign_in,
                       onClick: () {
                         _onSubmit();
                       }),
@@ -237,4 +238,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-

@@ -1,9 +1,6 @@
-import 'dart:developer';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:mobile/common_widgets/app_stepper.dart';
 import 'package:mobile/common_widgets/auth_bottom_text.dart';
 import 'package:mobile/core/routes/app_router.gr.dart';
@@ -13,7 +10,7 @@ import 'package:mobile/features/signup/presentation/bloc/bloc.dart';
 import 'package:mobile/features/signup/presentation/views/first_signup_step_widget.dart';
 import 'package:mobile/common_widgets/screen_title.dart';
 import 'package:mobile/features/signup/presentation/views/second_signup_step_widget.dart';
-import 'package:mobile/theme/colors.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/spacers.dart';
 import 'package:mobile/features/signup/presentation/views/third_signup_step_widget.dart';
 
@@ -138,8 +135,8 @@ class _SignupState extends State<Signup> {
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
               children: [
-                const ScreenTitle(
-                  title: "Signup",
+                ScreenTitle(
+                  title: context.l10n.signup,
                   arrowBack: false,
                 ),
                 smallVerticalSpacer,

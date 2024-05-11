@@ -7,6 +7,7 @@ import 'package:mobile/common_widgets/app_botton.dart';
 import 'package:mobile/common_widgets/app_date_picker.dart';
 import 'package:mobile/common_widgets/app_dropdown_widget.dart';
 import 'package:mobile/common_widgets/app_form_field.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/radius.dart';
 import 'package:mobile/theme/spacers.dart';
@@ -93,12 +94,12 @@ class _FirstSignupStepWidgetState extends State<FirstSignupStepWidget> {
   void _validateFirstName(String? value) {
     if (value == null || value.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter your first name.';
+        errorMessage.value = context.l10n.first_name_prompt;
         valid = false;
       });
     } else if (value.length < 3) {
       setState(() {
-        errorMessage.value = 'First name must be at least 3 characters long.';
+        errorMessage.value = context.l10n.first_name_length_error;
         valid = false;
       });
     } else {
@@ -112,12 +113,12 @@ class _FirstSignupStepWidgetState extends State<FirstSignupStepWidget> {
   void _validateLastName(String? value) {
     if (value == null || value.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter your last name.';
+        errorMessage.value = context.l10n.last_name_prompt;
         valid = false;
       });
     } else if (value.length < 3) {
       setState(() {
-        errorMessage.value = 'Last name must be at least 3 characters long.';
+        errorMessage.value = context.l10n.last_name_length_error;
         valid = false;
       });
     } else {
@@ -135,13 +136,13 @@ class _FirstSignupStepWidgetState extends State<FirstSignupStepWidget> {
     if (!valid) return;
     if (_date.value == null) {
       setState(() {
-        errorMessage.value = 'Birth date is required.';
+        errorMessage.value = context.l10n.birth_date_required;
       });
       return;
     }
     if (_gender.value == null) {
       setState(() {
-        errorMessage.value = 'Gender is required.';
+        errorMessage.value = context.l10n.gender_required;
       });
       return;
     }
@@ -208,7 +209,7 @@ class _FirstSignupStepWidgetState extends State<FirstSignupStepWidget> {
                           ),
                           smallVerticalSpacer,
                           Text(
-                            "click here to select profile picture",
+                            context.l10n.click_to_select_profile_pic,
                             style: TextStyles.mediumTextStyle.copyWith(
                               color: AppColors.greyDarkColor,
                               fontWeight: FontWeight.w500,
@@ -222,7 +223,7 @@ class _FirstSignupStepWidgetState extends State<FirstSignupStepWidget> {
           ),
           extraLargeVerticalSpacer,
           AppFormField(
-            hintText: "First Name",
+            hintText: context.l10n.first_name,
             controller: _firstNameController,
             prefixIcon: const Icon(
               Icons.person_2_outlined,
@@ -232,7 +233,7 @@ class _FirstSignupStepWidgetState extends State<FirstSignupStepWidget> {
           ),
           extraSmallVerticalSpacer,
           AppFormField(
-            hintText: "Last Name",
+            hintText: context.l10n.last_name,
             controller: _lastNameController,
             prefixIcon: const Icon(
               Icons.email_outlined,
@@ -246,7 +247,7 @@ class _FirstSignupStepWidgetState extends State<FirstSignupStepWidget> {
             builder: (context, value, child) {
               return AppDatePickerField(
                 onDateSelected: onDateSelected,
-                hint: "Birth date",
+                hint: context.l10n.birth_date,
                 initialDate: value,
               );
             },
@@ -258,7 +259,7 @@ class _FirstSignupStepWidgetState extends State<FirstSignupStepWidget> {
                 return AppDropdownWidget(
                   items: _genderItems,
                   onChange: changeGender,
-                  hint: 'Gender',
+                  hint: context.l10n. gender,
                   icon: Icons.male_rounded,
                   initialValue: value,
                 );
@@ -283,7 +284,7 @@ class _FirstSignupStepWidgetState extends State<FirstSignupStepWidget> {
             child: SizedBox(),
           ),
           AppBotton(
-            bottonText: "Continue",
+            bottonText: context.l10n.continue_step,
             onClick: () {
               _onSubmit();
             },

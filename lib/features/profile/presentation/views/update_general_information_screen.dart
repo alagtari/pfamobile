@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
@@ -13,6 +12,7 @@ import 'package:mobile/common_widgets/app_form_field.dart';
 import 'package:mobile/common_widgets/screen_title.dart';
 import 'package:mobile/features/profile/data/models/profile_model.dart';
 import 'package:mobile/features/profile/presentation/bloc/bloc.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/radius.dart';
 import 'package:mobile/theme/spacers.dart';
@@ -95,12 +95,12 @@ class _UpdateGeneralInformationScreenState
   void _validateFirstName(String? value) {
     if (value == null || value.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter your first name.';
+        errorMessage.value = context.l10n.first_name_prompt;
         valid = false;
       });
     } else if (value.length < 3) {
       setState(() {
-        errorMessage.value = 'First name must be at least 3 characters long.';
+        errorMessage.value = context.l10n.first_name_length_error;
         valid = false;
       });
     } else {
@@ -114,12 +114,12 @@ class _UpdateGeneralInformationScreenState
   void _validateLastName(String? value) {
     if (value == null || value.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter your last name.';
+        errorMessage.value = context.l10n.last_name_prompt;
         valid = false;
       });
     } else if (value.length < 3) {
       setState(() {
-        errorMessage.value = 'Last name must be at least 3 characters long.';
+        errorMessage.value = context.l10n.last_name_length_error;
         valid = false;
       });
     } else {
@@ -133,17 +133,17 @@ class _UpdateGeneralInformationScreenState
   void _validateCin(String? value) {
     if (value == null || value.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter your CIN.';
+        errorMessage.value = context.l10n.cin_prompt;
         valid = false;
       });
     } else if (value.length != 8) {
       setState(() {
-        errorMessage.value = 'CIN must be exactly 8 digits long.';
+        errorMessage.value = context.l10n.cin_length_error;
         valid = false;
       });
     } else if (value[0] != '0' && value[0] != '1') {
       setState(() {
-        errorMessage.value = 'CIN must start with 0 or 1.';
+        errorMessage.value = context.l10n.cin_format_error;
         valid = false;
       });
     } else {
@@ -157,17 +157,17 @@ class _UpdateGeneralInformationScreenState
   void _validatePhone(String? value) {
     if (value == null || value.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter your phone number.';
+        errorMessage.value = context.l10n.phone_number_prompt;
         valid = false;
       });
     } else if (value.length != 8) {
       setState(() {
-        errorMessage.value = 'Phone number must be exactly 8 digits long.';
+        errorMessage.value = context.l10n.phone_number_length_error;
         valid = false;
       });
     } else if (!['2', '3', '4', '5', '7', '9'].contains(value[0])) {
       setState(() {
-        errorMessage.value = "This phone number isn't a tunisian number.";
+        errorMessage.value = context.l10n.non_tunisian_number_error;
         valid = false;
       });
     } else {
@@ -194,13 +194,13 @@ class _UpdateGeneralInformationScreenState
     if (!valid) return;
     if (_date.value == null) {
       setState(() {
-        errorMessage.value = 'Birth date is required.';
+        errorMessage.value = context.l10n.birth_date_required;
       });
       return;
     }
     if (_gender.value == null) {
       setState(() {
-        errorMessage.value = 'Gender is required.';
+        errorMessage.value = context.l10n.gender_required;
       });
       return;
     }
@@ -253,8 +253,8 @@ class _UpdateGeneralInformationScreenState
               horizontal: MediaQuery.of(context).size.width * .075),
           child: Column(
             children: [
-              const ScreenTitle(
-                title: "General information",
+              ScreenTitle(
+                title: context.l10n.general_info,
               ),
               largeVerticalSpacer,
               Expanded(
@@ -349,7 +349,7 @@ class _UpdateGeneralInformationScreenState
                       ),
                       extraLargeVerticalSpacer,
                       AppFormField(
-                        hintText: "First Name",
+                        hintText: context.l10n.first_name,
                         controller: _firstNameController,
                         prefixIcon: const Icon(
                           Icons.person_2_outlined,
@@ -359,7 +359,7 @@ class _UpdateGeneralInformationScreenState
                       ),
                       extraSmallVerticalSpacer,
                       AppFormField(
-                        hintText: "Last Name",
+                        hintText: context.l10n.last_name,
                         controller: _lastNameController,
                         prefixIcon: const Icon(
                           Icons.email_outlined,
@@ -373,7 +373,7 @@ class _UpdateGeneralInformationScreenState
                         builder: (context, value, child) {
                           return AppDatePickerField(
                             onDateSelected: onDateSelected,
-                            hint: "Birth date",
+                            hint: context.l10n.birth_date,
                             initialDate: value,
                           );
                         },
@@ -382,18 +382,17 @@ class _UpdateGeneralInformationScreenState
                       ValueListenableBuilder(
                           valueListenable: _gender,
                           builder: (context, value, child) {
-                            log(value ?? "");
                             return AppDropdownWidget(
                               items: _genderItems,
                               onChange: changeGender,
-                              hint: 'Gender',
+                              hint: context.l10n. gender,
                               icon: Icons.male_rounded,
                               initialValue: value,
                             );
                           }),
                       extraSmallVerticalSpacer,
                       AppFormField(
-                        hintText: "Phone Number",
+                        hintText: context.l10n.phone_number,
                         controller: _phoneController,
                         prefixIcon: const Icon(
                           Icons.local_phone_outlined,
@@ -403,7 +402,7 @@ class _UpdateGeneralInformationScreenState
                       ),
                       extraSmallVerticalSpacer,
                       AppFormField(
-                        hintText: "Identity Number",
+                        hintText: context.l10n.identity_number,
                         controller: _cinController,
                         prefixIcon: const Icon(
                           Icons.perm_identity,
@@ -428,7 +427,7 @@ class _UpdateGeneralInformationScreenState
                       ),
                       largeVerticalSpacer,
                       AppBotton(
-                        bottonText: "Change",
+                        bottonText: context.l10n.change,
                         onClick: _onSubmit,
                       ),
                     ],

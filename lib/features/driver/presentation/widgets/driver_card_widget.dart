@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:mobile/core/routes/app_router.gr.dart';
 import 'package:mobile/features/driver/data/models/driver_model.dart';
 import 'package:mobile/features/driver/presentation/bloc/bloc.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
 import 'package:mobile/theme/text_styles.dart';
@@ -171,7 +170,7 @@ class _DriverCardWidgetState extends State<DriverCardWidget> {
                         ),
                         extraMiniHorizantalSpacer,
                         Text(
-                          "Update",
+                          context.l10n.update,
                           style: TextStyles.extraSmallTextStyle.copyWith(
                             fontWeight: FontWeight.w600,
                             color: AppColors.blackDarkColor,
@@ -190,7 +189,7 @@ class _DriverCardWidgetState extends State<DriverCardWidget> {
                         ),
                         extraMiniHorizantalSpacer,
                         Text(
-                          "Delete",
+                          context.l10n.delete,
                           style: TextStyles.extraSmallTextStyle.copyWith(
                             fontWeight: FontWeight.w600,
                             color: AppColors.blackDarkColor,
@@ -201,10 +200,8 @@ class _DriverCardWidgetState extends State<DriverCardWidget> {
                   ),
                 ],
                 onSelected: (value) {
-                  log(value);
                   switch (value) {
                     case "1":
-                      log(widget.driver.id!);
                       context.router
                           .push(UpdateDriverRoute(driver: widget.driver));
                     default:

@@ -1,6 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,6 +8,7 @@ import 'package:mobile/core/routes/app_router.gr.dart';
 import 'package:mobile/common_widgets/screen_title.dart';
 import 'package:mobile/features/auth/data/models/verify_code_request_model.dart';
 import 'package:mobile/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
 import 'package:mobile/theme/text_styles.dart';
@@ -77,17 +76,17 @@ class _ForgotPasswordCodeState extends State<ForgotPasswordCode> {
   void _validateCode(String value) {
     if (value.isEmpty) {
       setState(() {
-        errorMessage.value = 'Please enter the verification code.';
+        errorMessage.value = context.l10n.verification_code_instruction;
         valid = false;
       });
     } else if (value.length != 6) {
       setState(() {
-        errorMessage.value = 'Code must be 6 digits long.';
+        errorMessage.value = context.l10n.code_length_error;
         valid = false;
       });
     } else if (!RegExp(r'^[0-9]+$').hasMatch(value)) {
       setState(() {
-        errorMessage.value = 'Code must contain only numbers.';
+        errorMessage.value = context.l10n.code_numeric_error;
         valid = false;
       });
     } else {
@@ -154,15 +153,15 @@ class _ForgotPasswordCodeState extends State<ForgotPasswordCode> {
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
               children: [
-                const ScreenTitle(
-                  title: "Forgot password",
+                ScreenTitle(
+                  title: context.l10n.forgot_password,
                   arrowBack: false,
                 ),
                 extraExtraLargeVerticalSpacer,
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    "Enter your Verification code",
+                    context.l10n.verification_code_prompt,
                     style: TextStyles.extraExtraLargeTextStyle.copyWith(
                       fontWeight: FontWeight.w600,
                     ),
@@ -172,7 +171,7 @@ class _ForgotPasswordCodeState extends State<ForgotPasswordCode> {
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    "Enter the code sent to your email to proceed.",
+                    context.l10n.email_code_prompt,
                     style: TextStyles.smallTextStyle.copyWith(
                         fontWeight: FontWeight.w500,
                         color: AppColors.greyDarkColor),
@@ -198,7 +197,7 @@ class _ForgotPasswordCodeState extends State<ForgotPasswordCode> {
                 smallVerticalSpacer,
                 _totalSeconds > 0
                     ? Text(
-                        "The code is valid for the remaining time of",
+                        context.l10n.code_valid_duration,
                         style: TextStyles.smallTextStyle.copyWith(
                           fontWeight: FontWeight.w500,
                           color: AppColors.greyDarkColor,
@@ -223,7 +222,7 @@ class _ForgotPasswordCodeState extends State<ForgotPasswordCode> {
                   child: GestureDetector(
                     onTap: () => _resend(),
                     child: Text(
-                      "Rensend code",
+                      context.l10n.resend_code,
                       style: TextStyles.smallTextStyle.copyWith(
                         fontWeight: FontWeight.w600,
                         color: AppColors.greenDarkColor,
@@ -235,7 +234,7 @@ class _ForgotPasswordCodeState extends State<ForgotPasswordCode> {
                   child: SizedBox(),
                 ),
                 AppBotton(
-                  bottonText: "Verify Code",
+                  bottonText: context.l10n.verify_code,
                   onClick: () => _onSubmit(),
                 ),
                 miniVerticalSpacer,
