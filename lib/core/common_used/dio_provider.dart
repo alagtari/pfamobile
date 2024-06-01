@@ -18,11 +18,11 @@ class DioProvider {
       )..interceptors.addAll(
           [
             ApiInterceptor(),
-            // if (!kReleaseMode)
-            //   LogInterceptor(
-            //     requestBody: true,
-            //     responseBody: false,
-            //   ),
+            if (!kReleaseMode)
+              LogInterceptor(
+                requestBody: true,
+                responseBody: false,
+              ),
           ],
         );
 }

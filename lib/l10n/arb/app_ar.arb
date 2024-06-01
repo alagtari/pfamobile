@@ -32,6 +32,8 @@
   "city_postal_code_prompt": "الرجاء إدخال الرمز البريدي للمدينة.",
   "invalid_city_postal_code": "الرمز البريدي للمدينة غير صالح.",
   "city_name_prompt": "الرجاء إدخال اسم المدينة.",
+  "state_name_prompt": "الرجاء إدخال اسم الولاية.",
+  "state_length_error": "يجب أن يكون اسم الولاية على الأقل 3 أحرف.",
   "city_name_length_error": "يجب أن يتكون اسم المدينة من 3 أحرف على الأقل.",
   "city_added_successfully": "تمت إضافة المدينة بنجاح",
   "add_city": "إضافة مدينة",
@@ -148,5 +150,7 @@
   "go_now": "انطلق الآن",
   "location": "الموقع",
   "locations": "المواقع",
-  "kg": "كغ"
+  "kg": "كغ",
+  "state": "ولاية"
+
 }

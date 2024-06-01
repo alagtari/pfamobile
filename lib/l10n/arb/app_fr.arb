@@ -32,7 +32,9 @@
   "city_postal_code_prompt": "veuillez entrer le code postal de la ville.",
   "invalid_city_postal_code": "Code postal de la ville invalide.",
   "city_name_prompt": "veuillez entrer le nom de la ville.",
+  "state_name_prompt": "veuillez entrer le nom de l'état.",
   "city_name_length_error": "le nom de la ville doit comporter au moins 3 caractères.",
+  "state_length_error": "le nom de l'état doit comporter au moins 3 caractères.",
   "city_added_successfully": "ville ajoutée avec succès",
   "add_city": "ajouter une ville",
   "name": "nom",
@@ -148,6 +150,8 @@
   "go_now": "Aller",
   "location": "Emplacement",
   "locations": "Emplacements",
-  "kg": "Kg"
+  "kg": "Kg",
+  "state": "État"
+
 }
  

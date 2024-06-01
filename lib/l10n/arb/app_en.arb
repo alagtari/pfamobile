@@ -32,6 +32,8 @@
   "city_postal_code_prompt": "Please enter the city postal code.",
   "invalid_city_postal_code": "Invalid city postal code.",
   "city_name_prompt": "Please enter the city name.",
+  "state_name_prompt": "Please enter the state name.",
+  "state_length_error": "The state name must be at least 3 characters long.",
   "city_name_length_error": "The city name must be at least 3 characters long.",
   "city_added_successfully": "City added successfully",
   "add_city": "Add city",
@@ -148,5 +150,6 @@
   "go_now": "Go Now",
   "location": "Location",
   "locations": "Locations",
-  "kg": "Kg"
+  "kg": "Kg",
+  "state": "State"
 }

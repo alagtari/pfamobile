@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile/common_widgets/app_stepper.dart';
 import 'package:mobile/common_widgets/auth_bottom_text.dart';
 import 'package:mobile/core/routes/app_router.gr.dart';
-import 'package:mobile/features/city/presentation/bloc/bloc.dart';
+import 'package:mobile/features/admin/city/presentation/bloc/bloc.dart';
 import 'package:mobile/features/signup/data/models/signup_model.dart';
 import 'package:mobile/features/signup/presentation/bloc/bloc.dart';
 import 'package:mobile/features/signup/presentation/views/first_signup_step_widget.dart';

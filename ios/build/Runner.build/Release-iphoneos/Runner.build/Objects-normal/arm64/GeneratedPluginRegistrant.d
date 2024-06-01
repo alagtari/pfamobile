@@ -1,0 +1,20 @@
+dependencies: \
+  /Users/mac/Documents/study/pfa/mobile/ios/Runner/GeneratedPluginRegistrant.m \
+  /Users/mac/Documents/study/pfa/mobile/ios/Runner/GeneratedPluginRegistrant.h \
+  /Users/mac/Documents/study/pfa/mobile/ios/build/Release-iphoneos/Flutter.framework/Modules/module.modulemap \
+  /Users/mac/Documents/study/pfa/mobile/ios/build/Release-iphoneos/Flutter.framework/Headers/Flutter.h \
+  /Users/mac/Documents/study/pfa/mobile/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterAppDelegate.h \
+  /Users/mac/Documents/study/pfa/mobile/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterMacros.h \
+  /Users/mac/Documents/study/pfa/mobile/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterPlugin.h \
+  /Users/mac/Documents/study/pfa/mobile/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterBinaryMessenger.h \
+  /Users/mac/Documents/study/pfa/mobile/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterChannels.h \
+  /Users/mac/Documents/study/pfa/mobile/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterCodecs.h \
+  /Users/mac/Documents/study/pfa/mobile/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterPlatformViews.h \
+  /Users/mac/Documents/study/pfa/mobile/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterTexture.h \
+  /Users/mac/Documents/study/pfa/mobile/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterCallbackCache.h \
+  /Users/mac/Documents/study/pfa/mobile/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterDartProject.h \
+  /Users/mac/Documents/study/pfa/mobile/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterEngine.h \
+  /Users/mac/Documents/study/pfa/mobile/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterEngineGroup.h \
+  /Users/mac/Documents/study/pfa/mobile/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterHeadlessDartRunner.h \
+  /Users/mac/Documents/study/pfa/mobile/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterPluginAppLifeCycleDelegate.h \
+  /Users/mac/Documents/study/pfa/mobile/ios/build/Release-iphoneos/Flutter.framework/Headers/FlutterViewController.h

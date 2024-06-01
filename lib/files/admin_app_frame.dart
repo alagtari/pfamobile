@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:mobile/core/common_used/socket_service.dart';
+import 'package:mobile/core/injection/injection_container.dart';
 import 'package:mobile/files/bottom_navigation_icon_widget.dart';
 import 'package:mobile/core/routes/app_router.gr.dart';
 import 'package:mobile/l10n/l10n.dart';
@@ -17,6 +19,19 @@ class AdminAppFrame extends StatefulWidget {
 
 class _AdminAppFrameState extends State<AdminAppFrame> {
   int _selectedIndex = 0;
+  late SocketService _socketService;
+  @override
+  void initState() {
+    _socketService = sl<SocketService>();
+    _socketService.initSocket();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _socketService.dispose();
+    super.dispose();
+  }
 
   void _onItemTapped(int index) {
     switch (index) {

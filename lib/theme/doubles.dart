@@ -1,10 +1,10 @@
-const double extraExtraSmallFontSize = 10.0;
-const double extraSmallFontSize = 12.0;
-const double smallFontSize = 14.0;
-const double mediumFontSize = 16.0;
-const double largeFontSize = 18.0;
-const double extraLargeFontSize = 20.0;
-const double extraExtraLargeFontSize = 22.0;
+const double extraExtraSmallFontSize = 8.0;
+const double extraSmallFontSize = 10.0;
+const double smallFontSize = 12.0;
+const double mediumFontSize = 14.0;
+const double largeFontSize = 16.0;
+const double extraLargeFontSize = 18.0;
+const double extraExtraLargeFontSize = 20.0;
 
 const double extraExtraSmallRadiusSize = 5.0;
 const double extraSmallRadiusSize = 10.0;

@@ -113,6 +113,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     const CitizenAppFrame(),
                   );
                 case UserRole.driver:
+                  context.router.replace(
+                    const DriverAppFrame(),
+                  );
                 case UserRole.admin:
                   context.router.replace(
                     const AdminAppFrame(),

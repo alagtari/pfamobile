@@ -1,0 +1,8 @@
+version: "Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)"
+options: "976dfd6a0f88a70a711108707f375d62c590c07a45e58eccbd7eff2ee3d7bf69"
+build_start_time: [1715687385, 222456000]
+build_end_time: [1715687386, 869771000]
+inputs:
+  "/Users/mac/Documents/study/pfa/mobile/ios/Runner/AppDelegate.swift": [1697651653, 237006057]
+  ? "/Users/mac/Documents/study/pfa/mobile/ios/build/Runner.build/Release-iphoneos/Runner.build/DerivedSources/GeneratedAssetSymbols.swift"
+  : [1715687128, 318312882]

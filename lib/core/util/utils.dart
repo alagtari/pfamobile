@@ -11,6 +11,15 @@ extension StringExtension on String {
         ? "${this[0].toUpperCase()}${substring(1).toLowerCase()}"
         : this;
   }
+  String capitalizeWords() {
+  return split(' ').map((word) {
+    if (word.isNotEmpty) {
+      return word[0].toUpperCase() + word.substring(1);
+    } else {
+      return word;
+    }
+  }).join(' ');
+}
 }
 
 extension TimeOfDayExtension on TimeOfDay {
