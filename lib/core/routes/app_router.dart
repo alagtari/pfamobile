@@ -124,6 +124,10 @@ class AppRouter extends $AppRouter {
               transitionsBuilder: TransitionsBuilders.noTransition,
             ),
             CustomRoute(
+              page: DriverIncidentRoute.page,
+              transitionsBuilder: TransitionsBuilders.noTransition,
+            ),
+            CustomRoute(
               page: DriverProfileRoute.page,
               transitionsBuilder: TransitionsBuilders.noTransition,
             ),

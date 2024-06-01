@@ -42,6 +42,9 @@ class _DriverAppFrameState extends State<DriverAppFrame> {
         context.router.replace(const DriverChatRoomRoute());
         break;
       case 2:
+        context.router.replace(const DriverIncidentRoute());
+        break;
+      case 3:
         context.router.replace(const DriverProfileRoute());
         break;
     }
@@ -78,6 +81,14 @@ class _DriverAppFrameState extends State<DriverAppFrame> {
             icon: BottomNavigationIconWidget(
               selectedIndex: _selectedIndex,
               index: 2,
+              icon: 'assets/svg/report_icon.svg',
+            ),
+            label: 'Report',
+          ),
+          BottomNavigationBarItem(
+            icon: BottomNavigationIconWidget(
+              selectedIndex: _selectedIndex,
+              index: 3,
               icon: 'assets/svg/profile_icon.svg',
             ),
             label: context.l10n.profile,

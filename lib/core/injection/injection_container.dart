@@ -25,6 +25,9 @@ import 'package:mobile/features/admin/profile/domain/repositories/profile_reposi
 import 'package:mobile/features/driver/home/data/data_sources/plan_remote_data_source.dart';
 import 'package:mobile/features/driver/home/data/repositories/driver_plan_repository_impl.dart';
 import 'package:mobile/features/driver/home/domain/repositories/driver_plan_repository.dart';
+import 'package:mobile/features/driver/incident/data/data_sources/incident_remote_data_source.dart';
+import 'package:mobile/features/driver/incident/data/repositories/incident_repository_impl.dart';
+import 'package:mobile/features/driver/incident/domain/repositories/incident_repository.dart';
 import 'package:mobile/features/driver/misson/data/data_sources/misson_remote_data_source.dart';
 import 'package:mobile/features/driver/misson/data/repositories/misson_repository_impl.dart';
 import 'package:mobile/features/driver/misson/domain/repositories/misson_repository.dart';
@@ -138,6 +141,15 @@ Future<void> init() async {
   );
   sl.registerLazySingleton<MissionRepository>(
     () => MissionRepositoryImpl(
+      dataSource: sl(),
+    ),
+  );
+
+  sl.registerLazySingleton<IncidentOnlineDataSource>(
+    () => IncidentOnlineDataSourceImpl(),
+  );
+  sl.registerLazySingleton<IncidentRepository>(
+    () => IncidentRepositoryImpl(
       dataSource: sl(),
     ),
   );
