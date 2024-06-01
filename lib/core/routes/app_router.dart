@@ -28,7 +28,11 @@ class AppRouter extends $AppRouter {
               transitionsBuilder: TransitionsBuilders.noTransition,
             ),
             CustomRoute(
-              page: CitizenReportRoute.page,
+              page: CitizenProblemRoute.page,
+              transitionsBuilder: TransitionsBuilders.noTransition,
+            ),
+            CustomRoute(
+              page: CitizenProfileRoute.page,
               transitionsBuilder: TransitionsBuilders.noTransition,
             ),
             AutoRoute(

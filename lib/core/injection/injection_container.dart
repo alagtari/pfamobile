@@ -7,6 +7,9 @@ import 'package:mobile/features/auth/data/repositories/auth_repository_impl.dart
 import 'package:mobile/features/auth/domain/repositories/auth_repository.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mobile/core/routes/app_router.dart';
+import 'package:mobile/features/citizen/calendar/data/data_sources/calendar_remote_data_source.dart';
+import 'package:mobile/features/citizen/calendar/data/repositories/calendar_repository_impl.dart';
+import 'package:mobile/features/citizen/calendar/domain/repositories/calendar_repository.dart';
 import 'package:mobile/features/chat/data/data_sources/chat_remote_data_source.dart';
 import 'package:mobile/features/chat/data/repositories/chat_repository_impl.dart';
 import 'package:mobile/features/chat/domain/repositories/chat_repository.dart';
@@ -22,6 +25,9 @@ import 'package:mobile/features/admin/plan/domain/repositories/plan_repository.d
 import 'package:mobile/features/admin/profile/data/data_sources/profile_remote_data_source.dart';
 import 'package:mobile/features/admin/profile/data/repositories/profile_repository_impl.dart';
 import 'package:mobile/features/admin/profile/domain/repositories/profile_repository.dart';
+import 'package:mobile/features/citizen/problem/data/data_sources/problem_remote_data_source.dart';
+import 'package:mobile/features/citizen/problem/data/repositories/problem_repository_impl.dart';
+import 'package:mobile/features/citizen/problem/domain/repositories/problem_repository.dart';
 import 'package:mobile/features/driver/home/data/data_sources/plan_remote_data_source.dart';
 import 'package:mobile/features/driver/home/data/repositories/driver_plan_repository_impl.dart';
 import 'package:mobile/features/driver/home/domain/repositories/driver_plan_repository.dart';
@@ -150,6 +156,24 @@ Future<void> init() async {
   );
   sl.registerLazySingleton<IncidentRepository>(
     () => IncidentRepositoryImpl(
+      dataSource: sl(),
+    ),
+  );
+
+  sl.registerLazySingleton<ProblemOnlineDataSource>(
+    () => ProblemOnlineDataSourceImpl(),
+  );
+  sl.registerLazySingleton<ProblemRepository>(
+    () => ProblemRepositoryImpl(
+      dataSource: sl(),
+    ),
+  );
+
+  sl.registerLazySingleton<CalendarOnlineDataSource>(
+    () => CalendarOnlineDataSourceImpl(),
+  );
+  sl.registerLazySingleton<CalendarRepository>(
+    () => CalendarRepositoryImpl(
       dataSource: sl(),
     ),
   );

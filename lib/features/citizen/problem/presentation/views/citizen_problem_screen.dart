@@ -3,37 +3,36 @@ import 'dart:io';
 import 'package:auto_route/auto_route.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mobile/common_widgets/app_botton.dart';
 import 'package:mobile/common_widgets/app_textarea.dart';
 import 'package:mobile/common_widgets/screen_title.dart';
 import 'package:mobile/core/routes/app_router.gr.dart';
-import 'package:mobile/features/driver/incident/data/models/incident_model.dart';
-import 'package:mobile/features/driver/incident/presentation/bloc/bloc.dart';
+import 'package:mobile/features/citizen/problem/data/models/problem_model.dart';
+import 'package:mobile/features/citizen/problem/presentation/bloc/bloc.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/radius.dart';
 import 'package:mobile/theme/spacers.dart';
 import 'package:mobile/theme/text_styles.dart';
 
 @RoutePage()
-class DriverIncidentScreen extends StatefulWidget implements AutoRouteWrapper {
-  const DriverIncidentScreen({
+class CitizenProblemScreen extends StatefulWidget implements AutoRouteWrapper {
+  const CitizenProblemScreen({
     super.key,
   });
 
   @override
-  State<DriverIncidentScreen> createState() => _DriverIncidentScreenState();
+  State<CitizenProblemScreen> createState() => _CitizenProblemScreenState();
 
   @override
   Widget wrappedRoute(BuildContext context) => BlocProvider(
-        create: (_) => IncidentBloc(),
+        create: (_) => ProblemBloc(),
         child: this,
       );
 }
 
-class _DriverIncidentScreenState extends State<DriverIncidentScreen> {
+class _CitizenProblemScreenState extends State<CitizenProblemScreen> {
   final TextEditingController controller = TextEditingController();
   late XFile? imageFile = null;
   late ValueNotifier<String> errorMessage;
@@ -69,11 +68,11 @@ class _DriverIncidentScreenState extends State<DriverIncidentScreen> {
     _validateText(controller.text);
     if (!valid) return;
 
-    final incident = IncidentModel(
+    final incident = ProblemModel(
       content: controller.text,
       image: imageFile?.path,
     );
-    context.read<IncidentBloc>().add(AddIncidentEvent(incident: incident));
+    context.read<ProblemBloc>().add(AddProblemEvent(incident: incident));
   }
 
   @override
@@ -85,10 +84,10 @@ class _DriverIncidentScreenState extends State<DriverIncidentScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<IncidentBloc, IncidentState>(
+    return BlocListener<ProblemBloc, ProblemState>(
       listener: (context, state) {
-        if(state is AddIncidentSuccess) {
-          context.router.replace(const DriverPlansRoute());
+        if (state is AddProblemSuccess) {
+          context.router.replace(const CitizenHomeRoute());
         }
       },
       child: SafeArea(
@@ -101,7 +100,7 @@ class _DriverIncidentScreenState extends State<DriverIncidentScreen> {
           child: Column(
             children: [
               const ScreenTitle(
-                title: "Report Incident",
+                title: "Report Problem",
                 arrowBack: false,
               ),
               largeVerticalSpacer,

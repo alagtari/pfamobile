@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mobile/core/common_used/socket_service.dart';
 import 'package:mobile/core/injection/injection_container.dart';
-import 'package:mobile/files/bottom_navigation_icon_widget.dart';
+import 'package:mobile/common_widgets/bottom_navigation_icon_widget.dart';
 import 'package:mobile/core/routes/app_router.gr.dart';
 import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';

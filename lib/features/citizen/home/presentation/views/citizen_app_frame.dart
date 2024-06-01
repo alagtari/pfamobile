@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mobile/files/bottom_navigation_icon_widget.dart';
+import 'package:mobile/common_widgets/bottom_navigation_icon_widget.dart';
 import 'package:mobile/core/routes/app_router.gr.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/text_styles.dart';
@@ -26,10 +26,10 @@ class _CitizenAppFrameState extends State<CitizenAppFrame> {
         context.router.replace(const CitizenCalendarRoute());
         break;
       case 2:
-        context.router.replace(const CitizenReportRoute());
+        context.router.replace(const CitizenProblemRoute());
         break;
       case 3:
-        context.router.replace(const ProfileRoute());
+        context.router.replace(const CitizenProfileRoute());
         break;
     }
 
