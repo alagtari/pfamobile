@@ -4,7 +4,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:intl/intl.dart';
 import 'package:mobile/core/routes/app_router.gr.dart';
 import 'package:mobile/core/util/utils.dart';
-import 'package:mobile/features/admin/chat/data/models/room_model.dart';
+import 'package:mobile/features/chat/data/models/room_model.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
 import 'package:mobile/theme/text_styles.dart';

@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
+import 'package:mobile/core/enums/mission_enum.dart';
 import 'package:mobile/core/routes/app_router.gr.dart';
 import 'package:mobile/features/admin/plan/data/models/plan_model.dart';
 import 'package:mobile/features/admin/plan/presentation/bloc/bloc.dart';
@@ -44,7 +45,13 @@ class _PlanCardWidgetState extends State<PlanCardWidget> {
         children: [
           GestureDetector(
             onTap: () {
-              context.router.push(PlanLocationsRoute(plan: widget.plan));
+              log(widget.plan.status.toString());
+
+              if (widget.plan.status == MissionStatus.in_progress) {
+                context.router.push(AdminMissionMapRoute(plan: widget.plan));
+              } else {
+                context.router.push(PlanLocationsRoute(plan: widget.plan));
+              }
             },
             child: Container(
               width: MediaQuery.of(context).size.width * .4,
@@ -116,7 +123,8 @@ class _PlanCardWidgetState extends State<PlanCardWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            context.l10n.time,
+                            // context.l10n.time,
+                            "dxfxcv",
                             style: TextStyles.smallTextStyle.copyWith(
                               color: AppColors.greyDarkColor,
                               fontWeight: FontWeight.w600,
@@ -230,9 +238,9 @@ class _PlanCardWidgetState extends State<PlanCardWidget> {
                   case "1":
                   // context.router.push(UpdateTruckRoute(truck: widget.truck));
                   case "2":
-                    // context.read<PlanBloc>().add(
-                    //       DeletePlanEvent(id: widget.plan.id!),
-                    //     );
+                  // context.read<PlanBloc>().add(
+                  //       DeletePlanEvent(id: widget.plan.id!),
+                  //     );
                 }
               },
               child: Container(

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile/common_widgets/app_botton.dart';
 import 'package:mobile/core/routes/app_router.gr.dart';
-import 'package:mobile/features/admin/chat/presentation/bloc/bloc.dart';
+import 'package:mobile/features/chat/presentation/bloc/bloc.dart';
 import 'package:mobile/features/admin/driver/presentation/bloc/bloc.dart';
 import 'package:mobile/features/admin/driver/presentation/widgets/driver_card_widget.dart';
 import 'package:mobile/common_widgets/screen_title.dart';

@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:mobile/core/enums/mission_enum.dart';
 import 'package:mobile/features/admin/city/data/models/city_model.dart';
 import 'package:mobile/features/admin/city/data/models/location_model.dart';
 import 'package:mobile/features/admin/truck/data/models/truck_model.dart';
@@ -12,6 +13,7 @@ class PlanEntity extends Equatable {
   final TruckModel truck;
   final String garbageType;
   final List<LocationModel>? visitedLocation;
+  final MissionStatus status;
 
   const PlanEntity({
     this.id,
@@ -22,6 +24,7 @@ class PlanEntity extends Equatable {
     required this.city,
     required this.truck,
     required this.garbageType,
+    required this.status,
   });
 
   @override

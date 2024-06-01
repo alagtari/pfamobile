@@ -3,9 +3,10 @@ import 'dart:developer';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:mobile/core/injection/injection_container.dart';
-import 'package:mobile/features/admin/chat/data/models/room_model.dart';
-import 'package:mobile/features/admin/chat/domain/repositories/chat_repository.dart';
-import 'package:mobile/features/admin/chat/data/models/message_model.dart';
+import 'package:mobile/features/chat/data/models/driver_message_model.dart';
+import 'package:mobile/features/chat/data/models/room_model.dart';
+import 'package:mobile/features/chat/domain/repositories/chat_repository.dart';
+import 'package:mobile/features/chat/data/models/message_model.dart';
 part 'event.dart';
 part 'state.dart';
 
@@ -35,6 +36,17 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
       },
     );
 
+    on<GetDriverRoomMessagesEvent>(
+      (event, emit) async {
+        emit(GetDriverRoomMessagesLoading());
+        final res = await _repo.getDriverMessages();
+        res.fold(
+          (l) => emit(GetDriverRoomMessagesFailed(message: l.message)),
+          (r) => emit(GetDriverRoomMessagesSuccess(messages: r.payload!)),
+        );
+      },
+    );
+
     on<SendMessageEvent>(
       (event, emit) async {
         emit(SendMessageLoading());
@@ -42,6 +54,16 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
         res.fold(
           (l) => emit(SendMessageFailed(message: l.message)),
           (r) => emit(SendMessageSuccess()),
+        );
+      },
+    );
+    on<SendDriverMessageEvent>(
+      (event, emit) async {
+        emit(SendDriverMessageLoading());
+        final res = await _repo.sendDriverMessage(event.message);
+        res.fold(
+          (l) => emit(SendDriverMessageFailed(message: l.message)),
+          (r) => emit(SendDriverMessageSuccess()),
         );
       },
     );

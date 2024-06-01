@@ -6,7 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_cancellable_tile_provider/flutter_map_cancellable_tile_provider.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:mobile/common_widgets/app_botton.dart';
+import 'package:mobile/core/common_used/socket_service.dart';
+import 'package:mobile/core/enums/mission_enum.dart';
+import 'package:mobile/core/injection/injection_container.dart';
 import 'package:mobile/features/admin/city/data/models/location_model.dart';
 import 'package:mobile/features/admin/plan/data/models/plan_model.dart';
 import 'package:mobile/features/driver/misson/presentation/bloc/bloc.dart';
@@ -39,8 +44,10 @@ class DriverMissionMapScreenState extends State<DriverMissionMapScreen>
   late List<LocationModel> _locations;
   late ValueNotifier<List<LocationModel>> _visitedLocations;
   late List<LatLng> _path;
-  late LatLng _currentLocation;
+  late LatLng? _currentLocation;
   Timer? _timer;
+  final SocketService _socketService = sl<SocketService>();
+  late ValueNotifier<MissionStatus> _missionStatus;
 
   bool isAbleToAdd = false;
 
@@ -64,15 +71,24 @@ class DriverMissionMapScreenState extends State<DriverMissionMapScreen>
     }
   }
 
+  void _startMission() {
+    context.read<MissionBloc>().add(StartMissonEvent(id: widget.plan.id!));
+  }
+
+  void _endMission() {
+    context.read<MissionBloc>().add(EndMissonEvent(id: widget.plan.id!));
+  }
+
   @override
   void initState() {
     _markers = [];
     _locations = widget.plan.city.locations!;
     _visitedLocations = ValueNotifier(widget.plan.visitedLocation!);
     _path = [];
-    _currentLocation = widget.plan.city.cityLocation.toLatLng();
+    _currentLocation = null;
     buildPins();
     _startLocationUpdates();
+    _missionStatus = ValueNotifier(widget.plan.status);
     super.initState();
   }
 
@@ -84,7 +100,7 @@ class DriverMissionMapScreenState extends State<DriverMissionMapScreen>
   }
 
   void _startLocationUpdates() {
-    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 5), (timer) {
       context.read<MissionBloc>().add(GetLocationEvent());
     });
   }
@@ -116,22 +132,21 @@ class DriverMissionMapScreenState extends State<DriverMissionMapScreen>
         nearestPoint = point;
       }
     }
+
+    if (minDistance < 10 && _missionStatus.value == MissionStatus.in_progress) {
+      _visitedLocations.value = [..._visitedLocations.value, nearestPoint];
+      _visitedLocations.notifyListeners();
+      context.read<MissionBloc>().add(
+            VisitLocationEvent(
+                locationId: nearestPoint.id!, planId: widget.plan.id!),
+          );
+    }
     context.read<MissionBloc>().add(
           GetLocationsEvent(
             start: selectedPoint,
             end: nearestPoint.toLatLng(),
           ),
         );
-    if (minDistance < 10) {
-      _visitedLocations.value = [..._visitedLocations.value, nearestPoint];
-      _visitedLocations.notifyListeners();
-      // context.read<MissionBloc>().add(
-      //       GetLocationsEvent(
-      //         start: selectedPoint,
-      //         end: nearestPoint.toLatLng(),
-      //       ),
-      //     );
-    }
   }
 
   @override
@@ -146,19 +161,46 @@ class DriverMissionMapScreenState extends State<DriverMissionMapScreen>
               }
             }
             if (state is GeolocationLoaded) {
-              if (_currentLocation.latitude != state.position.latitude ||
-                  _currentLocation.longitude != state.position.longitude) {
+              final location = _currentLocation;
+              if (_currentLocation == null ||
+                  _currentLocation != null &&
+                      (_currentLocation!.latitude != state.position.latitude ||
+                          _currentLocation!.longitude !=
+                              state.position.longitude)) {
                 setState(() {
                   _currentLocation =
                       LatLng(state.position.latitude, state.position.longitude);
                 });
-                await animateMap(_currentLocation);
-                findNearestPoint(_currentLocation);
+                if (location == null) {
+                  await animateMap(_currentLocation!);
+                }
+                if (_missionStatus.value == MissionStatus.in_progress) {
+                  findNearestPoint(_currentLocation!);
+                  _socketService.sendLocation(
+                    {
+                      "latitude": state.position.latitude,
+                      "longitude": state.position.longitude
+                    },
+                    widget.plan.id!,
+                  );
+                }
               }
             }
             if (state is GetLocationsSuccess) {
               setState(() {
                 _path = state.locations;
+              });
+            }
+            if (state is StartMissonSuccess) {
+              setState(() {
+                _missionStatus.value = MissionStatus.in_progress;
+              });
+              findNearestPoint(_currentLocation!);
+            }
+            if (state is EndMissonSuccess) {
+              setState(() {
+                _missionStatus.value = MissionStatus.finished;
+                _path = [];
               });
             }
           },
@@ -169,46 +211,92 @@ class DriverMissionMapScreenState extends State<DriverMissionMapScreen>
                 builder: (context, visitedLocations, child) {
                   _markers = [];
                   buildPins();
-                  return FlutterMap(
-                    mapController: mapController,
-                    options: MapOptions(
-                      center: _currentLocation,
-                      initialZoom: 16,
-                      maxZoom: 19,
-                      minZoom: 15,
-                    ),
+                  return Stack(
                     children: [
-                      TileLayer(
-                        urlTemplate:
-                            'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                        userAgentPackageName:
-                            'dev.fleaflet.flutter_map.example',
-                        tileProvider: CancellableNetworkTileProvider(),
-                      ),
-                      PolylineLayer(
-                        polylines: [
-                          Polyline(
-                            points: _path,
-                            strokeWidth: 4.0,
-                            color: Colors.blue,
+                      FlutterMap(
+                        mapController: mapController,
+                        options: MapOptions(
+                          initialCenter:
+                              widget.plan.city.cityLocation.toLatLng(),
+                          initialZoom: 16,
+                          maxZoom: 19,
+                          minZoom: 15,
+                        ),
+                        children: [
+                          TileLayer(
+                            urlTemplate:
+                                'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                            userAgentPackageName:
+                                'dev.fleaflet.flutter_map.example',
+                            tileProvider: CancellableNetworkTileProvider(),
+                          ),
+                          PolylineLayer(
+                            polylines: [
+                              Polyline(
+                                points: _path,
+                                strokeWidth: 6.0,
+                                color: AppColors.greenDarkColor,
+                              ),
+                            ],
+                          ),
+                          MarkerLayer(
+                            markers: [
+                              _currentLocation != null
+                                  ? Marker(
+                                      point: _currentLocation!,
+                                      width: 50,
+                                      height: 50,
+                                      child: Container(
+                                        padding: EdgeInsets.all(5),
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius:
+                                              BorderRadius.circular(50),
+                                        ),
+                                        child: SvgPicture.asset(
+                                          'assets/svg/track.svg',
+                                        ),
+                                      ),
+                                    )
+                                  : Marker(
+                                      point: widget.plan.city.cityLocation
+                                          .toLatLng(),
+                                      width: 0,
+                                      height: 0,
+                                      child: const SizedBox(),
+                                    ),
+                              ..._markers,
+                            ],
                           ),
                         ],
                       ),
-                      MarkerLayer(
-                        markers: [
-                          ..._markers,
-                          Marker(
-                            point: _currentLocation,
-                            width: 60,
-                            height: 60,
-                            child: const Icon(
-                              Icons.location_pin,
-                              size: 60,
-                              color: AppColors.greenDarkColor,
-                            ),
-                          ),
-                        ],
-                      ),
+                      ValueListenableBuilder(
+                          valueListenable: _missionStatus,
+                          builder: (context, missionStatus, child) {
+                            if (missionStatus == MissionStatus.not_started) {
+                              return Positioned(
+                                bottom: 20,
+                                left: 20,
+                                right: 20,
+                                child: AppBotton(
+                                  bottonText: "Start Mission",
+                                  onClick: _startMission,
+                                ),
+                              );
+                            }
+                            if (missionStatus == MissionStatus.in_progress) {
+                              return Positioned(
+                                bottom: 20,
+                                left: 20,
+                                right: 20,
+                                child: AppBotton(
+                                  bottonText: "End Mission",
+                                  onClick: _endMission,
+                                ),
+                              );
+                            }
+                            return const SizedBox();
+                          })
                     ],
                   );
                 },

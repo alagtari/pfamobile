@@ -145,10 +145,10 @@ class CityLocationsScreenState extends State<CityLocationsScreen>
           },
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 30, left: 30, bottom: 15),
+              const Padding(
+                padding: EdgeInsets.only(right: 30, left: 30, bottom: 15),
                 child: ScreenTitle(
-                  title: context.l10n.add_city,
+                  title: "Add locations",
                   arrowBack: true,
                 ),
               ),

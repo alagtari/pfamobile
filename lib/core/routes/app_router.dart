@@ -17,7 +17,6 @@ class AppRouter extends $AppRouter {
         CustomRoute(
           page: CitizenAppFrame.page,
           transitionsBuilder: TransitionsBuilders.noTransition,
-          // initial: true,
           children: [
             CustomRoute(
               page: CitizenHomeRoute.page,
@@ -43,7 +42,6 @@ class AppRouter extends $AppRouter {
         CustomRoute(
           page: AdminAppFrame.page,
           transitionsBuilder: TransitionsBuilders.noTransition,
-          // initial: true,
           children: [
             CustomRoute(
               page: AdminHomeRoute.page,
@@ -92,6 +90,9 @@ class AppRouter extends $AppRouter {
             AutoRoute(
               page: AddPlanRoute.page,
             ),
+            AutoRoute(
+              page: AdminMissionMapRoute.page,
+            ),
             CustomRoute(
               page: ReportsRoute.page,
               transitionsBuilder: TransitionsBuilders.noTransition,
@@ -112,12 +113,15 @@ class AppRouter extends $AppRouter {
         CustomRoute(
           page: DriverAppFrame.page,
           transitionsBuilder: TransitionsBuilders.noTransition,
-          // initial: true,
           children: [
             CustomRoute(
               page: DriverPlansRoute.page,
               transitionsBuilder: TransitionsBuilders.noTransition,
               initial: true,
+            ),
+            CustomRoute(
+              page: DriverChatRoomRoute.page,
+              transitionsBuilder: TransitionsBuilders.noTransition,
             ),
             CustomRoute(
               page: DriverProfileRoute.page,
@@ -127,7 +131,6 @@ class AppRouter extends $AppRouter {
         ),
         AutoRoute(
           page: DriverMissionMapRoute.page,
-          // initial: true,
         ),
         AutoRoute(
           page: UpdateGeneralInformationRoute.page,

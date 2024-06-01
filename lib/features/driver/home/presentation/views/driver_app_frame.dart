@@ -39,7 +39,7 @@ class _DriverAppFrameState extends State<DriverAppFrame> {
         context.router.replace(const DriverPlansRoute());
         break;
       case 1:
-        // context.router.replace(const AdminChatRoomsRoute());
+        context.router.replace(const DriverChatRoomRoute());
         break;
       case 2:
         context.router.replace(const DriverProfileRoute());

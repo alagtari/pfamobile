@@ -5,10 +5,11 @@ import 'package:dio/dio.dart';
 import 'package:mobile/core/common_used/response_wrapper.dart';
 import 'package:mobile/core/errors/exceptions.dart';
 import 'package:mobile/core/errors/failures.dart';
-import 'package:mobile/features/admin/chat/data/data_sources/chat_remote_data_source.dart';
-import 'package:mobile/features/admin/chat/data/models/message_model.dart';
-import 'package:mobile/features/admin/chat/data/models/room_model.dart';
-import 'package:mobile/features/admin/chat/domain/repositories/chat_repository.dart';
+import 'package:mobile/features/chat/data/data_sources/chat_remote_data_source.dart';
+import 'package:mobile/features/chat/data/models/driver_message_model.dart';
+import 'package:mobile/features/chat/data/models/message_model.dart';
+import 'package:mobile/features/chat/data/models/room_model.dart';
+import 'package:mobile/features/chat/domain/repositories/chat_repository.dart';
 
 class ChatRepositoryImpl implements ChatRepository {
   final ChatOnlineDataSource dataSource;
@@ -22,6 +23,26 @@ class ChatRepositoryImpl implements ChatRepository {
       MessageModel request) async {
     try {
       final res = await dataSource.sendMessage(request);
+      log(res.toString());
+      return right(res);
+    } on AppException catch (e) {
+      return Left(AppFailure(message: e.message));
+    } on DioException catch (e) {
+      return Left(
+        AppFailure(message: e.response?.data?["message"]),
+      );
+    } catch (e) {
+      return Left(
+        AppFailure(message: 'Unexpected error occurred.'),
+      );
+    }
+  }
+
+  @override
+  Future<Either<AppFailure, ResponseWrapper<MessageModel>>> sendDriverMessage(
+      DriverMessageModel request) async {
+    try {
+      final res = await dataSource.sendDriverMessage(request);
       log(res.toString());
       return right(res);
     } on AppException catch (e) {
@@ -56,8 +77,30 @@ class ChatRepositoryImpl implements ChatRepository {
       );
     }
   }
-    @override
-  Future<Either<AppFailure, ResponseWrapper<List<RoomModel>>>> getRooms() async {
+
+  @override
+  Future<Either<AppFailure, ResponseWrapper<List<MessageModel>>>>
+      getDriverMessages() async {
+    try {
+      final res = await dataSource.getDriverMessages();
+      log(res.toString());
+      return right(res);
+    } on AppException catch (e) {
+      return Left(AppFailure(message: e.message));
+    } on DioException catch (e) {
+      return Left(
+        AppFailure(message: e.response?.data?["message"]),
+      );
+    } catch (e) {
+      return Left(
+        AppFailure(message: 'Unexpected error occurred.'),
+      );
+    }
+  }
+
+  @override
+  Future<Either<AppFailure, ResponseWrapper<List<RoomModel>>>>
+      getRooms() async {
     try {
       final res = await dataSource.getRooms();
       log(res.toString());

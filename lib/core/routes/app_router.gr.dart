@@ -8,125 +8,129 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i40;
-import 'package:flutter/material.dart' as _i41;
-import 'package:latlong2/latlong.dart' as _i47;
-import 'package:mobile/features/admin/chat/data/models/room_model.dart' as _i42;
-import 'package:mobile/features/admin/chat/presentation/views/admin_chat_room_screen.dart'
-    as _i6;
-import 'package:mobile/features/admin/chat/presentation/views/admin_chat_rooms_screen.dart'
-    as _i7;
-import 'package:mobile/features/admin/city/data/models/city_model.dart' as _i43;
+import 'package:auto_route/auto_route.dart' as _i42;
+import 'package:flutter/material.dart' as _i43;
+import 'package:latlong2/latlong.dart' as _i49;
+import 'package:mobile/features/admin/city/data/models/city_model.dart' as _i46;
 import 'package:mobile/features/admin/city/presentation/views/add_city_screen.dart'
     as _i1;
 import 'package:mobile/features/admin/city/presentation/views/cities_screen.dart'
-    as _i12;
+    as _i13;
 import 'package:mobile/features/admin/city/presentation/views/city_locations_screen.dart'
-    as _i17;
+    as _i18;
 import 'package:mobile/features/admin/city/presentation/views/update_city_screen.dart'
-    as _i34;
+    as _i36;
 import 'package:mobile/features/admin/city/presentation/views/verify_city_screen.dart'
-    as _i39;
+    as _i41;
 import 'package:mobile/features/admin/driver/data/models/driver_model.dart'
-    as _i45;
+    as _i47;
 import 'package:mobile/features/admin/driver/presentation/views/add_driver_screen.dart'
     as _i2;
 import 'package:mobile/features/admin/driver/presentation/views/drivers_screen.dart'
-    as _i23;
+    as _i25;
 import 'package:mobile/features/admin/driver/presentation/views/update_driver_screen.dart'
-    as _i35;
-import 'package:mobile/features/admin/plan/data/models/plan_model.dart' as _i44;
+    as _i37;
+import 'package:mobile/features/admin/plan/data/models/plan_model.dart' as _i45;
 import 'package:mobile/features/admin/plan/presentation/views/add_plan_screen.dart'
     as _i3;
+import 'package:mobile/features/admin/plan/presentation/views/admin_misson_map_screen.dart'
+    as _i9;
 import 'package:mobile/features/admin/plan/presentation/views/plan_locations_screen.dart'
-    as _i27;
-import 'package:mobile/features/admin/plan/presentation/views/plans_screen.dart'
-    as _i28;
-import 'package:mobile/features/admin/profile/presentation/views/change_password_screen.dart'
-    as _i10;
-import 'package:mobile/features/admin/profile/presentation/views/change_prefrences_screen.dart'
-    as _i11;
-import 'package:mobile/features/admin/profile/presentation/views/profile_screen.dart'
     as _i29;
+import 'package:mobile/features/admin/plan/presentation/views/plans_screen.dart'
+    as _i30;
+import 'package:mobile/features/admin/profile/presentation/views/change_password_screen.dart'
+    as _i11;
+import 'package:mobile/features/admin/profile/presentation/views/change_prefrences_screen.dart'
+    as _i12;
+import 'package:mobile/features/admin/profile/presentation/views/profile_screen.dart'
+    as _i31;
 import 'package:mobile/features/admin/profile/presentation/views/update_general_information_screen.dart'
-    as _i36;
+    as _i38;
 import 'package:mobile/features/admin/truck/data/models/truck_model.dart'
-    as _i46;
+    as _i48;
 import 'package:mobile/features/admin/truck/presentation/views/add_truck_screen.dart'
     as _i4;
 import 'package:mobile/features/admin/truck/presentation/views/trucks_screen.dart'
-    as _i33;
+    as _i35;
 import 'package:mobile/features/admin/truck/presentation/views/update_truck_screen.dart'
-    as _i38;
+    as _i40;
 import 'package:mobile/features/auth/presentation/views/forgot_password_code.dart'
-    as _i24;
-import 'package:mobile/features/auth/presentation/views/forgot_password_email.dart'
-    as _i25;
-import 'package:mobile/features/auth/presentation/views/login_screen.dart'
     as _i26;
+import 'package:mobile/features/auth/presentation/views/forgot_password_email.dart'
+    as _i27;
+import 'package:mobile/features/auth/presentation/views/login_screen.dart'
+    as _i28;
 import 'package:mobile/features/auth/presentation/views/reset_password.dart'
-    as _i31;
-import 'package:mobile/features/driver/home/presentation/views/driver_app_frame.dart'
-    as _i18;
-import 'package:mobile/features/driver/home/presentation/views/driver_plan_locations_screen.dart'
+    as _i33;
+import 'package:mobile/features/chat/data/models/room_model.dart' as _i44;
+import 'package:mobile/features/chat/presentation/views/admin/admin_chat_rooms_screen.dart'
+    as _i7;
+import 'package:mobile/features/chat/presentation/views/driver/driver_chat_room_screen.dart'
     as _i20;
-import 'package:mobile/features/driver/home/presentation/views/driver_plans_screen.dart'
-    as _i21;
-import 'package:mobile/features/driver/misson/presentation/views/misson_map_screen.dart'
+import 'package:mobile/features/driver/chat/presentation/views/admin_chat_room_screen.dart'
+    as _i6;
+import 'package:mobile/features/driver/home/presentation/views/driver_app_frame.dart'
     as _i19;
-import 'package:mobile/features/driver/profile/presentation/views/driver_profile_screen.dart'
+import 'package:mobile/features/driver/home/presentation/views/driver_plan_locations_screen.dart'
     as _i22;
-import 'package:mobile/features/signup/presentation/views/signup.dart' as _i32;
+import 'package:mobile/features/driver/home/presentation/views/driver_plans_screen.dart'
+    as _i23;
+import 'package:mobile/features/driver/misson/presentation/views/misson_map_screen.dart'
+    as _i21;
+import 'package:mobile/features/driver/profile/presentation/views/driver_profile_screen.dart'
+    as _i24;
+import 'package:mobile/features/signup/presentation/views/signup.dart' as _i34;
 import 'package:mobile/files/admin_app_frame.dart' as _i5;
 import 'package:mobile/files/admin_home_screen.dart' as _i8;
-import 'package:mobile/files/category_screen.dart' as _i9;
-import 'package:mobile/files/citizen_app_frame.dart' as _i13;
-import 'package:mobile/files/citizen_calendar_screen.dart' as _i14;
-import 'package:mobile/files/citizen_home_screen.dart' as _i15;
-import 'package:mobile/files/citizen_report_screen.dart' as _i16;
-import 'package:mobile/files/reports_screen.dart' as _i30;
-import 'package:mobile/files/update_address_screen.dart' as _i37;
+import 'package:mobile/files/category_screen.dart' as _i10;
+import 'package:mobile/files/citizen_app_frame.dart' as _i14;
+import 'package:mobile/files/citizen_calendar_screen.dart' as _i15;
+import 'package:mobile/files/citizen_home_screen.dart' as _i16;
+import 'package:mobile/files/citizen_report_screen.dart' as _i17;
+import 'package:mobile/files/reports_screen.dart' as _i32;
+import 'package:mobile/files/update_address_screen.dart' as _i39;
 
-abstract class $AppRouter extends _i40.RootStackRouter {
+abstract class $AppRouter extends _i42.RootStackRouter {
   $AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, _i40.PageFactory> pagesMap = {
+  final Map<String, _i42.PageFactory> pagesMap = {
     AddCityRoute.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(child: const _i1.AddCityScreen()),
+        child: _i42.WrappedRoute(child: const _i1.AddCityScreen()),
       );
     },
     AddDriverRoute.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(child: const _i2.AddDriverScreen()),
+        child: _i42.WrappedRoute(child: const _i2.AddDriverScreen()),
       );
     },
     AddPlanRoute.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(child: const _i3.AddPlanScreen()),
+        child: _i42.WrappedRoute(child: const _i3.AddPlanScreen()),
       );
     },
     AddTruckRoute.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(child: const _i4.AddTruckScreen()),
+        child: _i42.WrappedRoute(child: const _i4.AddTruckScreen()),
       );
     },
     AdminAppFrame.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i5.AdminAppFrame(),
       );
     },
     AdminChatRoomRoute.name: (routeData) {
       final args = routeData.argsAs<AdminChatRoomRouteArgs>();
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(
+        child: _i42.WrappedRoute(
             child: _i6.AdminChatRoomScreen(
           key: args.key,
           room: args.room,
@@ -134,88 +138,104 @@ abstract class $AppRouter extends _i40.RootStackRouter {
       );
     },
     AdminChatRoomsRoute.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(child: const _i7.AdminChatRoomsScreen()),
+        child: _i42.WrappedRoute(child: const _i7.AdminChatRoomsScreen()),
       );
     },
     AdminHomeRoute.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i8.AdminHomeScreen(),
       );
     },
-    CategoryRoute.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+    AdminMissionMapRoute.name: (routeData) {
+      final args = routeData.argsAs<AdminMissionMapRouteArgs>();
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i9.CategoryScreen(),
+        child: _i9.AdminMissionMapScreen(
+          key: args.key,
+          plan: args.plan,
+        ),
+      );
+    },
+    CategoryRoute.name: (routeData) {
+      return _i42.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i10.CategoryScreen(),
       );
     },
     ChangePasswordRoute.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(child: const _i10.ChangePasswordScreen()),
+        child: _i42.WrappedRoute(child: const _i11.ChangePasswordScreen()),
       );
     },
     ChangePreferencesRoute.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(child: const _i11.ChangePreferencesScreen()),
+        child: _i42.WrappedRoute(child: const _i12.ChangePreferencesScreen()),
       );
     },
     CitiesRoute.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(child: const _i12.CitiesScreen()),
+        child: _i42.WrappedRoute(child: const _i13.CitiesScreen()),
       );
     },
     CitizenAppFrame.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i13.CitizenAppFrame(),
+        child: const _i14.CitizenAppFrame(),
       );
     },
     CitizenCalendarRoute.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i14.CitizenCalendarScreen(),
+        child: const _i15.CitizenCalendarScreen(),
       );
     },
     CitizenHomeRoute.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i15.CitizenHomeScreen(),
+        child: const _i16.CitizenHomeScreen(),
       );
     },
     CitizenReportRoute.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i16.CitizenReportScreen(),
+        child: const _i17.CitizenReportScreen(),
       );
     },
     CityLocationsRoute.name: (routeData) {
       final args = routeData.argsAs<CityLocationsRouteArgs>();
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(
-            child: _i17.CityLocationsScreen(
+        child: _i42.WrappedRoute(
+            child: _i18.CityLocationsScreen(
           key: args.key,
           city: args.city,
         )),
       );
     },
     DriverAppFrame.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i18.DriverAppFrame(),
+        child: const _i19.DriverAppFrame(),
+      );
+    },
+    DriverChatRoomRoute.name: (routeData) {
+      return _i42.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i42.WrappedRoute(child: const _i20.DriverChatRoomScreen()),
       );
     },
     DriverMissionMapRoute.name: (routeData) {
       final args = routeData.argsAs<DriverMissionMapRouteArgs>();
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(
-            child: _i19.DriverMissionMapScreen(
+        child: _i42.WrappedRoute(
+            child: _i21.DriverMissionMapScreen(
           key: args.key,
           plan: args.plan,
         )),
@@ -223,89 +243,89 @@ abstract class $AppRouter extends _i40.RootStackRouter {
     },
     DriverPlanLocationsRoute.name: (routeData) {
       final args = routeData.argsAs<DriverPlanLocationsRouteArgs>();
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i20.DriverPlanLocationsScreen(
+        child: _i22.DriverPlanLocationsScreen(
           key: args.key,
           plan: args.plan,
         ),
       );
     },
     DriverPlansRoute.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(child: const _i21.DriverPlansScreen()),
+        child: _i42.WrappedRoute(child: const _i23.DriverPlansScreen()),
       );
     },
     DriverProfileRoute.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i22.DriverProfileScreen(),
+        child: const _i24.DriverProfileScreen(),
       );
     },
     DriversRoute.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(child: const _i23.DriversScreen()),
+        child: _i42.WrappedRoute(child: const _i25.DriversScreen()),
       );
     },
     ForgotPasswordCode.name: (routeData) {
       final args = routeData.argsAs<ForgotPasswordCodeArgs>();
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(
-            child: _i24.ForgotPasswordCode(
+        child: _i42.WrappedRoute(
+            child: _i26.ForgotPasswordCode(
           key: args.key,
           email: args.email,
         )),
       );
     },
     ForgotPasswordEmail.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(child: const _i25.ForgotPasswordEmail()),
+        child: _i42.WrappedRoute(child: const _i27.ForgotPasswordEmail()),
       );
     },
     LoginRoute.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(child: const _i26.LoginScreen()),
+        child: _i42.WrappedRoute(child: const _i28.LoginScreen()),
       );
     },
     PlanLocationsRoute.name: (routeData) {
       final args = routeData.argsAs<PlanLocationsRouteArgs>();
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i27.PlanLocationsScreen(
+        child: _i29.PlanLocationsScreen(
           key: args.key,
           plan: args.plan,
         ),
       );
     },
     PlansRoute.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(child: const _i28.PlansScreen()),
+        child: _i42.WrappedRoute(child: const _i30.PlansScreen()),
       );
     },
     ProfileRoute.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i29.ProfileScreen(),
+        child: const _i31.ProfileScreen(),
       );
     },
     ReportsRoute.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i30.ReportsScreen(),
+        child: const _i32.ReportsScreen(),
       );
     },
     ResetPassword.name: (routeData) {
       final args = routeData.argsAs<ResetPasswordArgs>();
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(
-            child: _i31.ResetPassword(
+        child: _i42.WrappedRoute(
+            child: _i33.ResetPassword(
           key: args.key,
           code: args.code,
           email: args.email,
@@ -313,23 +333,23 @@ abstract class $AppRouter extends _i40.RootStackRouter {
       );
     },
     Signup.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(child: const _i32.Signup()),
+        child: _i42.WrappedRoute(child: const _i34.Signup()),
       );
     },
     TrucksRoute.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(child: const _i33.TrucksScreen()),
+        child: _i42.WrappedRoute(child: const _i35.TrucksScreen()),
       );
     },
     UpdateCityRoute.name: (routeData) {
       final args = routeData.argsAs<UpdateCityRouteArgs>();
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(
-            child: _i34.UpdateCityScreen(
+        child: _i42.WrappedRoute(
+            child: _i36.UpdateCityScreen(
           key: args.key,
           city: args.city,
         )),
@@ -337,34 +357,34 @@ abstract class $AppRouter extends _i40.RootStackRouter {
     },
     UpdateDriverRoute.name: (routeData) {
       final args = routeData.argsAs<UpdateDriverRouteArgs>();
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(
-            child: _i35.UpdateDriverScreen(
+        child: _i42.WrappedRoute(
+            child: _i37.UpdateDriverScreen(
           key: args.key,
           driver: args.driver,
         )),
       );
     },
     UpdateGeneralInformationRoute.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(
-            child: const _i36.UpdateGeneralInformationScreen()),
+        child: _i42.WrappedRoute(
+            child: const _i38.UpdateGeneralInformationScreen()),
       );
     },
     UpdateLocationRoute.name: (routeData) {
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i37.UpdateLocationScreen(),
+        child: const _i39.UpdateLocationScreen(),
       );
     },
     UpdateTruckRoute.name: (routeData) {
       final args = routeData.argsAs<UpdateTruckRouteArgs>();
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(
-            child: _i38.UpdateTruckScreen(
+        child: _i42.WrappedRoute(
+            child: _i40.UpdateTruckScreen(
           key: args.key,
           truck: args.truck,
         )),
@@ -372,10 +392,10 @@ abstract class $AppRouter extends _i40.RootStackRouter {
     },
     VerifyCityRoute.name: (routeData) {
       final args = routeData.argsAs<VerifyCityRouteArgs>();
-      return _i40.AutoRoutePage<dynamic>(
+      return _i42.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: _i40.WrappedRoute(
-            child: _i39.VerifyCityScreen(
+        child: _i42.WrappedRoute(
+            child: _i41.VerifyCityScreen(
           key: args.key,
           location: args.location,
           name: args.name,
@@ -389,8 +409,8 @@ abstract class $AppRouter extends _i40.RootStackRouter {
 
 /// generated route for
 /// [_i1.AddCityScreen]
-class AddCityRoute extends _i40.PageRouteInfo<void> {
-  const AddCityRoute({List<_i40.PageRouteInfo>? children})
+class AddCityRoute extends _i42.PageRouteInfo<void> {
+  const AddCityRoute({List<_i42.PageRouteInfo>? children})
       : super(
           AddCityRoute.name,
           initialChildren: children,
@@ -398,13 +418,13 @@ class AddCityRoute extends _i40.PageRouteInfo<void> {
 
   static const String name = 'AddCityRoute';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i2.AddDriverScreen]
-class AddDriverRoute extends _i40.PageRouteInfo<void> {
-  const AddDriverRoute({List<_i40.PageRouteInfo>? children})
+class AddDriverRoute extends _i42.PageRouteInfo<void> {
+  const AddDriverRoute({List<_i42.PageRouteInfo>? children})
       : super(
           AddDriverRoute.name,
           initialChildren: children,
@@ -412,13 +432,13 @@ class AddDriverRoute extends _i40.PageRouteInfo<void> {
 
   static const String name = 'AddDriverRoute';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i3.AddPlanScreen]
-class AddPlanRoute extends _i40.PageRouteInfo<void> {
-  const AddPlanRoute({List<_i40.PageRouteInfo>? children})
+class AddPlanRoute extends _i42.PageRouteInfo<void> {
+  const AddPlanRoute({List<_i42.PageRouteInfo>? children})
       : super(
           AddPlanRoute.name,
           initialChildren: children,
@@ -426,13 +446,13 @@ class AddPlanRoute extends _i40.PageRouteInfo<void> {
 
   static const String name = 'AddPlanRoute';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i4.AddTruckScreen]
-class AddTruckRoute extends _i40.PageRouteInfo<void> {
-  const AddTruckRoute({List<_i40.PageRouteInfo>? children})
+class AddTruckRoute extends _i42.PageRouteInfo<void> {
+  const AddTruckRoute({List<_i42.PageRouteInfo>? children})
       : super(
           AddTruckRoute.name,
           initialChildren: children,
@@ -440,13 +460,13 @@ class AddTruckRoute extends _i40.PageRouteInfo<void> {
 
   static const String name = 'AddTruckRoute';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i5.AdminAppFrame]
-class AdminAppFrame extends _i40.PageRouteInfo<void> {
-  const AdminAppFrame({List<_i40.PageRouteInfo>? children})
+class AdminAppFrame extends _i42.PageRouteInfo<void> {
+  const AdminAppFrame({List<_i42.PageRouteInfo>? children})
       : super(
           AdminAppFrame.name,
           initialChildren: children,
@@ -454,16 +474,16 @@ class AdminAppFrame extends _i40.PageRouteInfo<void> {
 
   static const String name = 'AdminAppFrame';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i6.AdminChatRoomScreen]
-class AdminChatRoomRoute extends _i40.PageRouteInfo<AdminChatRoomRouteArgs> {
+class AdminChatRoomRoute extends _i42.PageRouteInfo<AdminChatRoomRouteArgs> {
   AdminChatRoomRoute({
-    _i41.Key? key,
-    required _i42.RoomModel room,
-    List<_i40.PageRouteInfo>? children,
+    _i43.Key? key,
+    required _i44.RoomModel room,
+    List<_i42.PageRouteInfo>? children,
   }) : super(
           AdminChatRoomRoute.name,
           args: AdminChatRoomRouteArgs(
@@ -475,8 +495,8 @@ class AdminChatRoomRoute extends _i40.PageRouteInfo<AdminChatRoomRouteArgs> {
 
   static const String name = 'AdminChatRoomRoute';
 
-  static const _i40.PageInfo<AdminChatRoomRouteArgs> page =
-      _i40.PageInfo<AdminChatRoomRouteArgs>(name);
+  static const _i42.PageInfo<AdminChatRoomRouteArgs> page =
+      _i42.PageInfo<AdminChatRoomRouteArgs>(name);
 }
 
 class AdminChatRoomRouteArgs {
@@ -485,9 +505,9 @@ class AdminChatRoomRouteArgs {
     required this.room,
   });
 
-  final _i41.Key? key;
+  final _i43.Key? key;
 
-  final _i42.RoomModel room;
+  final _i44.RoomModel room;
 
   @override
   String toString() {
@@ -497,8 +517,8 @@ class AdminChatRoomRouteArgs {
 
 /// generated route for
 /// [_i7.AdminChatRoomsScreen]
-class AdminChatRoomsRoute extends _i40.PageRouteInfo<void> {
-  const AdminChatRoomsRoute({List<_i40.PageRouteInfo>? children})
+class AdminChatRoomsRoute extends _i42.PageRouteInfo<void> {
+  const AdminChatRoomsRoute({List<_i42.PageRouteInfo>? children})
       : super(
           AdminChatRoomsRoute.name,
           initialChildren: children,
@@ -506,13 +526,13 @@ class AdminChatRoomsRoute extends _i40.PageRouteInfo<void> {
 
   static const String name = 'AdminChatRoomsRoute';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i8.AdminHomeScreen]
-class AdminHomeRoute extends _i40.PageRouteInfo<void> {
-  const AdminHomeRoute({List<_i40.PageRouteInfo>? children})
+class AdminHomeRoute extends _i42.PageRouteInfo<void> {
+  const AdminHomeRoute({List<_i42.PageRouteInfo>? children})
       : super(
           AdminHomeRoute.name,
           initialChildren: children,
@@ -520,13 +540,52 @@ class AdminHomeRoute extends _i40.PageRouteInfo<void> {
 
   static const String name = 'AdminHomeRoute';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i9.CategoryScreen]
-class CategoryRoute extends _i40.PageRouteInfo<void> {
-  const CategoryRoute({List<_i40.PageRouteInfo>? children})
+/// [_i9.AdminMissionMapScreen]
+class AdminMissionMapRoute
+    extends _i42.PageRouteInfo<AdminMissionMapRouteArgs> {
+  AdminMissionMapRoute({
+    _i43.Key? key,
+    required _i45.PlanModel plan,
+    List<_i42.PageRouteInfo>? children,
+  }) : super(
+          AdminMissionMapRoute.name,
+          args: AdminMissionMapRouteArgs(
+            key: key,
+            plan: plan,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'AdminMissionMapRoute';
+
+  static const _i42.PageInfo<AdminMissionMapRouteArgs> page =
+      _i42.PageInfo<AdminMissionMapRouteArgs>(name);
+}
+
+class AdminMissionMapRouteArgs {
+  const AdminMissionMapRouteArgs({
+    this.key,
+    required this.plan,
+  });
+
+  final _i43.Key? key;
+
+  final _i45.PlanModel plan;
+
+  @override
+  String toString() {
+    return 'AdminMissionMapRouteArgs{key: $key, plan: $plan}';
+  }
+}
+
+/// generated route for
+/// [_i10.CategoryScreen]
+class CategoryRoute extends _i42.PageRouteInfo<void> {
+  const CategoryRoute({List<_i42.PageRouteInfo>? children})
       : super(
           CategoryRoute.name,
           initialChildren: children,
@@ -534,13 +593,13 @@ class CategoryRoute extends _i40.PageRouteInfo<void> {
 
   static const String name = 'CategoryRoute';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i10.ChangePasswordScreen]
-class ChangePasswordRoute extends _i40.PageRouteInfo<void> {
-  const ChangePasswordRoute({List<_i40.PageRouteInfo>? children})
+/// [_i11.ChangePasswordScreen]
+class ChangePasswordRoute extends _i42.PageRouteInfo<void> {
+  const ChangePasswordRoute({List<_i42.PageRouteInfo>? children})
       : super(
           ChangePasswordRoute.name,
           initialChildren: children,
@@ -548,13 +607,13 @@ class ChangePasswordRoute extends _i40.PageRouteInfo<void> {
 
   static const String name = 'ChangePasswordRoute';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i11.ChangePreferencesScreen]
-class ChangePreferencesRoute extends _i40.PageRouteInfo<void> {
-  const ChangePreferencesRoute({List<_i40.PageRouteInfo>? children})
+/// [_i12.ChangePreferencesScreen]
+class ChangePreferencesRoute extends _i42.PageRouteInfo<void> {
+  const ChangePreferencesRoute({List<_i42.PageRouteInfo>? children})
       : super(
           ChangePreferencesRoute.name,
           initialChildren: children,
@@ -562,13 +621,13 @@ class ChangePreferencesRoute extends _i40.PageRouteInfo<void> {
 
   static const String name = 'ChangePreferencesRoute';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i12.CitiesScreen]
-class CitiesRoute extends _i40.PageRouteInfo<void> {
-  const CitiesRoute({List<_i40.PageRouteInfo>? children})
+/// [_i13.CitiesScreen]
+class CitiesRoute extends _i42.PageRouteInfo<void> {
+  const CitiesRoute({List<_i42.PageRouteInfo>? children})
       : super(
           CitiesRoute.name,
           initialChildren: children,
@@ -576,13 +635,13 @@ class CitiesRoute extends _i40.PageRouteInfo<void> {
 
   static const String name = 'CitiesRoute';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i13.CitizenAppFrame]
-class CitizenAppFrame extends _i40.PageRouteInfo<void> {
-  const CitizenAppFrame({List<_i40.PageRouteInfo>? children})
+/// [_i14.CitizenAppFrame]
+class CitizenAppFrame extends _i42.PageRouteInfo<void> {
+  const CitizenAppFrame({List<_i42.PageRouteInfo>? children})
       : super(
           CitizenAppFrame.name,
           initialChildren: children,
@@ -590,13 +649,13 @@ class CitizenAppFrame extends _i40.PageRouteInfo<void> {
 
   static const String name = 'CitizenAppFrame';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i14.CitizenCalendarScreen]
-class CitizenCalendarRoute extends _i40.PageRouteInfo<void> {
-  const CitizenCalendarRoute({List<_i40.PageRouteInfo>? children})
+/// [_i15.CitizenCalendarScreen]
+class CitizenCalendarRoute extends _i42.PageRouteInfo<void> {
+  const CitizenCalendarRoute({List<_i42.PageRouteInfo>? children})
       : super(
           CitizenCalendarRoute.name,
           initialChildren: children,
@@ -604,13 +663,13 @@ class CitizenCalendarRoute extends _i40.PageRouteInfo<void> {
 
   static const String name = 'CitizenCalendarRoute';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i15.CitizenHomeScreen]
-class CitizenHomeRoute extends _i40.PageRouteInfo<void> {
-  const CitizenHomeRoute({List<_i40.PageRouteInfo>? children})
+/// [_i16.CitizenHomeScreen]
+class CitizenHomeRoute extends _i42.PageRouteInfo<void> {
+  const CitizenHomeRoute({List<_i42.PageRouteInfo>? children})
       : super(
           CitizenHomeRoute.name,
           initialChildren: children,
@@ -618,13 +677,13 @@ class CitizenHomeRoute extends _i40.PageRouteInfo<void> {
 
   static const String name = 'CitizenHomeRoute';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i16.CitizenReportScreen]
-class CitizenReportRoute extends _i40.PageRouteInfo<void> {
-  const CitizenReportRoute({List<_i40.PageRouteInfo>? children})
+/// [_i17.CitizenReportScreen]
+class CitizenReportRoute extends _i42.PageRouteInfo<void> {
+  const CitizenReportRoute({List<_i42.PageRouteInfo>? children})
       : super(
           CitizenReportRoute.name,
           initialChildren: children,
@@ -632,16 +691,16 @@ class CitizenReportRoute extends _i40.PageRouteInfo<void> {
 
   static const String name = 'CitizenReportRoute';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i17.CityLocationsScreen]
-class CityLocationsRoute extends _i40.PageRouteInfo<CityLocationsRouteArgs> {
+/// [_i18.CityLocationsScreen]
+class CityLocationsRoute extends _i42.PageRouteInfo<CityLocationsRouteArgs> {
   CityLocationsRoute({
-    _i41.Key? key,
-    required _i43.CityModel city,
-    List<_i40.PageRouteInfo>? children,
+    _i43.Key? key,
+    required _i46.CityModel city,
+    List<_i42.PageRouteInfo>? children,
   }) : super(
           CityLocationsRoute.name,
           args: CityLocationsRouteArgs(
@@ -653,8 +712,8 @@ class CityLocationsRoute extends _i40.PageRouteInfo<CityLocationsRouteArgs> {
 
   static const String name = 'CityLocationsRoute';
 
-  static const _i40.PageInfo<CityLocationsRouteArgs> page =
-      _i40.PageInfo<CityLocationsRouteArgs>(name);
+  static const _i42.PageInfo<CityLocationsRouteArgs> page =
+      _i42.PageInfo<CityLocationsRouteArgs>(name);
 }
 
 class CityLocationsRouteArgs {
@@ -663,9 +722,9 @@ class CityLocationsRouteArgs {
     required this.city,
   });
 
-  final _i41.Key? key;
+  final _i43.Key? key;
 
-  final _i43.CityModel city;
+  final _i46.CityModel city;
 
   @override
   String toString() {
@@ -674,9 +733,9 @@ class CityLocationsRouteArgs {
 }
 
 /// generated route for
-/// [_i18.DriverAppFrame]
-class DriverAppFrame extends _i40.PageRouteInfo<void> {
-  const DriverAppFrame({List<_i40.PageRouteInfo>? children})
+/// [_i19.DriverAppFrame]
+class DriverAppFrame extends _i42.PageRouteInfo<void> {
+  const DriverAppFrame({List<_i42.PageRouteInfo>? children})
       : super(
           DriverAppFrame.name,
           initialChildren: children,
@@ -684,17 +743,31 @@ class DriverAppFrame extends _i40.PageRouteInfo<void> {
 
   static const String name = 'DriverAppFrame';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i19.DriverMissionMapScreen]
+/// [_i20.DriverChatRoomScreen]
+class DriverChatRoomRoute extends _i42.PageRouteInfo<void> {
+  const DriverChatRoomRoute({List<_i42.PageRouteInfo>? children})
+      : super(
+          DriverChatRoomRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'DriverChatRoomRoute';
+
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i21.DriverMissionMapScreen]
 class DriverMissionMapRoute
-    extends _i40.PageRouteInfo<DriverMissionMapRouteArgs> {
+    extends _i42.PageRouteInfo<DriverMissionMapRouteArgs> {
   DriverMissionMapRoute({
-    _i41.Key? key,
-    required _i44.PlanModel plan,
-    List<_i40.PageRouteInfo>? children,
+    _i43.Key? key,
+    required _i45.PlanModel plan,
+    List<_i42.PageRouteInfo>? children,
   }) : super(
           DriverMissionMapRoute.name,
           args: DriverMissionMapRouteArgs(
@@ -706,8 +779,8 @@ class DriverMissionMapRoute
 
   static const String name = 'DriverMissionMapRoute';
 
-  static const _i40.PageInfo<DriverMissionMapRouteArgs> page =
-      _i40.PageInfo<DriverMissionMapRouteArgs>(name);
+  static const _i42.PageInfo<DriverMissionMapRouteArgs> page =
+      _i42.PageInfo<DriverMissionMapRouteArgs>(name);
 }
 
 class DriverMissionMapRouteArgs {
@@ -716,9 +789,9 @@ class DriverMissionMapRouteArgs {
     required this.plan,
   });
 
-  final _i41.Key? key;
+  final _i43.Key? key;
 
-  final _i44.PlanModel plan;
+  final _i45.PlanModel plan;
 
   @override
   String toString() {
@@ -727,13 +800,13 @@ class DriverMissionMapRouteArgs {
 }
 
 /// generated route for
-/// [_i20.DriverPlanLocationsScreen]
+/// [_i22.DriverPlanLocationsScreen]
 class DriverPlanLocationsRoute
-    extends _i40.PageRouteInfo<DriverPlanLocationsRouteArgs> {
+    extends _i42.PageRouteInfo<DriverPlanLocationsRouteArgs> {
   DriverPlanLocationsRoute({
-    _i41.Key? key,
-    required _i44.PlanModel plan,
-    List<_i40.PageRouteInfo>? children,
+    _i43.Key? key,
+    required _i45.PlanModel plan,
+    List<_i42.PageRouteInfo>? children,
   }) : super(
           DriverPlanLocationsRoute.name,
           args: DriverPlanLocationsRouteArgs(
@@ -745,8 +818,8 @@ class DriverPlanLocationsRoute
 
   static const String name = 'DriverPlanLocationsRoute';
 
-  static const _i40.PageInfo<DriverPlanLocationsRouteArgs> page =
-      _i40.PageInfo<DriverPlanLocationsRouteArgs>(name);
+  static const _i42.PageInfo<DriverPlanLocationsRouteArgs> page =
+      _i42.PageInfo<DriverPlanLocationsRouteArgs>(name);
 }
 
 class DriverPlanLocationsRouteArgs {
@@ -755,9 +828,9 @@ class DriverPlanLocationsRouteArgs {
     required this.plan,
   });
 
-  final _i41.Key? key;
+  final _i43.Key? key;
 
-  final _i44.PlanModel plan;
+  final _i45.PlanModel plan;
 
   @override
   String toString() {
@@ -766,9 +839,9 @@ class DriverPlanLocationsRouteArgs {
 }
 
 /// generated route for
-/// [_i21.DriverPlansScreen]
-class DriverPlansRoute extends _i40.PageRouteInfo<void> {
-  const DriverPlansRoute({List<_i40.PageRouteInfo>? children})
+/// [_i23.DriverPlansScreen]
+class DriverPlansRoute extends _i42.PageRouteInfo<void> {
+  const DriverPlansRoute({List<_i42.PageRouteInfo>? children})
       : super(
           DriverPlansRoute.name,
           initialChildren: children,
@@ -776,13 +849,13 @@ class DriverPlansRoute extends _i40.PageRouteInfo<void> {
 
   static const String name = 'DriverPlansRoute';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i22.DriverProfileScreen]
-class DriverProfileRoute extends _i40.PageRouteInfo<void> {
-  const DriverProfileRoute({List<_i40.PageRouteInfo>? children})
+/// [_i24.DriverProfileScreen]
+class DriverProfileRoute extends _i42.PageRouteInfo<void> {
+  const DriverProfileRoute({List<_i42.PageRouteInfo>? children})
       : super(
           DriverProfileRoute.name,
           initialChildren: children,
@@ -790,13 +863,13 @@ class DriverProfileRoute extends _i40.PageRouteInfo<void> {
 
   static const String name = 'DriverProfileRoute';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i23.DriversScreen]
-class DriversRoute extends _i40.PageRouteInfo<void> {
-  const DriversRoute({List<_i40.PageRouteInfo>? children})
+/// [_i25.DriversScreen]
+class DriversRoute extends _i42.PageRouteInfo<void> {
+  const DriversRoute({List<_i42.PageRouteInfo>? children})
       : super(
           DriversRoute.name,
           initialChildren: children,
@@ -804,16 +877,16 @@ class DriversRoute extends _i40.PageRouteInfo<void> {
 
   static const String name = 'DriversRoute';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i24.ForgotPasswordCode]
-class ForgotPasswordCode extends _i40.PageRouteInfo<ForgotPasswordCodeArgs> {
+/// [_i26.ForgotPasswordCode]
+class ForgotPasswordCode extends _i42.PageRouteInfo<ForgotPasswordCodeArgs> {
   ForgotPasswordCode({
-    _i41.Key? key,
+    _i43.Key? key,
     required String email,
-    List<_i40.PageRouteInfo>? children,
+    List<_i42.PageRouteInfo>? children,
   }) : super(
           ForgotPasswordCode.name,
           args: ForgotPasswordCodeArgs(
@@ -825,8 +898,8 @@ class ForgotPasswordCode extends _i40.PageRouteInfo<ForgotPasswordCodeArgs> {
 
   static const String name = 'ForgotPasswordCode';
 
-  static const _i40.PageInfo<ForgotPasswordCodeArgs> page =
-      _i40.PageInfo<ForgotPasswordCodeArgs>(name);
+  static const _i42.PageInfo<ForgotPasswordCodeArgs> page =
+      _i42.PageInfo<ForgotPasswordCodeArgs>(name);
 }
 
 class ForgotPasswordCodeArgs {
@@ -835,7 +908,7 @@ class ForgotPasswordCodeArgs {
     required this.email,
   });
 
-  final _i41.Key? key;
+  final _i43.Key? key;
 
   final String email;
 
@@ -846,9 +919,9 @@ class ForgotPasswordCodeArgs {
 }
 
 /// generated route for
-/// [_i25.ForgotPasswordEmail]
-class ForgotPasswordEmail extends _i40.PageRouteInfo<void> {
-  const ForgotPasswordEmail({List<_i40.PageRouteInfo>? children})
+/// [_i27.ForgotPasswordEmail]
+class ForgotPasswordEmail extends _i42.PageRouteInfo<void> {
+  const ForgotPasswordEmail({List<_i42.PageRouteInfo>? children})
       : super(
           ForgotPasswordEmail.name,
           initialChildren: children,
@@ -856,13 +929,13 @@ class ForgotPasswordEmail extends _i40.PageRouteInfo<void> {
 
   static const String name = 'ForgotPasswordEmail';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i26.LoginScreen]
-class LoginRoute extends _i40.PageRouteInfo<void> {
-  const LoginRoute({List<_i40.PageRouteInfo>? children})
+/// [_i28.LoginScreen]
+class LoginRoute extends _i42.PageRouteInfo<void> {
+  const LoginRoute({List<_i42.PageRouteInfo>? children})
       : super(
           LoginRoute.name,
           initialChildren: children,
@@ -870,16 +943,16 @@ class LoginRoute extends _i40.PageRouteInfo<void> {
 
   static const String name = 'LoginRoute';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i27.PlanLocationsScreen]
-class PlanLocationsRoute extends _i40.PageRouteInfo<PlanLocationsRouteArgs> {
+/// [_i29.PlanLocationsScreen]
+class PlanLocationsRoute extends _i42.PageRouteInfo<PlanLocationsRouteArgs> {
   PlanLocationsRoute({
-    _i41.Key? key,
-    required _i44.PlanModel plan,
-    List<_i40.PageRouteInfo>? children,
+    _i43.Key? key,
+    required _i45.PlanModel plan,
+    List<_i42.PageRouteInfo>? children,
   }) : super(
           PlanLocationsRoute.name,
           args: PlanLocationsRouteArgs(
@@ -891,8 +964,8 @@ class PlanLocationsRoute extends _i40.PageRouteInfo<PlanLocationsRouteArgs> {
 
   static const String name = 'PlanLocationsRoute';
 
-  static const _i40.PageInfo<PlanLocationsRouteArgs> page =
-      _i40.PageInfo<PlanLocationsRouteArgs>(name);
+  static const _i42.PageInfo<PlanLocationsRouteArgs> page =
+      _i42.PageInfo<PlanLocationsRouteArgs>(name);
 }
 
 class PlanLocationsRouteArgs {
@@ -901,9 +974,9 @@ class PlanLocationsRouteArgs {
     required this.plan,
   });
 
-  final _i41.Key? key;
+  final _i43.Key? key;
 
-  final _i44.PlanModel plan;
+  final _i45.PlanModel plan;
 
   @override
   String toString() {
@@ -912,9 +985,9 @@ class PlanLocationsRouteArgs {
 }
 
 /// generated route for
-/// [_i28.PlansScreen]
-class PlansRoute extends _i40.PageRouteInfo<void> {
-  const PlansRoute({List<_i40.PageRouteInfo>? children})
+/// [_i30.PlansScreen]
+class PlansRoute extends _i42.PageRouteInfo<void> {
+  const PlansRoute({List<_i42.PageRouteInfo>? children})
       : super(
           PlansRoute.name,
           initialChildren: children,
@@ -922,13 +995,13 @@ class PlansRoute extends _i40.PageRouteInfo<void> {
 
   static const String name = 'PlansRoute';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i29.ProfileScreen]
-class ProfileRoute extends _i40.PageRouteInfo<void> {
-  const ProfileRoute({List<_i40.PageRouteInfo>? children})
+/// [_i31.ProfileScreen]
+class ProfileRoute extends _i42.PageRouteInfo<void> {
+  const ProfileRoute({List<_i42.PageRouteInfo>? children})
       : super(
           ProfileRoute.name,
           initialChildren: children,
@@ -936,13 +1009,13 @@ class ProfileRoute extends _i40.PageRouteInfo<void> {
 
   static const String name = 'ProfileRoute';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i30.ReportsScreen]
-class ReportsRoute extends _i40.PageRouteInfo<void> {
-  const ReportsRoute({List<_i40.PageRouteInfo>? children})
+/// [_i32.ReportsScreen]
+class ReportsRoute extends _i42.PageRouteInfo<void> {
+  const ReportsRoute({List<_i42.PageRouteInfo>? children})
       : super(
           ReportsRoute.name,
           initialChildren: children,
@@ -950,17 +1023,17 @@ class ReportsRoute extends _i40.PageRouteInfo<void> {
 
   static const String name = 'ReportsRoute';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i31.ResetPassword]
-class ResetPassword extends _i40.PageRouteInfo<ResetPasswordArgs> {
+/// [_i33.ResetPassword]
+class ResetPassword extends _i42.PageRouteInfo<ResetPasswordArgs> {
   ResetPassword({
-    _i41.Key? key,
+    _i43.Key? key,
     required String code,
     required String email,
-    List<_i40.PageRouteInfo>? children,
+    List<_i42.PageRouteInfo>? children,
   }) : super(
           ResetPassword.name,
           args: ResetPasswordArgs(
@@ -973,8 +1046,8 @@ class ResetPassword extends _i40.PageRouteInfo<ResetPasswordArgs> {
 
   static const String name = 'ResetPassword';
 
-  static const _i40.PageInfo<ResetPasswordArgs> page =
-      _i40.PageInfo<ResetPasswordArgs>(name);
+  static const _i42.PageInfo<ResetPasswordArgs> page =
+      _i42.PageInfo<ResetPasswordArgs>(name);
 }
 
 class ResetPasswordArgs {
@@ -984,7 +1057,7 @@ class ResetPasswordArgs {
     required this.email,
   });
 
-  final _i41.Key? key;
+  final _i43.Key? key;
 
   final String code;
 
@@ -997,9 +1070,9 @@ class ResetPasswordArgs {
 }
 
 /// generated route for
-/// [_i32.Signup]
-class Signup extends _i40.PageRouteInfo<void> {
-  const Signup({List<_i40.PageRouteInfo>? children})
+/// [_i34.Signup]
+class Signup extends _i42.PageRouteInfo<void> {
+  const Signup({List<_i42.PageRouteInfo>? children})
       : super(
           Signup.name,
           initialChildren: children,
@@ -1007,13 +1080,13 @@ class Signup extends _i40.PageRouteInfo<void> {
 
   static const String name = 'Signup';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i33.TrucksScreen]
-class TrucksRoute extends _i40.PageRouteInfo<void> {
-  const TrucksRoute({List<_i40.PageRouteInfo>? children})
+/// [_i35.TrucksScreen]
+class TrucksRoute extends _i42.PageRouteInfo<void> {
+  const TrucksRoute({List<_i42.PageRouteInfo>? children})
       : super(
           TrucksRoute.name,
           initialChildren: children,
@@ -1021,16 +1094,16 @@ class TrucksRoute extends _i40.PageRouteInfo<void> {
 
   static const String name = 'TrucksRoute';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i34.UpdateCityScreen]
-class UpdateCityRoute extends _i40.PageRouteInfo<UpdateCityRouteArgs> {
+/// [_i36.UpdateCityScreen]
+class UpdateCityRoute extends _i42.PageRouteInfo<UpdateCityRouteArgs> {
   UpdateCityRoute({
-    _i41.Key? key,
-    required _i43.CityModel city,
-    List<_i40.PageRouteInfo>? children,
+    _i43.Key? key,
+    required _i46.CityModel city,
+    List<_i42.PageRouteInfo>? children,
   }) : super(
           UpdateCityRoute.name,
           args: UpdateCityRouteArgs(
@@ -1042,8 +1115,8 @@ class UpdateCityRoute extends _i40.PageRouteInfo<UpdateCityRouteArgs> {
 
   static const String name = 'UpdateCityRoute';
 
-  static const _i40.PageInfo<UpdateCityRouteArgs> page =
-      _i40.PageInfo<UpdateCityRouteArgs>(name);
+  static const _i42.PageInfo<UpdateCityRouteArgs> page =
+      _i42.PageInfo<UpdateCityRouteArgs>(name);
 }
 
 class UpdateCityRouteArgs {
@@ -1052,9 +1125,9 @@ class UpdateCityRouteArgs {
     required this.city,
   });
 
-  final _i41.Key? key;
+  final _i43.Key? key;
 
-  final _i43.CityModel city;
+  final _i46.CityModel city;
 
   @override
   String toString() {
@@ -1063,12 +1136,12 @@ class UpdateCityRouteArgs {
 }
 
 /// generated route for
-/// [_i35.UpdateDriverScreen]
-class UpdateDriverRoute extends _i40.PageRouteInfo<UpdateDriverRouteArgs> {
+/// [_i37.UpdateDriverScreen]
+class UpdateDriverRoute extends _i42.PageRouteInfo<UpdateDriverRouteArgs> {
   UpdateDriverRoute({
-    _i41.Key? key,
-    required _i45.DriverModel driver,
-    List<_i40.PageRouteInfo>? children,
+    _i43.Key? key,
+    required _i47.DriverModel driver,
+    List<_i42.PageRouteInfo>? children,
   }) : super(
           UpdateDriverRoute.name,
           args: UpdateDriverRouteArgs(
@@ -1080,8 +1153,8 @@ class UpdateDriverRoute extends _i40.PageRouteInfo<UpdateDriverRouteArgs> {
 
   static const String name = 'UpdateDriverRoute';
 
-  static const _i40.PageInfo<UpdateDriverRouteArgs> page =
-      _i40.PageInfo<UpdateDriverRouteArgs>(name);
+  static const _i42.PageInfo<UpdateDriverRouteArgs> page =
+      _i42.PageInfo<UpdateDriverRouteArgs>(name);
 }
 
 class UpdateDriverRouteArgs {
@@ -1090,9 +1163,9 @@ class UpdateDriverRouteArgs {
     required this.driver,
   });
 
-  final _i41.Key? key;
+  final _i43.Key? key;
 
-  final _i45.DriverModel driver;
+  final _i47.DriverModel driver;
 
   @override
   String toString() {
@@ -1101,9 +1174,9 @@ class UpdateDriverRouteArgs {
 }
 
 /// generated route for
-/// [_i36.UpdateGeneralInformationScreen]
-class UpdateGeneralInformationRoute extends _i40.PageRouteInfo<void> {
-  const UpdateGeneralInformationRoute({List<_i40.PageRouteInfo>? children})
+/// [_i38.UpdateGeneralInformationScreen]
+class UpdateGeneralInformationRoute extends _i42.PageRouteInfo<void> {
+  const UpdateGeneralInformationRoute({List<_i42.PageRouteInfo>? children})
       : super(
           UpdateGeneralInformationRoute.name,
           initialChildren: children,
@@ -1111,13 +1184,13 @@ class UpdateGeneralInformationRoute extends _i40.PageRouteInfo<void> {
 
   static const String name = 'UpdateGeneralInformationRoute';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i37.UpdateLocationScreen]
-class UpdateLocationRoute extends _i40.PageRouteInfo<void> {
-  const UpdateLocationRoute({List<_i40.PageRouteInfo>? children})
+/// [_i39.UpdateLocationScreen]
+class UpdateLocationRoute extends _i42.PageRouteInfo<void> {
+  const UpdateLocationRoute({List<_i42.PageRouteInfo>? children})
       : super(
           UpdateLocationRoute.name,
           initialChildren: children,
@@ -1125,16 +1198,16 @@ class UpdateLocationRoute extends _i40.PageRouteInfo<void> {
 
   static const String name = 'UpdateLocationRoute';
 
-  static const _i40.PageInfo<void> page = _i40.PageInfo<void>(name);
+  static const _i42.PageInfo<void> page = _i42.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i38.UpdateTruckScreen]
-class UpdateTruckRoute extends _i40.PageRouteInfo<UpdateTruckRouteArgs> {
+/// [_i40.UpdateTruckScreen]
+class UpdateTruckRoute extends _i42.PageRouteInfo<UpdateTruckRouteArgs> {
   UpdateTruckRoute({
-    _i41.Key? key,
-    required _i46.TruckModel truck,
-    List<_i40.PageRouteInfo>? children,
+    _i43.Key? key,
+    required _i48.TruckModel truck,
+    List<_i42.PageRouteInfo>? children,
   }) : super(
           UpdateTruckRoute.name,
           args: UpdateTruckRouteArgs(
@@ -1146,8 +1219,8 @@ class UpdateTruckRoute extends _i40.PageRouteInfo<UpdateTruckRouteArgs> {
 
   static const String name = 'UpdateTruckRoute';
 
-  static const _i40.PageInfo<UpdateTruckRouteArgs> page =
-      _i40.PageInfo<UpdateTruckRouteArgs>(name);
+  static const _i42.PageInfo<UpdateTruckRouteArgs> page =
+      _i42.PageInfo<UpdateTruckRouteArgs>(name);
 }
 
 class UpdateTruckRouteArgs {
@@ -1156,9 +1229,9 @@ class UpdateTruckRouteArgs {
     required this.truck,
   });
 
-  final _i41.Key? key;
+  final _i43.Key? key;
 
-  final _i46.TruckModel truck;
+  final _i48.TruckModel truck;
 
   @override
   String toString() {
@@ -1167,15 +1240,15 @@ class UpdateTruckRouteArgs {
 }
 
 /// generated route for
-/// [_i39.VerifyCityScreen]
-class VerifyCityRoute extends _i40.PageRouteInfo<VerifyCityRouteArgs> {
+/// [_i41.VerifyCityScreen]
+class VerifyCityRoute extends _i42.PageRouteInfo<VerifyCityRouteArgs> {
   VerifyCityRoute({
-    _i41.Key? key,
-    required _i47.LatLng location,
+    _i43.Key? key,
+    required _i49.LatLng location,
     required String name,
     required String state,
     required String postalCode,
-    List<_i40.PageRouteInfo>? children,
+    List<_i42.PageRouteInfo>? children,
   }) : super(
           VerifyCityRoute.name,
           args: VerifyCityRouteArgs(
@@ -1190,8 +1263,8 @@ class VerifyCityRoute extends _i40.PageRouteInfo<VerifyCityRouteArgs> {
 
   static const String name = 'VerifyCityRoute';
 
-  static const _i40.PageInfo<VerifyCityRouteArgs> page =
-      _i40.PageInfo<VerifyCityRouteArgs>(name);
+  static const _i42.PageInfo<VerifyCityRouteArgs> page =
+      _i42.PageInfo<VerifyCityRouteArgs>(name);
 }
 
 class VerifyCityRouteArgs {
@@ -1203,9 +1276,9 @@ class VerifyCityRouteArgs {
     required this.postalCode,
   });
 
-  final _i41.Key? key;
+  final _i43.Key? key;
 
-  final _i47.LatLng location;
+  final _i49.LatLng location;
 
   final String name;
 

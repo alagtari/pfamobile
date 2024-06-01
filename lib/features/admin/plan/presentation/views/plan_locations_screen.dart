@@ -84,7 +84,7 @@ class PlanLocationsScreenState extends State<PlanLocationsScreen>
             Padding(
               padding: const EdgeInsets.only(right: 30, left: 30, bottom: 15),
               child: ScreenTitle(
-                title: context.l10n.add_city,
+                title: widget.plan.city.name,
                 arrowBack: true,
               ),
             ),

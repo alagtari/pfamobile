@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:mobile/features/admin/chat/data/models/user_preview_model.dart';
+import 'package:mobile/features/chat/data/models/user_preview_model.dart';
 import 'package:mobile/theme/colors.dart';
 
 class ChatImageWidget extends StatelessWidget {

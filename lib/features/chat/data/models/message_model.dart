@@ -1,4 +1,4 @@
-import 'package:mobile/features/admin/chat/domain/entities/message_entity.dart';
+import 'package:mobile/features/chat/domain/entities/message_entity.dart';
 
 // ignore: must_be_immutable
 class MessageModel extends MessageEntity {

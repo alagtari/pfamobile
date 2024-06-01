@@ -4,41 +4,36 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile/common_widgets/app_chat_form_field.dart';
-import 'package:mobile/common_widgets/chat_image_widget.dart';
 import 'package:mobile/common_widgets/recived_message_widget.dart';
 import 'package:mobile/common_widgets/sent_message_widget.dart';
 import 'package:mobile/core/common_used/socket_service.dart';
 import 'package:mobile/core/injection/injection_container.dart';
-import 'package:mobile/features/admin/chat/data/models/message_model.dart';
-import 'package:mobile/features/admin/chat/data/models/room_model.dart';
-import 'package:mobile/features/admin/chat/presentation/bloc/bloc.dart';
+import 'package:mobile/features/chat/data/models/driver_message_model.dart';
+import 'package:mobile/features/chat/data/models/message_model.dart';
+import 'package:mobile/features/chat/presentation/bloc/bloc.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
-import 'package:mobile/theme/text_styles.dart';
 
 @RoutePage()
-class AdminChatRoomScreen extends StatefulWidget implements AutoRouteWrapper {
-  const AdminChatRoomScreen({
+class DriverChatRoomScreen extends StatefulWidget implements AutoRouteWrapper {
+  const DriverChatRoomScreen({
     super.key,
-    required this.room,
   });
 
-  final RoomModel room;
-
   @override
-  State<AdminChatRoomScreen> createState() => _AdminChatRoomScreenState();
+  State<DriverChatRoomScreen> createState() => _DriverChatRoomScreenState();
 
   @override
   Widget wrappedRoute(BuildContext context) => BlocProvider(
         create: (context) => ChatBloc()
           ..add(
-            GetRoomMessagesEvent(id: room.id),
+            GetDriverRoomMessagesEvent(),
           ),
         child: this,
       );
 }
 
-class _AdminChatRoomScreenState extends State<AdminChatRoomScreen> {
+class _DriverChatRoomScreenState extends State<DriverChatRoomScreen> {
   final SocketService _socketService = sl<SocketService>();
   late Stream<List<MessageModel>> _messages;
   final ScrollController _scrollController = ScrollController();
@@ -83,41 +78,10 @@ class _AdminChatRoomScreenState extends State<AdminChatRoomScreen> {
       child: SafeArea(
         child: Column(
           children: [
-            Container(
-              margin: EdgeInsets.symmetric(
-                horizontal: MediaQuery.of(context).size.width * .075,
-              ),
-              child: Row(
-                children: [
-                  ChatImageWidget(user: widget.room.user),
-                  extraMiniHorizantalSpacer,
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "${widget.room.user.firstName} ${widget.room.user.lastName}",
-                        style: TextStyles.mediumTextStyle.copyWith(
-                          color: AppColors.whiteDarkColor,
-                          fontSize: 17,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      Text(
-                        "Online",
-                        style: TextStyles.extraSmallTextStyle.copyWith(
-                          color: AppColors.whiteDarkColor,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
             Expanded(
               child: BlocListener<ChatBloc, ChatState>(
                 listener: (context, state) {
-                  if (state is GetRoomMessagesSuccess) {
+                  if (state is GetDriverRoomMessagesSuccess) {
                     setState(() {
                       _messagesNotifier.value = state.messages;
                     });
@@ -144,8 +108,7 @@ class _AdminChatRoomScreenState extends State<AdminChatRoomScreen> {
                         return StreamBuilder<List<MessageModel>>(
                           stream: _messages,
                           builder: (context, snapshot) {
-                            if (snapshot.data != null &&
-                                snapshot.data!.last.roomId == widget.room.id) {
+                            if (snapshot.data != null) {
                               value.add(snapshot.data!.last);
                             }
                             return ListView.builder(
@@ -188,12 +151,11 @@ class _AdminChatRoomScreenState extends State<AdminChatRoomScreen> {
                   GestureDetector(
                     onTap: () {
                       if (controller.text.isNotEmpty) {
-                        final message = MessageModel(
+                        final message = DriverMessageModel(
                           content: controller.text,
-                          roomId: widget.room.id,
                         );
                         context.read<ChatBloc>().add(
-                              SendMessageEvent(message: message),
+                              SendDriverMessageEvent(message: message),
                             );
                         controller.text = "";
                       }

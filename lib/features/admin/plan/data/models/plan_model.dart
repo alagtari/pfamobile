@@ -1,3 +1,4 @@
+import 'package:mobile/core/enums/mission_enum.dart';
 import 'package:mobile/features/admin/city/data/models/city_model.dart';
 import 'package:mobile/features/admin/city/data/models/location_model.dart';
 import 'package:mobile/features/admin/plan/domain/entities/plan_entity.dart';
@@ -13,6 +14,7 @@ class PlanModel extends PlanEntity {
     required super.truck,
     required super.garbageType,
     super.visitedLocation,
+    required super.status
   });
 
   factory PlanModel.fromJson(Map<String, dynamic> json) {
@@ -29,6 +31,7 @@ class PlanModel extends PlanEntity {
       truck: TruckModel.fromJson(json['truck']),
       garbageType: json['garbageType'],
       visitedLocation: locations,
+      status: getMissionStatusFromString(json['status']),
     );
   }
 

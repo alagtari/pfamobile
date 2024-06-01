@@ -13,16 +13,6 @@ class MissionBloc extends Bloc<MissionEvent, MissionState> {
 
   MissionBloc() : super(MissionInitial()) {
     on<MissionEvent>((event, emit) {});
-    on<GetMissionsEvent>(
-      (event, emit) async {
-        emit(GetMissionsLoading());
-        final res = await _repo.getMissions();
-        res.fold(
-          (l) => emit(GetMissionsFailed(message: l.message)),
-          (r) => emit(GetMissionsSuccess(missons: r.payload!)),
-        );
-      },
-    );
 
     on<GetLocationEvent>((event, emit) async {
       emit(GeolocationLoading());

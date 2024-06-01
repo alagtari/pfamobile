@@ -6,9 +6,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile/common_widgets/chat_room_preview_widget.dart';
 import 'package:mobile/core/common_used/socket_service.dart';
 import 'package:mobile/core/injection/injection_container.dart';
-import 'package:mobile/features/admin/chat/data/models/message_model.dart';
-import 'package:mobile/features/admin/chat/data/models/room_model.dart';
-import 'package:mobile/features/admin/chat/presentation/bloc/bloc.dart';
+import 'package:mobile/features/chat/data/models/message_model.dart';
+import 'package:mobile/features/chat/data/models/room_model.dart';
+import 'package:mobile/features/chat/presentation/bloc/bloc.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
 

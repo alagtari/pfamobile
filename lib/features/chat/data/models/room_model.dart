@@ -1,6 +1,6 @@
-import 'package:mobile/features/admin/chat/data/models/message_model.dart';
-import 'package:mobile/features/admin/chat/data/models/user_preview_model.dart';
-import 'package:mobile/features/admin/chat/domain/entities/room_entity.dart';
+import 'package:mobile/features/chat/data/models/message_model.dart';
+import 'package:mobile/features/chat/data/models/user_preview_model.dart';
+import 'package:mobile/features/chat/domain/entities/room_entity.dart';
 
 // ignore: must_be_immutable
 class RoomModel extends RoomEntity {

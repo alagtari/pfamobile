@@ -1,15 +1,11 @@
-import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:mobile/core/common_used/response_wrapper.dart';
 import 'package:mobile/core/injection/injection_container.dart';
-import 'package:mobile/features/driver/misson/data/models/misson_model.dart';
 
 abstract class MissionOnlineDataSource {
-  Future<ResponseWrapper<List<MissionModel>>> getMissions();
   Future<List<LatLng>> getDirections(LatLng start, LatLng end);
   Future<Unit> startMission(String id);
   Future<Unit> endMission(String id);
@@ -19,22 +15,6 @@ abstract class MissionOnlineDataSource {
 class MissionOnlineDataSourceImpl implements MissionOnlineDataSource {
   @override
   @override
-  Future<ResponseWrapper<List<MissionModel>>> getMissions() async {
-    final res = await sl<Dio>().get(
-      "/driver/misson",
-    );
-    try {
-      return ResponseWrapper.fromJson(res.data, (p0) {
-        List<MissionModel> missonList = [];
-        for (var misson in p0 as List) {
-          missonList.add(MissionModel.fromJson(misson));
-        }
-        return missonList;
-      });
-    } catch (e) {
-      rethrow;
-    }
-  }
 
   @override
   Future<List<LatLng>> getDirections(LatLng start, LatLng end) async {
@@ -59,7 +39,7 @@ class MissionOnlineDataSourceImpl implements MissionOnlineDataSource {
   @override
   Future<Unit> startMission(String id) async {
     await sl<Dio>().patch(
-      "/driver/misson/$id/start",
+      "/driver/plan/$id/start",
     );
     return unit;
   }
@@ -67,7 +47,7 @@ class MissionOnlineDataSourceImpl implements MissionOnlineDataSource {
   @override
   Future<Unit> endMission(String id) async {
     await sl<Dio>().patch(
-      "/driver/misson/$id/end",
+      "/driver/plan/$id/end",
     );
     return unit;
   }
@@ -75,7 +55,7 @@ class MissionOnlineDataSourceImpl implements MissionOnlineDataSource {
   @override
   Future<Unit> visitLocation(String locationId, String planId) async {
     await sl<Dio>().patch(
-      "/driver/misson/$planId/visit/$locationId",
+      "/driver/plan/$planId/visit/$locationId",
     );
     return unit;
   }

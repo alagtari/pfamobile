@@ -6,6 +6,7 @@ import 'package:mobile/common_widgets/app_dropdown_widget.dart';
 import 'package:mobile/common_widgets/app_time_picker.dart';
 import 'package:mobile/common_widgets/screen_title.dart';
 import 'package:mobile/common_widgets/app_botton.dart';
+import 'package:mobile/core/enums/mission_enum.dart';
 import 'package:mobile/features/admin/city/data/models/city_model.dart';
 import 'package:mobile/features/admin/city/presentation/bloc/bloc.dart';
 import 'package:mobile/features/admin/plan/data/models/plan_model.dart';
@@ -196,6 +197,7 @@ class _AddPlanScreenState extends State<AddPlanScreen> {
       city: _city.value!,
       truck: _truck.value!,
       garbageType: _garbageType.value!,
+      status: MissionStatus.not_started,
     );
     context.read<PlanBloc>().add(AddPlanEvent(plan: plan));
   }

@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:mobile/features/admin/chat/data/models/message_model.dart';
-import 'package:mobile/features/admin/chat/data/models/user_preview_model.dart';
+import 'package:mobile/features/chat/data/models/message_model.dart';
+import 'package:mobile/features/chat/data/models/user_preview_model.dart';
 
 class RoomEntity extends Equatable {
   final String id;

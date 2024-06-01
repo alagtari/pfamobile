@@ -11,14 +11,10 @@ class SendMessageEvent extends ChatEvent {
     required this.message,
   });
 }
-
-class UpdateChatEvent extends ChatEvent {
-  final MessageModel chat;
-  final String id;
-
-  const UpdateChatEvent({
-    required this.chat,
-    required this.id,
+class SendDriverMessageEvent extends ChatEvent {
+  final DriverMessageModel message;
+  const SendDriverMessageEvent({
+    required this.message,
   });
 }
 
@@ -28,11 +24,6 @@ class GetRoomMessagesEvent extends ChatEvent {
   const GetRoomMessagesEvent({required this.id});
 }
 
-class GetRoomsEvent extends ChatEvent {}
+class GetDriverRoomMessagesEvent extends ChatEvent {}
 
-class DeleteChatEvent extends ChatEvent {
-  final String id;
-  const DeleteChatEvent({
-    required this.id,
-  });
-}
+class GetRoomsEvent extends ChatEvent {}

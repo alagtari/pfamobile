@@ -7,9 +7,9 @@ import 'package:mobile/features/auth/data/repositories/auth_repository_impl.dart
 import 'package:mobile/features/auth/domain/repositories/auth_repository.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mobile/core/routes/app_router.dart';
-import 'package:mobile/features/admin/chat/data/data_sources/chat_remote_data_source.dart';
-import 'package:mobile/features/admin/chat/data/repositories/chat_repository_impl.dart';
-import 'package:mobile/features/admin/chat/domain/repositories/chat_repository.dart';
+import 'package:mobile/features/chat/data/data_sources/chat_remote_data_source.dart';
+import 'package:mobile/features/chat/data/repositories/chat_repository_impl.dart';
+import 'package:mobile/features/chat/domain/repositories/chat_repository.dart';
 import 'package:mobile/features/admin/city/data/data_sources/city_remote_data_source.dart';
 import 'package:mobile/features/admin/city/data/repositories/city_repository_impl.dart';
 import 'package:mobile/features/admin/city/domain/repositories/city_repository.dart';

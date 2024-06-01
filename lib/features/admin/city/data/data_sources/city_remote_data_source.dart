@@ -15,9 +15,9 @@ abstract class CityOnlineDataSource {
   Future<LatLng?> verifyCity({required String state, required String name});
   Future<ResponseWrapper<CityModel>> updateCity(CityModel city, String id);
   Future<Unit> deleteCity(String id);
-  Future<ResponseWrapper<LocationModel>> addCityLocation(AddLocationModel location);
+  Future<ResponseWrapper<LocationModel>> addCityLocation(
+      AddLocationModel location);
   Future<Unit> deleteCityLocation(String id);
-
 }
 
 class CityOnlineDataSourceImpl implements CityOnlineDataSource {
@@ -91,20 +91,22 @@ class CityOnlineDataSourceImpl implements CityOnlineDataSource {
     }
     return null;
   }
-  
+
   @override
-  Future<ResponseWrapper<LocationModel>> addCityLocation(AddLocationModel location) async {
+  Future<ResponseWrapper<LocationModel>> addCityLocation(
+      AddLocationModel location) async {
     final res = await sl<Dio>().post(
-      "/location",
+      "/admin/location",
       data: location.toJson(),
     );
-    return ResponseWrapper.fromJson(res.data, (p0) => LocationModel.fromJson(p0));
+    return ResponseWrapper.fromJson(
+        res.data, (p0) => LocationModel.fromJson(p0));
   }
-  
+
   @override
   Future<Unit> deleteCityLocation(String id) async {
     await sl<Dio>().delete(
-      "/location/$id",
+      "/admin/location/$id",
     );
     return unit;
   }
