@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile/core/common_used/app_prefs.dart';
+import 'package:mobile/core/injection/injection_container.dart';
 import 'package:mobile/core/routes/app_router.gr.dart';
 import 'package:mobile/common_widgets/screen_title.dart';
 import 'package:mobile/common_widgets/setting_option_widget.dart';
@@ -82,6 +84,27 @@ class CitizenProfileScreen extends StatelessWidget {
               icon: "assets/svg/preferences.svg",
               settingTitle: context.l10n.preferences,
             ),
+            miniVerticalSpacer,
+            Container(
+              decoration: const BoxDecoration(
+                border: Border(
+                  top: BorderSide(
+                    color: AppColors.greyDarkColor,
+                    width: .3,
+                  ),
+                ),
+              ),
+              // margin: const EdgeInsets.symmetric(horizontal: 5),
+            ),
+            miniVerticalSpacer,
+            SettingOptionWidget(
+                icon: "assets/svg/logout.svg",
+                settingTitle: "Logout",
+                arrow: false,
+                onTap: () async {
+                  context.router.replaceAll([const LoginRoute()]);
+                  await sl<AppPrefs>().clearAll();
+                }),
           ],
         ),
       ),

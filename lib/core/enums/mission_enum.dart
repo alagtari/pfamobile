@@ -5,8 +5,8 @@ enum MissionStatus {
   cancelled,
 }
 
-MissionStatus getMissionStatusFromString(String role) {
-  switch (role) {
+MissionStatus getMissionStatusFromString(String status) {
+  switch (status) {
     case 'IN_PROGRESS':
       return MissionStatus.in_progress;
     case 'FINISHED':

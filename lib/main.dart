@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:mobile/core/common_used/app_prefs.dart';
@@ -7,6 +8,7 @@ import 'package:mobile/core/routes/app_router.dart';
 import 'package:mobile/core/injection/injection_container.dart' as container;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:mobile/core/routes/app_router.gr.dart';
 import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/core/injection/injection_container.dart';
 
@@ -49,6 +51,30 @@ class _MyAppState extends State<MyApp> {
         local = language;
       });
     });
+    _navigateBasedOnAuth();
+  }
+
+  Future<void> _navigateBasedOnAuth() async {
+    String? role = sl<AppPrefs>().getRole();
+    String? token = sl<AppPrefs>().getToken();
+    log(role??"role is null");
+    log(token??"token is null");
+    if (role != null && token != null) {
+      switch (role) {
+        case "citizen":
+          appRouter.push(const CitizenAppFrame());
+        case 'driver':
+          appRouter.push(const DriverAppFrame());
+        case 'admin':
+          appRouter.push(const AdminAppFrame());
+        default:
+          appRouter.push(const LoginRoute());
+      }
+    } else {
+      appRouter.push(const LoginRoute());
+    }
+
+    FlutterNativeSplash.remove();
   }
 
   @override

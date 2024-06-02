@@ -11,3 +11,15 @@ UserRole getUserRoleFromString(String role) {
       return UserRole.admin;
   }
 }
+
+// Function to convert enum to string
+String getUserRoleToString(UserRole role) {
+  switch (role) {
+    case UserRole.citizen:
+      return "citizen";
+    case UserRole.driver:
+      return 'driver';
+    default:
+      return 'admin';
+  }
+}

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:mobile/core/common_used/app_prefs.dart';
+import 'package:mobile/core/enums/role_enum.dart';
 import 'package:mobile/core/injection/injection_container.dart';
 import 'package:mobile/features/auth/data/models/auth_response_model.dart';
 import 'package:mobile/features/auth/data/models/auth_request_model.dart';
@@ -86,5 +87,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   Future<void> _cacheToPrefs(AuthResponseModel r) async {
     await _prefs.saveToken(r.token);
+    await _prefs.saveRole(getUserRoleToString(r.role));
   }
 }

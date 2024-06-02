@@ -11,18 +11,26 @@ class SettingOptionWidget extends StatelessWidget {
     required this.icon,
     required this.settingTitle,
     this.size = 20,
-    required this.route,
+    this.route,
+    this.arrow = true,
+    this.onTap,
   });
 
   final String icon;
   final String settingTitle;
   final double size;
-  final route;
+  final dynamic route;
+  final bool arrow;
+  final VoidCallback? onTap;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.router.push(route);
+        onTap?.call();
+        if (route != null) {
+          context.router.push(route);
+        }
       },
       child: Row(
         children: [
@@ -53,10 +61,12 @@ class SettingOptionWidget extends StatelessWidget {
           const Expanded(
             child: SizedBox(),
           ),
-          const Icon(
-            Icons.arrow_forward_ios,
-            size: 18,
-          )
+          arrow
+              ? const Icon(
+                  Icons.arrow_forward_ios,
+                  size: 18,
+                )
+              : const SizedBox()
         ],
       ),
     );
