@@ -2,6 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:mobile/core/common_used/app_prefs.dart';
 import 'package:mobile/core/common_used/dio_provider.dart';
 import 'package:mobile/core/common_used/socket_service.dart';
+import 'package:mobile/features/admin/problem/data/data_sources/problem_remote_data_source.dart';
+import 'package:mobile/features/admin/problem/data/repositories/problem_repository_impl.dart';
+import 'package:mobile/features/admin/problem/domain/repositories/problem_repository.dart';
 import 'package:mobile/features/auth/data/data_sources/remote_data_source.dart';
 import 'package:mobile/features/auth/data/repositories/auth_repository_impl.dart';
 import 'package:mobile/features/auth/domain/repositories/auth_repository.dart';
@@ -174,6 +177,15 @@ Future<void> init() async {
   );
   sl.registerLazySingleton<CalendarRepository>(
     () => CalendarRepositoryImpl(
+      dataSource: sl(),
+    ),
+  );
+
+  sl.registerLazySingleton<AdminProblemOnlineDataSource>(
+    () => AdminProblemOnlineDataSourceImpl(),
+  );
+  sl.registerLazySingleton<AdminProblemRepository>(
+    () => AdminProblemRepositoryImpl(
       dataSource: sl(),
     ),
   );

@@ -1,25 +1,27 @@
+import 'dart:developer';
+
 import 'package:auto_route/auto_route.dart';
-import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile/files/active_category_widget.dart';
-import 'package:mobile/common_widgets/app_botton.dart';
-import 'package:mobile/files/category_date_card_widget.dart';
-import 'package:mobile/files/citizens_problems_tab_widget.dart';
-import 'package:mobile/features/admin/city/presentation/widgets/city_card_widget.dart';
-import 'package:mobile/features/admin/driver/presentation/widgets/driver_card_widget.dart';
-import 'package:mobile/files/drivers_problems_tab_widget.dart';
-import 'package:mobile/files/not_active_category_widget.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mobile/features/admin/problem/presentation/bloc/bloc.dart';
+import 'package:mobile/features/admin/problem/presentation/views/citizens_problems_tab_widget.dart';
+import 'package:mobile/features/admin/problem/presentation/views/drivers_problems_tab_widget.dart';
 import 'package:mobile/common_widgets/screen_title.dart';
 import 'package:mobile/theme/colors.dart';
-import 'package:mobile/theme/spacers.dart';
 import 'package:mobile/theme/text_styles.dart';
 
 @RoutePage()
-class ReportsScreen extends StatefulWidget {
+class ReportsScreen extends StatefulWidget implements AutoRouteWrapper {
   const ReportsScreen({super.key});
 
   @override
   State<ReportsScreen> createState() => _ReportsScreenState();
+
+  @override
+  Widget wrappedRoute(BuildContext context) => BlocProvider(
+        create: (context) => ProblemBloc()..add(GetProblemsEvent()),
+        child: this,
+      );
 }
 
 class _ReportsScreenState extends State<ReportsScreen>
@@ -31,12 +33,23 @@ class _ReportsScreenState extends State<ReportsScreen>
   void initState() {
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
+    _tabController.addListener(_handleTabChange);
   }
 
   @override
   void dispose() {
+    _tabController.removeListener(_handleTabChange);
     _tabController.dispose();
     super.dispose();
+  }
+
+  void _handleTabChange() {
+    log(_tabController.index.toString());
+    if (_tabController.index == 0) {
+      context.read<ProblemBloc>().add(GetProblemsEvent());
+    } else if (_tabController.index == 1) {
+      context.read<ProblemBloc>().add(GetIncidentsEvent());
+    }
   }
 
   @override

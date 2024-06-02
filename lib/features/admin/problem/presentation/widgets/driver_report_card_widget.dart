@@ -1,14 +1,18 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:mobile/core/util/utils.dart';
+import 'package:mobile/features/admin/problem/data/models/problem_model.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
 import 'package:mobile/theme/text_styles.dart';
 
-class CitizenReportCardWidget extends StatelessWidget {
-  const CitizenReportCardWidget({
+class DriverReportCardWidget extends StatelessWidget {
+  const DriverReportCardWidget({
     super.key,
+    required this.incident,
   });
+  final ProblemModel incident;
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +23,8 @@ class CitizenReportCardWidget extends StatelessWidget {
       strokeWidth: 1,
       color: AppColors.greyDarkColor,
       child: Container(
+        width: MediaQuery.of(context).size.width * .4,
+        height: 180,
         padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25),
@@ -33,8 +39,13 @@ class CitizenReportCardWidget extends StatelessWidget {
                   width: 40,
                   padding: const EdgeInsets.all(7),
                   decoration: BoxDecoration(
-                    image: const DecorationImage(
-                      image: AssetImage('assets/images/profile.jpg'),
+                    image: DecorationImage(
+                      fit: BoxFit.fill,
+                      image: incident.user.image != null
+                          ? NetworkImage(
+                              "${dotenv.env['IMAGE_BASE_URL']}/${incident.user.image}")
+                          : const AssetImage('assets/images/profile.jpg')
+                              as ImageProvider,
                     ),
                     borderRadius: BorderRadius.circular(12),
                   ),
@@ -44,13 +55,13 @@ class CitizenReportCardWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Ala Gtari",
+                      "${incident.user.firstName.capitalize()} ${incident.user.lastName.capitalize()}",
                       style: TextStyles.smallTextStyle.copyWith(
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                     Text(
-                      "02-02-2024",
+                      incident.createdAt.formatDayMonthYear(),
                       style: TextStyles.extraSmallTextStyle.copyWith(
                         color: AppColors.greyDarkColor,
                         fontWeight: FontWeight.w600,
@@ -61,15 +72,15 @@ class CitizenReportCardWidget extends StatelessWidget {
               ],
             ),
             miniVerticalSpacer,
-            Container(
+            SizedBox(
+              width: double.infinity,
+              height: 100,
               child: Text(
                 overflow: TextOverflow.ellipsis,
                 maxLines: 7,
-                "galley of type and rele scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting typesetting typesetting",
-                style: TextStyles.extraSmallTextStyle.copyWith(
-                  color: AppColors.greyDarkColor,
-                  fontSize: 11
-                ),
+                incident.content,
+                style: TextStyles.extraSmallTextStyle
+                    .copyWith(color: AppColors.greyDarkColor, fontSize: 11),
               ),
             ),
           ],

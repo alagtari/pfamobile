@@ -94,7 +94,7 @@ import 'package:mobile/files/admin_home_screen.dart' as _i8;
 import 'package:mobile/files/category_screen.dart' as _i10;
 import 'package:mobile/features/citizen/calendar/presentation/views/citizen_calendar_screen.dart' as _i15;
 import 'package:mobile/files/citizen_home_screen.dart' as _i16;
-import 'package:mobile/files/reports_screen.dart' as _i34;
+import 'package:mobile/features/admin/problem/presentation/views/reports_screen.dart' as _i34;
 import 'package:mobile/files/update_address_screen.dart' as _i41;
 
 abstract class $AppRouter extends _i44.RootStackRouter {

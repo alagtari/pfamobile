@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class AppPrefs {
   final SharedPreferences prefs;
-  static StreamController<String> _languageController =
+  static final StreamController<String> _languageController =
       StreamController.broadcast();
 
   static Stream<String> get languageStream => _languageController.stream;
