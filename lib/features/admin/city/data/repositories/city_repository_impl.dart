@@ -127,12 +127,30 @@ class CityRepositoryImpl implements CityRepository {
     }
   }
 
-
   @override
   Future<Either<AppFailure, Unit>> deleteCityLocation(String id) async {
     try {
       final res = await dataSource.deleteCityLocation(id);
 
+      return right(res);
+    } on AppException catch (e) {
+      return Left(AppFailure(message: e.message));
+    } on DioException catch (e) {
+      return Left(
+        AppFailure(message: e.response?.data?["message"]),
+      );
+    } catch (e) {
+      return Left(
+        AppFailure(message: 'Unexpected error occurred.'),
+      );
+    }
+  }
+
+  @override
+  Future<Either<AppFailure, ResponseWrapper<List<CityModel>>>>
+      getCitiesForCitizen() async {
+    try {
+      final res = await dataSource.getCitiesForCitizen();
       return right(res);
     } on AppException catch (e) {
       return Left(AppFailure(message: e.message));

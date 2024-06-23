@@ -259,7 +259,7 @@ class _FirstSignupStepWidgetState extends State<FirstSignupStepWidget> {
                 return AppDropdownWidget(
                   items: _genderItems,
                   onChange: changeGender,
-                  hint: context.l10n. gender,
+                  hint: context.l10n.gender,
                   icon: Icons.male_rounded,
                   initialValue: value,
                 );
@@ -278,10 +278,6 @@ class _FirstSignupStepWidgetState extends State<FirstSignupStepWidget> {
                 );
               },
             ),
-          ),
-          largeVerticalSpacer,
-          const Expanded(
-            child: SizedBox(),
           ),
           AppBotton(
             bottonText: context.l10n.continue_step,

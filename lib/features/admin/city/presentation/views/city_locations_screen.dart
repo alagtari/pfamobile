@@ -11,7 +11,6 @@ import 'package:mobile/features/admin/city/data/models/add_location_model.dart';
 import 'package:mobile/features/admin/city/data/models/city_model.dart';
 import 'package:mobile/features/admin/city/data/models/location_model.dart';
 import 'package:mobile/features/admin/city/presentation/bloc/bloc.dart';
-import 'package:mobile/l10n/l10n.dart';
 import 'package:mobile/theme/colors.dart';
 
 @RoutePage()

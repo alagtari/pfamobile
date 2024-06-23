@@ -33,7 +33,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   final TextEditingController _confirmNewPasswordController =
       TextEditingController();
 
-  late ValueNotifier<bool> obscured;
+  late ValueNotifier<bool> oldObscured;
+  late ValueNotifier<bool> newObscured;
   late ValueNotifier<bool> confirmObscured;
 
   late ValueNotifier<String> errorMessage;
@@ -82,7 +83,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   @override
   void initState() {
     super.initState();
-    obscured = ValueNotifier(true);
+    newObscured = ValueNotifier(true);
+    oldObscured = ValueNotifier(true);
     confirmObscured = ValueNotifier(true);
     errorMessage = ValueNotifier("");
     valid = true;
@@ -126,7 +128,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                 ),
                 largeVerticalSpacer,
                 ValueListenableBuilder<bool>(
-                  valueListenable: obscured,
+                  valueListenable: oldObscured,
                   builder: (_, obs, __) => AppFormField(
                     obscured: obs,
                     hintText: context.l10n.old_password,
@@ -138,7 +140,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                     ),
                     suffixIcon: InkWell(
                       onTap: () {
-                        obscured.value = !obs;
+                        oldObscured.value = !obs;
                       },
                       child: obs
                           ? const Icon(
@@ -154,7 +156,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                 ),
                 extraSmallVerticalSpacer,
                 ValueListenableBuilder<bool>(
-                  valueListenable: obscured,
+                  valueListenable: newObscured,
                   builder: (_, obs, __) => AppFormField(
                     obscured: obs,
                     hintText: context.l10n.new_password,
@@ -166,7 +168,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                     ),
                     suffixIcon: InkWell(
                       onTap: () {
-                        obscured.value = !obs;
+                        newObscured.value = !obs;
                       },
                       child: obs
                           ? const Icon(

@@ -52,7 +52,7 @@ class _ThirdSignupStepWidgetState extends State<ThirdSignupStepWidget> {
   Widget build(BuildContext context) {
     return BlocListener<CityBloc, CityState>(
       listener: (context, state) {
-        if (state is GetCitiesSuccess) {
+        if (state is GetCitiesForCitizenSuccess) {
           setState(() {
             _cities.value = state.cities;
             _cityItems.value = state.cities
@@ -79,7 +79,7 @@ class _ThirdSignupStepWidgetState extends State<ThirdSignupStepWidget> {
             AppDropdownWidget(
               items: _cityItems.value,
               onChange: changeCity,
-              hint: context.l10n. city,
+              hint: context.l10n.city,
               icon: Icons.location_on_outlined,
             ),
             extraSmallVerticalSpacer,

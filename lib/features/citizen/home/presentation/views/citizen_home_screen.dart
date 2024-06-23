@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:mobile/core/routes/app_router.gr.dart';
 import 'package:mobile/files/category_widget.dart';
 import 'package:mobile/theme/colors.dart';
 import 'package:mobile/theme/spacers.dart';
@@ -26,56 +28,59 @@ class CitizenHomeScreen extends StatelessWidget {
             mediumVerticalSpacer,
             Row(
               children: [
-                GestureDetector(
-                  onTap: () {},
-                  child: Container(
-                    width: 45,
-                    height: 45,
-                    decoration: const BoxDecoration(
-                      color: AppColors.greenLightColor,
-                      image: DecorationImage(
-                        image: AssetImage('assets/images/profile.jpg'),
-                        fit: BoxFit.cover,
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(15),
-                      ),
-                    ),
-                  ),
-                ),
-                miniHorizantalSpacer,
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Ala Gtari",
-                      style: TextStyles.mediumTextStyle.copyWith(
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        const Icon(
-                          Icons.location_on,
-                          color: AppColors.greenDarkColor,
-                          size: 18,
-                        ),
-                        Text(
-                          "Hammem Linf",
-                          style: TextStyles.extraSmallTextStyle.copyWith(
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                // GestureDetector(
+                //   onTap: () {},
+                //   child: Container(
+                //     width: 45,
+                //     height: 45,
+                //     decoration: const BoxDecoration(
+                //       color: AppColors.greenLightColor,
+                //       image: DecorationImage(
+                //         image: AssetImage('assets/images/profile.jpg'),
+                //         fit: BoxFit.cover,
+                //       ),
+                //       borderRadius: BorderRadius.all(
+                //         Radius.circular(15),
+                //       ),
+                //     ),
+                //   ),
+                // ),
+                // miniHorizantalSpacer,
+                // Column(
+                //   crossAxisAlignment: CrossAxisAlignment.start,
+                //   children: [
+                //     Text(
+                //       "Ala Gtari",
+                //       style: TextStyles.mediumTextStyle.copyWith(
+                //         fontWeight: FontWeight.w600,
+                //       ),
+                //     ),
+                //     Row(
+                //       crossAxisAlignment: CrossAxisAlignment.end,
+                //       children: [
+                //         const Icon(
+                //           Icons.location_on,
+                //           color: AppColors.greenDarkColor,
+                //           size: 18,
+                //         ),
+                //         Text(
+                //           "Hammem Linf",
+                //           style: TextStyles.extraSmallTextStyle.copyWith(
+                //             fontWeight: FontWeight.w500,
+                //           ),
+                //         ),
+                //       ],
+                //     ),
+                //   ],
+                // ),
+                
                 const Expanded(
                   child: SizedBox(),
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    context.router.push(const NotificationRoute());
+                  },
                   child: Container(
                     width: 45,
                     height: 45,

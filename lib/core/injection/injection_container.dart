@@ -28,6 +28,9 @@ import 'package:mobile/features/admin/plan/domain/repositories/plan_repository.d
 import 'package:mobile/features/admin/profile/data/data_sources/profile_remote_data_source.dart';
 import 'package:mobile/features/admin/profile/data/repositories/profile_repository_impl.dart';
 import 'package:mobile/features/admin/profile/domain/repositories/profile_repository.dart';
+import 'package:mobile/features/citizen/home/data/repositories/notification_repository_impl.dart';
+import 'package:mobile/features/citizen/home/domain/repositories/notification_repository.dart';
+import 'package:mobile/features/citizen/home/data/data_sources/notification_remote_data_source.dart';
 import 'package:mobile/features/citizen/problem/data/data_sources/problem_remote_data_source.dart';
 import 'package:mobile/features/citizen/problem/data/repositories/problem_repository_impl.dart';
 import 'package:mobile/features/citizen/problem/domain/repositories/problem_repository.dart';
@@ -186,6 +189,15 @@ Future<void> init() async {
   );
   sl.registerLazySingleton<AdminProblemRepository>(
     () => AdminProblemRepositoryImpl(
+      dataSource: sl(),
+    ),
+  );
+
+  sl.registerLazySingleton<NotificationOnlineDataSource>(
+    () => NotificationOnlineDataSourceImpl(),
+  );
+  sl.registerLazySingleton<NotificationRepository>(
+    () => NotificationRepositoryImpl(
       dataSource: sl(),
     ),
   );

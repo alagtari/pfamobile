@@ -10,9 +10,11 @@ class AppTimePickerField extends StatefulWidget {
     super.key,
     required this.onTimeSelected,
     required this.hint,
+    this.initialValue,
   });
   final void Function(TimeOfDay time) onTimeSelected;
   final String hint;
+  final DateTime? initialValue;
 
   @override
   State<AppTimePickerField> createState() => _AppTimePickerFieldState();
@@ -20,6 +22,14 @@ class AppTimePickerField extends StatefulWidget {
 
 class _AppTimePickerFieldState extends State<AppTimePickerField> {
   TimeOfDay? _selectedTime;
+
+  @override
+  void initState() {
+    if (widget.initialValue != null) {
+      _selectedTime = TimeOfDay.fromDateTime(widget.initialValue!);
+    }
+    super.initState();
+  }
 
   void _pickTime() async {
     final time = await showTimePicker(

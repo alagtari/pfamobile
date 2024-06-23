@@ -70,12 +70,12 @@ class _TrucksScreenState extends State<TrucksScreen> {
                             return Row(
                               children: [
                                 TruckCardWidget(
-                                  truck: trucks[index],
+                                  truck: trucks[index * 2],
                                 ),
                                 const Expanded(
                                   child: SizedBox(),
                                 ),
-                                (index + 1 == trucks.length
+                                (index * 2 + 1 == trucks.length
                                     ? const SizedBox()
                                     : TruckCardWidget(
                                         truck: trucks[index + 1],

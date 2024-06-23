@@ -24,6 +24,21 @@ class GetCitiesFailed extends CityState {
   });
 }
 
+class GetCitiesForCitizenLoading extends CityState {}
+
+class GetCitiesForCitizenSuccess extends CityState {
+  final List<CityModel> cities;
+  const GetCitiesForCitizenSuccess({
+    required this.cities,
+  });
+}
+
+class GetCitiesForCitizenFailed extends CityState {
+  final String message;
+
+  const GetCitiesForCitizenFailed({required this.message});
+}
+
 class AddCityLoading extends CityState {}
 
 class AddCitySuccess extends CityState {}

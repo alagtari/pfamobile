@@ -40,6 +40,9 @@ class AppRouter extends $AppRouter {
             AutoRoute(
               page: CategoryRoute.page,
             ),
+            AutoRoute(
+              page: NotificationRoute.page,
+            ),
           ],
         ),
         CustomRoute(
@@ -92,6 +95,9 @@ class AppRouter extends $AppRouter {
             ),
             AutoRoute(
               page: AddPlanRoute.page,
+            ),
+            AutoRoute(
+              page: UpdatePlanRoute.page,
             ),
             AutoRoute(
               page: AdminMissionMapRoute.page,

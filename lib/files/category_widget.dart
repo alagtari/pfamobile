@@ -19,7 +19,7 @@ class CategoryWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.router.push(const CategoryRoute());
+        // context.router.push(const CategoryRoute());
       },
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 17, horizontal: 10),

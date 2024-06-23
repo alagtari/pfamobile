@@ -92,7 +92,8 @@ class _PlanCardWidgetState extends State<PlanCardWidget> {
                             ),
                           ),
                           Text(
-                            DateFormat('dd MMM yyyy').format(widget.plan.date),
+                            DateFormat('dd MMM yyyy')
+                                .format(widget.plan.date.toLocal()),
                             style: TextStyles.smallTextStyle.copyWith(
                               fontWeight: FontWeight.w600,
                             ),
@@ -123,8 +124,7 @@ class _PlanCardWidgetState extends State<PlanCardWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            // context.l10n.time,
-                            "dxfxcv",
+                            context.l10n.time,
                             style: TextStyles.smallTextStyle.copyWith(
                               color: AppColors.greyDarkColor,
                               fontWeight: FontWeight.w600,
@@ -236,11 +236,11 @@ class _PlanCardWidgetState extends State<PlanCardWidget> {
                 log(value);
                 switch (value) {
                   case "1":
-                  // context.router.push(UpdateTruckRoute(truck: widget.truck));
+                    context.router.push(UpdatePlanRoute(plan: widget.plan));
                   case "2":
-                  // context.read<PlanBloc>().add(
-                  //       DeletePlanEvent(id: widget.plan.id!),
-                  //     );
+                    context.read<PlanBloc>().add(
+                          DeletePlanEvent(id: widget.plan.id!),
+                        );
                 }
               },
               child: Container(

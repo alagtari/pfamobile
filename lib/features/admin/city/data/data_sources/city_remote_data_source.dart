@@ -11,6 +11,7 @@ import 'package:mobile/features/admin/city/data/models/location_model.dart';
 
 abstract class CityOnlineDataSource {
   Future<ResponseWrapper<List<CityModel>>> getCities();
+    Future<ResponseWrapper<List<CityModel>>> getCitiesForCitizen();
   Future<ResponseWrapper<CityModel>> addCity(CityModel city);
   Future<LatLng?> verifyCity({required String state, required String name});
   Future<ResponseWrapper<CityModel>> updateCity(CityModel city, String id);
@@ -42,6 +43,24 @@ class CityOnlineDataSourceImpl implements CityOnlineDataSource {
   Future<ResponseWrapper<List<CityModel>>> getCities() async {
     final res = await sl<Dio>().get(
       "/admin/city",
+    );
+    try {
+      return ResponseWrapper.fromJson(res.data, (p0) {
+        List<CityModel> cityList = [];
+        for (var city in p0 as List) {
+          cityList.add(CityModel.fromJson(city));
+        }
+        return cityList;
+      });
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+    @override
+  Future<ResponseWrapper<List<CityModel>>> getCitiesForCitizen() async {
+    final res = await sl<Dio>().get(
+      "/city",
     );
     try {
       return ResponseWrapper.fromJson(res.data, (p0) {

@@ -32,251 +32,255 @@ class TruckCardWidget extends StatefulWidget implements AutoRouteWrapper {
 class _TruckCardWidgetState extends State<TruckCardWidget> {
   @override
   Widget build(BuildContext context) {
-    return DottedBorder(
-      borderType: BorderType.RRect,
-      radius: const Radius.circular(25),
-      dashPattern: const [7, 4],
-      strokeWidth: 1,
-      color: AppColors.greyDarkColor,
-      child: Stack(
-        children: [
-          Container(
-            width: MediaQuery.of(context).size.width * .4,
-            padding: const EdgeInsets.all(15),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25),
-              color: AppColors.greyLightColor,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                largeVerticalSpacer,
-                Row(
-                  children: [
-                    Container(
-                      height: 40,
-                      width: 40,
-                      padding: const EdgeInsets.all(7),
-                      decoration: BoxDecoration(
-                        color: AppColors.greyLessDarkColor,
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: SvgPicture.asset(
-                        "assets/svg/profile_icon.svg",
-                        colorFilter: const ColorFilter.mode(
-                          AppColors.greyDarkColor,
-                          BlendMode.srcIn,
+    return Container(
+      margin: const EdgeInsets.only(bottom: 10),
+      child: DottedBorder(
+        borderType: BorderType.RRect,
+        radius: const Radius.circular(25),
+        dashPattern: const [7, 4],
+        strokeWidth: 1,
+        color: AppColors.greyDarkColor,
+        child: Stack(
+          children: [
+            Container(
+              width: MediaQuery.of(context).size.width * .4,
+              padding: const EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                color: AppColors.greyLightColor,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  largeVerticalSpacer,
+                  Row(
+                    children: [
+                      Container(
+                        height: 40,
+                        width: 40,
+                        padding: const EdgeInsets.all(7),
+                        decoration: BoxDecoration(
+                          color: AppColors.greyLessDarkColor,
+                          borderRadius: BorderRadius.circular(12),
                         ),
-                      ),
-                    ),
-                    extraMiniHorizantalSpacer,
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          context.l10n.driver,
-                          style: TextStyles.smallTextStyle.copyWith(
-                            color: AppColors.greyDarkColor,
-                            fontWeight: FontWeight.w600,
+                        child: SvgPicture.asset(
+                          "assets/svg/profile_icon.svg",
+                          colorFilter: const ColorFilter.mode(
+                            AppColors.greyDarkColor,
+                            BlendMode.srcIn,
                           ),
                         ),
-                        Text(
-                          "${widget.truck.driver?.firstName ?? "Unavailable"} ${widget.truck.driver?.lastName ?? ""}",
-                          style: TextStyles.smallTextStyle.copyWith(
-                            fontWeight: FontWeight.w600,
-                          ),
-                        )
-                      ],
-                    )
-                  ],
-                ),
-                extraSmallVerticalSpacer,
-                Row(
-                  children: [
-                    Container(
-                      height: 40,
-                      width: 40,
-                      padding: const EdgeInsets.all(7),
-                      decoration: BoxDecoration(
-                        color: AppColors.greyLessDarkColor,
-                        borderRadius: BorderRadius.circular(12),
                       ),
-                      child: SvgPicture.asset(
-                        "assets/svg/truck_icon.svg",
-                        colorFilter: const ColorFilter.mode(
-                          AppColors.greyDarkColor,
-                          BlendMode.srcIn,
-                        ),
-                      ),
-                    ),
-                    extraMiniHorizantalSpacer,
-                    Expanded(
-                      child: Column(
+                      extraMiniHorizantalSpacer,
+                      Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            context.l10n.truck_model,
+                            context.l10n.driver,
                             style: TextStyles.smallTextStyle.copyWith(
                               color: AppColors.greyDarkColor,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
-                          Container(
-                            child: Text(
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 1,
-                              widget.truck.model,
+                          Text(
+                            "${widget.truck.driver?.firstName ?? "Unavailable"} ${widget.truck.driver?.lastName ?? ""}",
+                            style: TextStyles.smallTextStyle.copyWith(
+                              fontWeight: FontWeight.w600,
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                  extraSmallVerticalSpacer,
+                  Row(
+                    children: [
+                      Container(
+                        height: 40,
+                        width: 40,
+                        padding: const EdgeInsets.all(7),
+                        decoration: BoxDecoration(
+                          color: AppColors.greyLessDarkColor,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: SvgPicture.asset(
+                          "assets/svg/truck_icon.svg",
+                          colorFilter: const ColorFilter.mode(
+                            AppColors.greyDarkColor,
+                            BlendMode.srcIn,
+                          ),
+                        ),
+                      ),
+                      extraMiniHorizantalSpacer,
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              context.l10n.truck_model,
                               style: TextStyles.smallTextStyle.copyWith(
+                                color: AppColors.greyDarkColor,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
+                            Container(
+                              child: Text(
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 1,
+                                widget.truck.model,
+                                style: TextStyles.smallTextStyle.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  extraSmallVerticalSpacer,
+                  Row(
+                    children: [
+                      Container(
+                        height: 40,
+                        width: 40,
+                        padding: const EdgeInsets.all(7),
+                        decoration: BoxDecoration(
+                          color: AppColors.greyLessDarkColor,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: SvgPicture.asset(
+                          "assets/svg/weight_icon.svg",
+                          colorFilter: const ColorFilter.mode(
+                            AppColors.greyDarkColor,
+                            BlendMode.srcIn,
                           ),
+                        ),
+                      ),
+                      extraMiniHorizantalSpacer,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            context.l10n.truck_capacity,
+                            style: TextStyles.smallTextStyle.copyWith(
+                              color: AppColors.greyDarkColor,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          Text(
+                            "${widget.truck.capacity} ${context.l10n.kg}",
+                            style: TextStyles.smallTextStyle.copyWith(
+                              fontWeight: FontWeight.w600,
+                            ),
+                          )
                         ],
                       ),
-                    ),
-                  ],
-                ),
-                extraSmallVerticalSpacer,
-                Row(
-                  children: [
-                    Container(
-                      height: 40,
-                      width: 40,
-                      padding: const EdgeInsets.all(7),
-                      decoration: BoxDecoration(
-                        color: AppColors.greyLessDarkColor,
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: SvgPicture.asset(
-                        "assets/svg/weight_icon.svg",
-                        colorFilter: const ColorFilter.mode(
-                          AppColors.greyDarkColor,
-                          BlendMode.srcIn,
-                        ),
-                      ),
-                    ),
-                    extraMiniHorizantalSpacer,
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    ],
+                  )
+                ],
+              ),
+            ),
+            Positioned(
+              top: 15,
+              right: 15,
+              child: PopupMenuButton<String>(
+                position: PopupMenuPosition.under,
+                offset: Offset.fromDirection(10),
+                color: AppColors.whiteDarkColor,
+                surfaceTintColor: AppColors.whiteDarkColor,
+                itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                  PopupMenuItem<String>(
+                    value: '1',
+                    child: Row(
                       children: [
-                        Text(
-                          context.l10n.truck_capacity,
-                          style: TextStyles.smallTextStyle.copyWith(
-                            color: AppColors.greyDarkColor,
-                            fontWeight: FontWeight.w600,
-                          ),
+                        const Icon(
+                          Icons.edit_note,
+                          color: AppColors.blackDarkColor,
                         ),
+                        extraMiniHorizantalSpacer,
                         Text(
-                          "${widget.truck.capacity} ${context.l10n.kg}",
+                          context.l10n.update,
                           style: TextStyles.smallTextStyle.copyWith(
                             fontWeight: FontWeight.w600,
+                            color: AppColors.blackDarkColor,
                           ),
                         )
                       ],
                     ),
-                  ],
-                )
-              ],
-            ),
-          ),
-          Positioned(
-            top: 15,
-            right: 15,
-            child: PopupMenuButton<String>(
-              position: PopupMenuPosition.under,
-              offset: Offset.fromDirection(10),
-              color: AppColors.whiteDarkColor,
-              surfaceTintColor: AppColors.whiteDarkColor,
-              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-                PopupMenuItem<String>(
-                  value: '1',
-                  child: Row(
-                    children: [
-                      const Icon(
-                        Icons.edit_note,
-                        color: AppColors.blackDarkColor,
-                      ),
-                      extraMiniHorizantalSpacer,
-                      Text(
-                        context.l10n.update,
-                        style: TextStyles.smallTextStyle.copyWith(
-                          fontWeight: FontWeight.w600,
+                  ),
+                  PopupMenuItem<String>(
+                    value: '2',
+                    child: Row(
+                      children: [
+                        const Icon(
+                          Icons.delete,
                           color: AppColors.blackDarkColor,
                         ),
-                      )
-                    ],
+                        extraMiniHorizantalSpacer,
+                        Text(
+                          context.l10n.delete,
+                          style: TextStyles.smallTextStyle.copyWith(
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.blackDarkColor,
+                          ),
+                        )
+                      ],
+                    ),
                   ),
-                ),
-                PopupMenuItem<String>(
-                  value: '2',
-                  child: Row(
-                    children: [
-                      const Icon(
-                        Icons.delete,
-                        color: AppColors.blackDarkColor,
+                ],
+                onSelected: (value) {
+                  switch (value) {
+                    case "1":
+                      context.router
+                          .push(UpdateTruckRoute(truck: widget.truck));
+                    default:
+                      context.read<TruckBloc>().add(
+                            DeleteTruckEvent(id: widget.truck.id!),
+                          );
+                  }
+                },
+                child: Container(
+                  width: 32,
+                  height: 17,
+                  decoration: BoxDecoration(
+                    color: AppColors.greyLessDarkColor,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Center(
+                    child: SvgPicture.asset(
+                      "assets/svg/more_icon.svg",
+                      width: 20,
+                      colorFilter: const ColorFilter.mode(
+                        AppColors.greyDarkColor,
+                        BlendMode.srcIn,
                       ),
-                      extraMiniHorizantalSpacer,
-                      Text(
-                        context.l10n.delete,
-                        style: TextStyles.smallTextStyle.copyWith(
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.blackDarkColor,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ],
-              onSelected: (value) {
-                switch (value) {
-                  case "1":
-                    context.router.push(UpdateTruckRoute(truck: widget.truck));
-                  default:
-                    context.read<TruckBloc>().add(
-                          DeleteTruckEvent(id: widget.truck.id!),
-                        );
-                }
-              },
-              child: Container(
-                width: 32,
-                height: 17,
-                decoration: BoxDecoration(
-                  color: AppColors.greyLessDarkColor,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Center(
-                  child: SvgPicture.asset(
-                    "assets/svg/more_icon.svg",
-                    width: 20,
-                    colorFilter: const ColorFilter.mode(
-                      AppColors.greyDarkColor,
-                      BlendMode.srcIn,
                     ),
                   ),
                 ),
               ),
             ),
-          ),
-          Positioned(
-            top: 8,
-            left: 15,
-            child: Container(
-              width: 85,
-              height: 30,
-              decoration: BoxDecoration(
-                  color: AppColors.blackDarkColor,
-                  borderRadius: BorderRadius.circular(5)),
-              child: Center(
-                child: Text(
-                  widget.truck.number,
-                  style: TextStyles.extraSmallTextStyle.copyWith(
-                      color: AppColors.whiteDarkColor,
-                      fontWeight: FontWeight.w600),
+            Positioned(
+              top: 8,
+              left: 15,
+              child: Container(
+                width: 85,
+                height: 30,
+                decoration: BoxDecoration(
+                    color: AppColors.blackDarkColor,
+                    borderRadius: BorderRadius.circular(5)),
+                child: Center(
+                  child: Text(
+                    widget.truck.number,
+                    style: TextStyles.extraSmallTextStyle.copyWith(
+                        color: AppColors.whiteDarkColor,
+                        fontWeight: FontWeight.w600),
+                  ),
                 ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }

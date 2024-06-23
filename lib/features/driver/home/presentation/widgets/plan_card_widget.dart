@@ -46,7 +46,9 @@ class _PlanCardWidgetState extends State<PlanCardWidget> {
         },
         child: GestureDetector(
           onTap: () {
-            context.router.push(DriverMissionMapRoute(plan: widget.plan,));
+            context.router.push(DriverMissionMapRoute(
+              plan: widget.plan,
+            ));
           },
           child: Container(
             width: MediaQuery.of(context).size.width * .4,
@@ -86,7 +88,8 @@ class _PlanCardWidgetState extends State<PlanCardWidget> {
                           ),
                         ),
                         Text(
-                          DateFormat('dd MMM yyyy').format(widget.plan.date),
+                          DateFormat('dd MMM yyyy')
+                              .format(widget.plan.date.toLocal()),
                           style: TextStyles.smallTextStyle.copyWith(
                             fontWeight: FontWeight.w600,
                           ),

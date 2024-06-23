@@ -33,6 +33,8 @@ class UpdateCityEvent extends CityEvent {
 
 class GetCitiesEvent extends CityEvent {}
 
+class GetCitiesForCitizenEvent extends CityEvent {}
+
 class DeleteCityEvent extends CityEvent {
   final String id;
   const DeleteCityEvent({

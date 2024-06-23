@@ -28,7 +28,7 @@ class Signup extends StatefulWidget implements AutoRouteWrapper {
             create: (context) => SignupBloc(),
           ),
           BlocProvider(
-            create: (context) => CityBloc()..add(GetCitiesEvent()),
+            create: (context) => CityBloc()..add(GetCitiesForCitizenEvent()),
           )
         ],
         child: this,

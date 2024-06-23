@@ -8,6 +8,7 @@ import 'package:mobile/features/admin/city/data/models/location_model.dart';
 
 abstract class CityRepository {
   Future<Either<AppFailure, ResponseWrapper<List<CityModel>>>> getCities();
+  Future<Either<AppFailure, ResponseWrapper<List<CityModel>>>> getCitiesForCitizen();
   Future<Either<AppFailure, ResponseWrapper<CityModel>>> addCity(CityModel request);
   Future<Either<AppFailure, LatLng?>> verifyCity({required String state,required String name});
   Future<Either<AppFailure, ResponseWrapper<CityModel>>> updateCity(CityModel request, String id);

@@ -25,6 +25,17 @@ class CityBloc extends Bloc<CityEvent, CityState> {
       },
     );
 
+    on<GetCitiesForCitizenEvent>(
+      (event, emit) async {
+        emit(GetCitiesForCitizenLoading());
+        final res = await _repo.getCitiesForCitizen();
+        res.fold(
+          (l) => emit(GetCitiesForCitizenFailed(message: l.message)),
+          (r) => emit(GetCitiesForCitizenSuccess(cities: r.payload!)),
+        );
+      },
+    );
+
     on<AddCityEvent>(
       (event, emit) async {
         emit(AddCityLoading());

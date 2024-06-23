@@ -5,17 +5,16 @@ import 'package:mobile/features/admin/plan/domain/entities/plan_entity.dart';
 import 'package:mobile/features/admin/truck/data/models/truck_model.dart';
 
 class PlanModel extends PlanEntity {
-  const PlanModel({
-    super.id,
-    required super.date,
-    required super.startHour,
-    required super.endHour,
-    required super.city,
-    required super.truck,
-    required super.garbageType,
-    super.visitedLocation,
-    required super.status
-  });
+  const PlanModel(
+      {super.id,
+      required super.date,
+      required super.startHour,
+      required super.endHour,
+      required super.city,
+      required super.truck,
+      required super.garbageType,
+      super.visitedLocation,
+      required super.status});
 
   factory PlanModel.fromJson(Map<String, dynamic> json) {
     final List<LocationModel> locations = [];
@@ -45,5 +44,26 @@ class PlanModel extends PlanEntity {
       'truck': truck.id,
       'garbageType': garbageType,
     };
+  }
+
+  PlanModel copyWith({
+    DateTime? date,
+    DateTime? startHour,
+    DateTime? endHour,
+    CityModel? city,
+    TruckModel? truck,
+    String? garbageType,
+  }) {
+    return PlanModel(
+      id: id,
+      date: date ?? this.date,
+      startHour: startHour ?? this.startHour,
+      endHour: endHour ?? this.endHour,
+      city: city ?? this.city,
+      truck: truck ?? this.truck,
+      garbageType: garbageType ?? this.garbageType,
+      status: status,
+      visitedLocation: visitedLocation,
+    );
   }
 }
